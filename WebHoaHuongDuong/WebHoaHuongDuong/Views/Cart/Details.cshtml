@@ -1,0 +1,36 @@
+﻿@model DataModel.Cart
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Cart</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cart_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cart_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Customer.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Customer.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateOfCreation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateOfCreation)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

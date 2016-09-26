@@ -1,0 +1,1 @@
+document.getElementById('qcStats_total').innerHTML='061039'; document.getElementById('qcStats_online').innerHTML='000002'; document.getElementById('qcStats_day').innerHTML='000064'; document.getElementById('qcStats_week').innerHTML='001163'; document.getElementById('qcStats_month').innerHTML='002662'; 

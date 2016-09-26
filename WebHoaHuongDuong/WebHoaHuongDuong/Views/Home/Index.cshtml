@@ -1,0 +1,128 @@
+﻿@*@model IEnumerable<BusinessEntities.ProductEntity>*@
+
+<div class="benphai float_l">
+    <!-- <// Xem nhanh include -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="css/product_xemnhanh.css" />
+    <!-- <script type="text/javascript" src="images/imgload/jquery.imgload.js"></script>
+                     -->
+    <!-- >// Xem nhanh include -->
+    <div class="clear"></div>
+    <div id="huongcontent">
+        @{Html.RenderAction("_SanPhamMoi", "Product");}
+        <div class="clr"></div>
+        @{Html.RenderAction("_SanPhamXemNhieu", "Product");}
+        <div class="clr"></div>
+        @{Html.RenderAction("_SanPhamBanChay", "Product");}
+        <!-- xuat san pham ra trang chu theo danh mục -->
+
+        @{Html.RenderAction("_MyPham", "Product");}
+        @{Html.RenderAction("_SuaXachTayChoBeYeu", "Product");}
+        @{Html.RenderAction("_ThucPhamDinhDuong", "Product");}
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.tab_category .cate_sp li span').click(function () {
+                    $(this).parent().parent().find('li').removeClass('active');
+                    $(this).parent().addClass('active');
+                    $(this).parent().parent().parent().parent().find('.content_sp').hide();
+                    $(this).parent().parent().parent().parent().find('#_' + $(this).attr('id')).show();
+                });
+            });
+        </script>
+    </div>
+    <script type="text/javascript" src="js/product_xemnhanh.js"></script>
+    <div class="module relative">
+        <div class="module_title">
+            <ul id="tab-02" class="unlnavi box_tit">
+                <li id="tab_link-04_02" class="acti"><a href="javascript:void()">TIN TỨC MỚI</a>
+                </li>   
+                <li id="tab_link-05_02"><a href="javascript:void()">TIN TỨC XEM NHIỀU</a>
+                </li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="module_body" style="position: relative">
+        <p class="space3 float_r"><a href="~/News/ViewIndex" class="viewall">&raquo;Xem tất cả</a></p>
+        <div class="show">
+            <ul class="content_tin _tab-02 tab_link-04_02 ">
+                <li>
+                    <div class="box_new">
+                        <a href="#" title="Nguyên nhân không ngờ khiến bạn tăng cân">
+                            <img class="sts" src='images/146287499839.jpg_crop265x200.jpg' onerror="this.onerror=null;this.src='https://upload.webbnc.net/view.php?image=upload/web/51/513168/news/2016/05/10/10/09/146287499839.jpg&mode=crop&size=265x200'" alt="Nguyên nhân không ngờ khiến bạn tăng cân" /></a>
+                    </div>
+                    <!--box_news-->
+                    <h3 class="title_new"><a href="#" class="chu_tin">Nguyên nhân không ngờ khiến bạn tăng cân</a></h3>
+                    <p>Béo phì đang là một biểu hiện phổ biến hiện nay trên thế giới nói chung và Việt Nam nói riêng. Béo phì có thể gây ra nhiều hậu quả nghiêm trọng như: bệnh tim mạch, suy giảm trí nhớ, ung thư...</p>
+                </li>
+                <li>
+                    <div class="box_new">
+                        <a href="#" title="3 loại sữa ong chúa của Úc ưa chuộng nhất hiện nay">
+                            <img class="sts" src='images/146286672017.jpg_crop265x200.jpg' onerror="this.onerror=null;this.src='https://upload.webbnc.net/view.php?image=upload/web/51/513168/news/2016/05/10/07/52/146286672017.jpg&mode=crop&size=265x200'" alt="3 loại sữa ong chúa của Úc ưa chuộng nhất hiện nay" /></a>
+                    </div>
+                    <!--box_news-->
+                    <h3 class="title_new"><a href="#" class="chu_tin">3 loại sữa ong chúa của Úc ưa chuộng nhất hiện nay...</a></h3>
+                    <p>Nước Úc là môi trường lý tưởng nền nông nghiệp khổng lồ nuôi ong lấy mật và lấy sữa ong chúa. Dưới đây là 3 sản phẩm Sữa Ong Chúa Úc được nhiều người trên thế giới tin dùng nhất.</p>
+                </li>
+                <li>
+                    <div class="box_new">
+                        <a href="#" title="Các cách cho con bú hiệu quả">
+                            <img class="sts" src='images/146276790828.jpg_crop265x200.jpg' onerror="this.onerror=null;this.src='https://upload.webbnc.net/view.php?image=upload/web/51/513168/news/2016/05/09/04/25/146276790828.jpg&mode=crop&size=265x200'" alt="Các cách cho con bú hiệu quả" /></a>
+                    </div>
+                    <!--box_news-->
+                    <h3 class="title_new"><a href="#" class="chu_tin">Các cách cho con bú hiệu quả</a></h3>
+                    <p>Nhiều bà mẹ trẻ cho rằng việc một người mẹ cho con bú là cứ cho bú theo bản năng của người mẹ là được, nhưng không phải thế, sau đây chúng tôi sẽ tư vấn cách cho con bú để đạt hiệu quả nhất</p>
+                </li>
+
+            </ul>
+            <ul class="content_tin _tab-02 tab_link-05_02 hide">
+                <li>
+                    <div class="box_new">
+                        <a href="#" title="Thực phẩm chức năng là gì? Dùng như thế nào?">
+                            <img class="sts" src='images/145855437939.jpg_crop265x200.jpg' onerror="this.onerror=null;this.src='images/145855437939.jpg&mode=crop&size=265x200'" alt="Thực phẩm chức năng là gì? Dùng như thế nào?" /></a>
+                    </div>
+                    <!--box_news-->
+                    <h3 class="title_new"><a href="#" class="chu_tin">Thực phẩm chức năng là gì? Dùng như thế nào?</a></h3>
+                    <p>Thực phẩm chức năng rất tốt cho cở thể bởi nó là sản phẩm giao thoa giữa thực phẩm và thuốc cho lên nhiều khi người ta còn gọi là thực phẩm thuốc.</p>
+                </li>
+                <li>
+                    <div class="box_new">
+                        <a href="#" title="Cách pha sữa Kid essentials">
+                            <img class="sts" src='images/144585325963.jpg_crop265x200.jpg' onerror="this.onerror=null;this.src='images/144585325963.jpg&mode=crop&size=265x200'" alt="Cách pha sữa Kid essentials" /></a>
+                    </div>
+                    <!--box_news-->
+                    <h3 class="title_new"><a href="#" class="chu_tin">Cách pha sữa Kid essentials</a></h3>
+                    <p>Thời gian gần đây các mẹ có con biếng ăn đang rất thích thú với sản phẩm mới của Nestle là sữa Kid Essentials. Tuy nhiên nhiều mẹ vẫn băn khoăn liệu cách sử dụng loại sữa kid esentials này đã đúng chuẩn chưa.</p>
+                </li>
+                <li>
+                    <div class="box_new">
+                        <a href="#" title="Mẹo phân biệt hàng xách tay Úc chính hãng">
+                            <img class="sts" src='images/144539620742.jpg_crop265x200.jpg' onerror="this.onerror=null;this.src='images/144539620742.jpg&mode=crop&size=265x200'" alt="Mẹo phân biệt hàng xách tay Úc chính hãng" /></a>
+                    </div>
+                    <!--box_news-->
+                    <h3 class="title_new"><a href="#" class="chu_tin">Mẹo phân biệt hàng xách tay Úc chính hãng</a></h3>
+                    <p>Hàng xách tay là những hàng hóa được mua trực tiếp từ công ty hoặc từ chính hãng sản xuất bên nước ngoài xách về việt nam qua đường hàng không , không phải đóng thuế, không phải nhập qua trung gian nên giá thành sẽ rẻ hơn hàng chính hãng.</p>
+                </li>
+
+            </ul>
+            <div class="clear"></div>
+            <div class="clear"></div>
+            <span class="vach_bot3"></span>
+        </div>
+    </div>
+    <!-- Xuat tin tuc ra trang chu theo danh muc -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.tab_category .cate_tt li span').click(function () {
+                $(this).parent().parent().find('li').removeClass('active');
+                $(this).parent().addClass('active');
+                $(this).parent().parent().parent().parent().find('.content_tt').hide();
+                $(this).parent().parent().parent().parent().find('#_' + $(this).attr('id')).show();
+            });
+        });
+    </script>
+</div>
+
+

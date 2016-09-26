@@ -1,0 +1,60 @@
+﻿@model DataModel.CartDetail
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CartDetail</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cart_Detail_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cart_Detail_ID)
+            @Html.ValidationMessageFor(model => model.Cart_Detail_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Product_ID, "Product")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Product_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Product_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Quantity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Quantity)
+            @Html.ValidationMessageFor(model => model.Quantity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cart_ID, "Cart")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Cart_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Cart_ID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

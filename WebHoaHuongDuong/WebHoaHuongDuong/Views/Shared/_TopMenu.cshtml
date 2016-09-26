@@ -1,0 +1,171 @@
+﻿@model BusinessServices.Menu
+<div class="content-top">
+    <div class="content_top_border">
+        <!--top-->
+        <div class="header-top-inner">
+            <div class="header-menu">
+                <div class="clear"></div>
+                <ul class="topmenu">
+                    <li>
+                        <div class="icon_menu">
+                            <img src="~/imgs/1.png">
+                        </div>
+                        <a class="active" href="~/">TRANG CHỦ</a>
+                    </li>
+                    <li>
+                        <div class="icon_menu">
+                            <img src="~/imgs/2.png">
+                        </div>
+                        <a class="" href="~/Introduce">GIỚI THIỆU</a>
+                    </li>
+                    <li class="haveSub">
+                        <div class="icon_menu">
+                            <img src="~/imgs/3.png">
+                        </div>
+                        <a class="" href="~/Category/ViewIndex">SẢN PHẨM</a>
+                        <ul>
+                            @foreach (var item in Model.GetCategoryLevel1)
+                            {
+                                <li><span class="itemmn"></span><a style="color: #595959" href="~/Category/ViewIndex">&diams; @item.Name </a>
+                                </li>
+                            }
+
+                        </ul>
+                    </li>
+                    <li class="haveSub">
+                        <div class="icon_menu">
+                            <img src="~/imgs/4.png">
+                        </div>
+                        <a class="" href="~/News/ViewIndex">TIN TỨC</a>
+                        <ul>
+                            <li><span class="itemmn"></span><a style="color: #595959" href="~/News/ViewIndex">&diams; Thực phẩm</a>
+                            </li>
+                            <li><span class="itemmn"></span><a style="color: #595959" href="~/News/ViewIndex">&diams; Sức khỏe</a>
+                            </li>
+                            <li><span class="itemmn"></span><a style="color: #595959" href="~/News/ViewIndex">&diams; Làm đẹp</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="icon_menu">
+                            <img src="~/imgs/5.png">
+                        </div>
+                        <a class="" href="~/Contact">LIÊN HỆ</a>
+                    </li>
+                    <li class="haveSub">
+                        <div class="icon_menu">
+                            <img src="~/imgs/6.png">
+                        </div>
+                        <a class="" href="~/Home/ExternalPage">KHUYẾN MẠI</a>
+                        <ul>
+                            <li><span class="itemmn"></span><a style="color: #595959" href="">&diams; Khuyến mại trong tháng</a>
+                            </li>
+                            <li><span class="itemmn"></span><a style="color: #595959" href="">&diams; Khuyến mại trong năm</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="header-banner">
+            <div class="header-inner">
+                <div class="auto980px">
+                    <div class="clear"></div>
+                    <div class="header-logo">
+                        <a href="~/Home">
+                            <h1 title="Shop Hoa Hướng Dương - chuyên hàng xách tay" style="display: none">Shop Hoa Hướng Dương - chuyên hàng xách tay</h1>
+                            <img src="~/images/qc_header_0.21412000_1450318485.jpg" width="1170px" height="117px" />
+                        </a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <!--content-top-->
+    </div>
+</div>
+<!-- Skitter-->
+<div style="width: 1170px; position: relative; margin: 0 auto;">
+    <div class="clear"></div>
+    <div class="slideshow">
+        <div class="box_skitter box_skitter_large">
+            <ul>
+                <li>
+                    <a href="~/Home" title="" target="_blank">
+                        <img width="1170" height="450" title="" src='~/imgs/qc/1.jpg' alt='images/143105800154.png' />
+                        <div class="label_text">
+                            <span>Shop Hoa Hướng Dương</span>
+                            <p>Chuyên hàng xách tay</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="~/Home" title="Hàng xách tay Úc" target="_blank">
+                        <img width="1170" height="450" title="Hàng xách tay Úc" src='~/imgs/qc/2.jpg' alt='images/143105792566.png' />
+                        <div class="label_text">
+                            <span>Chuyên hàng xách tay</span>
+                            <p>Chuyên hàng xách tay giá tốt nhất trên toàn quốc</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="" target="_blank">
+                        <img width="1170" height="450" title="" src='~/imgs/qc/3.jpg' alt='images/143105794065.png' />
+                        <div class="label_text">
+                            <span>Shop Hoa Hướng Dương</span>
+                            <p>Chuyên hàng xách tay</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="Hàng xách Tay" target="_blank">
+                        <img width="1170" height="450" title="Hàng Úc xách Tay" src='~/imgs/qc/4.jpg' alt='images/143105795518.png' />
+                        <div class="label_text">
+                            <span>Hàng xách Tay</span>
+                            <p>Shop Hoa Hướng Dương - Chuyên hàng xách tay chính hãng 100%</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="" target="_blank">
+                        <img width="1170" height="450" title="" src='~/imgs/qc/5.jpg' alt='images/143105797967.png' />
+                        <div class="label_text">
+                            <span>Hàng xách Tay</span>
+                            <p>Chuyên hàng xách tay</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="" target="_blank">
+                        <img width="1170" height="450" title="" src='~/imgs/qc/6.jpg' alt='images/144210267718.gif' />
+                        <div class="label_text">
+                            <span></span>
+                            <p></p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <script type="text/javascript" language="javascript" src="~/js/jquery.skitter.min.js"></script>
+    <!-- Init Skitter -->
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $('.box_skitter_large').skitter({
+                theme: 'clean',
+                numbers_align: 'center',
+                progressbar: true,
+                dots: true,
+                preview: true,
+                with_animations: ['cube', 'cubeRandom', 'block', 'cubeStop', 'cubeHide', 'cubeSize', 'horizontal', 'showBars', 'showBarsRandom', 'tube', 'fade', 'fadeFour', 'paralell', 'blind', 'blindHeight', 'blindWidth', 'directionTop', 'directionBottom', 'directionRight', 'directionLeft', 'cubeStopRandom', 'cubeSpread', 'cubeJelly', 'glassCube', 'glassBlock', 'circles', 'circlesInside', 'circlesRotate', 'cubeShow', 'upBars', 'downBars', 'hideBars', 'swapBars', 'swapBarsBack', 'swapBlocks', 'cut', 'random', 'randomSmart']
+            });
+        });
+    </script>
+    <div class='clear'></div>
+</div>
+<!--bg-top-->

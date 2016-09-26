@@ -1,0 +1,40 @@
+﻿@model DataModel.Cart
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Cart</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cart_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cart_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Customer.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Customer.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateOfCreation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateOfCreation)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,451 @@
+﻿@model DataModel.News
+@{
+    ViewBag.Title = "ViewDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="benphai float_l">
+    <div style="display:none"><img src="http://bncvn.net/index.php?mod=imgqc&domain=mapu.vn" /></div><div class="bg-content-new">
+        <div class="module relative">
+
+            <div class="module_body">
+                <div>
+                    <div class="contentdetail relative" style="line-height: 20px;margin-top: 0;">
+                        <div class="content_detail_new">
+
+                            <h1 class="tentin">@Model.Title</h1>
+                            <p class="space1"><span class="chu_date">Thời gian đăng: @Model.DateUpload | @Model.Views lượt xem</span></p>
+                            <img src="http://cdn-gd-v1-1.webbnc.net/themes/web/65/core/imgs/other/ban_in.png" style="margin:0 5px" /><a class="chu_grey bantin print_" href="javascript:;">In bản tin</a>
+                            <div class="tin_lienquan">
+                                <ul></ul>
+                            </div>
+                            @Html.Raw(HttpUtility.HtmlDecode(@Model.Content))
+                            <div class="btn_chiase_bg" style="padding-bottom:10px; padding-top:10px;">
+                                <!-- Zing Share -->
+                                <a class="" name="zm_share" type="button" title="Chia sẻ lên Zing Me" style="float:left;margin-right:10px;margin-top:-2px;"></a>
+                                <script src="http://stc.ugc.zdn.vn/link/js/lwb.0.7.js" type="text/javascript"></script>
+                                <!-- Zing Share -->
+                                <!-- Google Plus Like -->
+                                <span style="float:left"><g:plusone size="medium"></g:plusone></span>
+                                <script type="text/javascript">
+                                    window.___gcfg = {
+                                        lang: 'vi',
+                                    };
+
+                                    (function () {
+                                        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                        po.src = 'https://apis.google.com/js/plusone.js';
+                                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                                    })();
+                                </script>
+                                <!-- Google Plus Like -->
+                                <!-- Facebook Like -->
+                                <div class="fb-like" data-href="http://mapu.vn/nhung-tac-dung-than-ki-cua-sua-ong-chua-toplife-royal-jelly-2.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" style="float:left;margin-right:10px;"></div>
+                                <!-- Facebook Like -->
+                                <div class="clr"></div>
+                            </div>
+
+                            <span class="vach_bot3"></span>
+                        </div>
+                        <style>
+                            .kpoll {
+                                position: relative;
+                                display: none;
+                            }
+
+                            #basic-modal-content, .messagebox {
+                                position: relative;
+                            }
+
+                            #showpoll h3 {
+                                padding-top: 15px;
+                                right: 125px;
+                                font-size: 12px;
+                            }
+                        </style>
+
+                        <div class="tab_content_in">
+                            <!--[if IE 7]>
+                             <style>
+                            #editpoll{
+                                top:10px !important;
+                                }
+                                </style>
+                            <![endif]-->
+
+                            <div id="showpoll">
+
+                            </div>
+                            <div class="kpoll">
+                                <img src="http://cdn-gd-v1-1.webbnc.net/themes/web/411/core/imgs/x-altx-alt.png" width="24" height="24" class="_kclose" style="position:absolute;right:15px;top:15px;cursor:pointer;z-index:10" />
+                                <div id="basic-modal-content"></div>
+                            </div>
+                            <div class="clr"></div>
+                        </div>
+                        <div class="tab_title_lv2" style="margin: 10px;"><span class="bluan"></span>Bình luận</div>
+                        <div class="border_bchon" style="margin:0px 0px 14px 0;">
+                            <span class="vach_top"></span>
+                            <style>
+                                .k_bl {
+                                    overflow: hidden;
+                                    width: 100%;
+                                }
+                            </style>
+                            <script src="http://cdn-gd-v1-1.webbnc.net/themes/default/ch/js/jquery.limit.js" type="text/javascript"></script>
+                            <script src="https://apis.google.com/js/plusone.js">
+                            </script>
+                            <div class="ch-comm">
+                                <style>
+                                    .binhluan {
+                                        text-align: right;
+                                        margin-top: 10px;
+                                    }
+
+                                        .binhluan a {
+                                            color: #424241;
+                                            font-weight: bold;
+                                        }
+
+                                            .binhluan a:hover, .binhluan a.active {
+                                                color: #047267;
+                                            }
+
+                                        .binhluan span._line {
+                                            margin: 0px 5px;
+                                        }
+                                </style>
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        $('#_fb').click(function () {
+                                            $('#_gg').removeClass('active');
+                                            $('#_fb').addClass('active');
+                                            $('#show_comments').hide();
+                                            $('#fb_comment').show();
+                                            $('#g_comment').hide();
+                                        });
+                                        $('#_gg').click(function () {
+                                            $('#_gg').addClass('active');
+                                            $('#_fb').removeClass('active');
+                                            $('#show_comments').hide();
+                                            $('#g_comment').show();
+                                            $('#fb_comment').hide();
+                                        });
+
+                                    });
+                                </script>
+                                <div class="binhluan">
+
+                                    <a href="javascript:void()" class="active" id="_fb">Bình luận bằng tài khoản Facebook</a>
+                                    <span class="_line">|</span>
+                                    <a href="javascript:void()" id="_gg">Bình luận bằng tài khoản Google+</a>
+
+                                </div>
+
+                                <div id="fb_comment">
+                                    <div class="fb-comments" data-href="http://mapu.vn/nhung-tac-dung-than-ki-cua-sua-ong-chua-toplife-royal-jelly-2.html" data-width="870px" data-num-posts="10"></div>
+                                </div>
+
+                                <div id="g_comment" style="display:none;">
+                                    <div class="g-comments"
+                                         data-href="http://mapu.vn/nhung-tac-dung-than-ki-cua-sua-ong-chua-toplife-royal-jelly-2.html"
+                                         data-width="870"
+                                         data-first_party_property="BLOGGER"
+                                         data-view_type="FILTERED_POSTMOD">
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <span class="vach_bot3"></span>
+                        </div>
+
+                    </div><!--content-detail_neww-->
+                </div>  <!--  contentdetail-->
+
+
+
+                <div class="newother">
+                    <div class="module_title ">
+                        <ul class="unlnavi" style="margin-bottom:0px;">
+
+                            <li id="tab_link-01_01" class="acti"><div class="tren"></div><a href="javascript:void()">Các tin liên quan</a><div class="duoi"></div></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+
+                    <span class="other-item">&#187;</span> <a href="http://mapu.vn/gia-sua-ong-chua-uc-royal-jelly-tai-mapu-2.html">Giá sữa ong chúa Úc Royal Jelly  tại Mapu (16/09/2016)</a> <br />
+
+                    <span class="other-item">&#187;</span> <a href="http://mapu.vn/duong-da-hieu-qua-vao-mua-kho-hanh-voi-nhau-thai-cuu-uc-2.html">Dưỡng da hiệu quả vào mùa khô hanh với nhau thai cừu Úc (14/09/2016)</a> <br />
+
+                    <span class="other-item">&#187;</span> <a href="http://mapu.vn/5-loai-sua-bot-danh-cho-tre-tu-0-6-thang-tuoi-tot-nhat-2.html">5 loại sữa bột dành cho trẻ từ 0-6 tháng tuổi tốt nhất (13/09/2016)</a> <br />
+
+                    <span class="other-item">&#187;</span> <a href="http://mapu.vn/nhung-dieu-nen-biet-khi-su-dung-nhau-thai-cuu-uc-2.html">Những điều nên biết khi sử dụng nhau thai cừu Úc (12/09/2016)</a> <br />
+
+                    <span class="other-item">&#187;</span> <a href="http://mapu.vn/cach-uong-vien-sua-ong-chua-uc-de-co-hieu-qua-tot-nhat-2.html">Cách uống viên sữa ong chúa ÚC để có hiệu quả tốt nhất (09/09/2016)</a> <br />
+
+                    <span class="other-item">&#187;</span> <a href="http://mapu.vn/tai-sao-nen-chon-sua-ngoai-la-sua-uc--2.html">Tại Sao Nên Chọn Sữa Ngoại Là Sữa Úc ? (06/09/2016)</a> <br />
+
+                    <span class="other-item">&#187;</span> <a href="http://mapu.vn/sua-uc-de-co-tot-cho-tre-em-khong-2.html">Sữa Úc dê có tốt cho trẻ em không? (06/09/2016)</a> <br />
+
+                    <span class="other-item">&#187;</span> <a href="http://mapu.vn/sua-ong-chua-uc-than-duoc-cua-suc-khoe-va-sac-dep-2.html">Sữa ong chúa Úc thần dược của sức khỏe và sắc đẹp (06/09/2016)</a> <br />
+
+
+                </div>
+                <div class="clear"></div><!-- <// Xem nhanh include -->
+                <link rel="stylesheet" type="text/css" href="http://v1.webbnc.net/themes/web/common/product_xemnhanh/jquery.fancybox.css" />
+                <link rel="stylesheet" type="text/css" href="http://cdn-gd-v1-1.webbnc.net/themes/web/common/product_xemnhanh/product_xemnhanh.css" />
+
+                <!-- <script type="text/javascript" src="http://cdn-gd-v1-1.webbnc.net/themes/web/common/imgload/jquery.imgload.js"></script>
+                 -->
+                <script type="text/javascript" src="http://cdn-gd-v1-1.webbnc.net/themes/web/common/bnc_scroll/bnc_scroll.js"></script>
+                <script type="text/javascript" src="http://v1.webbnc.net/themes/web/common/product_detail_2/js/jcarousel/jquery.jcarousel.js"></script>
+                <script type="text/javascript" src="http://v1.webbnc.net/themes/web/common/product_detail_2/js/jquery.elevatezoom.js"></script>
+                <link rel="stylesheet" type="text/css" href="http://v1.webbnc.net/themes/web/common/product_detail_2/css/jquery.fancybox-thumbs.css" />
+                <script type="text/javascript" src="http://v1.webbnc.net/themes/web/common/product_detail_2/js/jquery.fancybox.js"></script>
+                <script src="http://v1.webbnc.net/themes/web/common/product_detail_2/js/jquery.fancybox-thumbs.js"></script>
+                <script src="http://v1.webbnc.net/themes/web/common/product_detail_2/js/widget.js"></script>
+                <style type="text/css">
+                    .btnxemnhanh {
+                        position: absolute;
+                        top: 120px;
+                        left: 100px;
+                        width: 100%;
+                        text-align: center;
+                        z-index: 10;
+                        webkit-transition: all 0.4s ease;
+                        -moz-transition: all 0.4s ease;
+                        -o-transition: all 0.4s ease;
+                        -ms-transition: all 0.4s ease;
+                        transition: all 0.4s ease;
+                        opacity: 0;
+                    }
+
+                    .intro .btnxemnhanh {
+                        position: absolute;
+                        top: 85px;
+                        left: 55px;
+                        width: auto;
+                        text-align: center;
+                        z-index: 10;
+                    }
+
+                    .btnxemnhanh a {
+                        background: #FF83C1;
+                        padding: 5px 8px;
+                        border-radius: 2px;
+                        color: #FFF;
+                        font-family: 'Roboto Condensed', sans-serif;
+                        font-weight: 400;
+                        font-size: 13px;
+                        border: 1px solid #fff;
+                    }
+
+                        .btnxemnhanh a:hover {
+                            border: 1px solid #3CF;
+                        }
+
+                    .item_xemnhanh:hover .btnxemnhanh {
+                        left: 0px;
+                        opacity: 1;
+                    }
+
+                    .muahang .btn-control-cart a {
+                        background: #C75635 !important;
+                    }
+
+                    .pro_title {
+                        color: #C75635 !important;
+                    }
+                </style>
+                <!-- >// Xem nhanh include -->
+                <br>
+                <div id="huongcontent">
+                    <div class="clear"></div>
+                    <div class="clear"></div>
+
+                </div>
+                <script type="text/javascript" src="http://v1.webbnc.net/themes/web/common/product_xemnhanh/product_xemnhanh.js"></script>
+
+                <script type="text/javascript">
+                    $(function () {
+                        $('.news_related').jCarouselLite({
+                            hoverPause: true,
+                            visible: 3,
+                            scroll: 1,
+                            auto: 2500,
+                            speed: 1500,
+                            btnNext: '',
+                            btnPrev: ''
+                        });
+                    });
+                </script>
+                <script type="text/javascript">
+                    $(function () {
+                        $('.news_n_related').jCarouselLite({
+                            hoverPause: true,
+                            visible: 3,
+                            scroll: 1,
+                            auto: 2500,
+                            speed: 1500,
+                            btnNext: '',
+                            btnPrev: ''
+                        });
+                    });
+                </script>
+                <script type="text/javascript">
+                    $(function () {
+                        $('.news_vd_related').jCarouselLite({
+                            hoverPause: true,
+                            visible: 3,
+                            scroll: 1,
+                            auto: 2500,
+                            speed: 1500,
+                            btnNext: '',
+                            btnPrev: ''
+                        });
+                    });
+                </script>
+                <script type="text/javascript">
+                    $(function () {
+                        $('.news_ab_related').jCarouselLite({
+                            hoverPause: true,
+                            visible: 3,
+                            scroll: 1,
+                            auto: 2500,
+                            speed: 1500,
+                            btnNext: '',
+                            btnPrev: ''
+                        });
+                    });
+                </script>
+                <style type="text/css">
+                    .news_n_related, .news_vd_related, .news_ab_related, .news_related {
+                        width: 100% !important;
+                    }
+
+                    .slide-news {
+                        width: 100%;
+                        float: left;
+                        margin-bottom: 20px;
+                    }
+
+                        .slide-news li {
+                            float: left;
+                            width: 162px;
+                            margin: 0px 10px;
+                        }
+
+                            .slide-news li a.img {
+                                display: block;
+                                width: 162px;
+                                height: 120px;
+                                overflow: hidden;
+                                position: relative;
+                            }
+
+                                .slide-news li a.img img {
+                                    width: 100%;
+                                    height: auto;
+                                    position: absolute;
+                                    top: 0px;
+                                    left: 0px;
+                                    bottom: 0px;
+                                    right: 0px;
+                                    margin: auto;
+                                }
+                </style>
+            </div><!--module_body-->
+
+
+
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('a.del_').click(function () {
+                    var answer = confirm('Bạn muốn xóa tin này?');
+                    if (answer) {
+                        window.location = "http://mapu.vn/quantri&view=news&layout=chucnang&chucnang=delnews&idn=MTg4OTIxMA==&ref=aHR0cDovL21hcHUudm4vbmh1bmctdGFjLWR1bmctdGhhbi1raS1jdWEtc3VhLW9uZy1jaHVhLXRvcGxpZmUtcm95YWwtamVsbHktMi5odG1s";
+                        return false;
+                    }
+                });
+
+            });
+
+            $(document).ready(function () {
+                $('a.f5_').click(function () {
+                    var answer = confirm('Bạn muốn làm mới tin này?');
+                    if (answer) {
+                        window.location = "http://mapu.vn/quantri&view=news&layout=chucnang&chucnang=f5news&idn=MTg4OTIxMA==&ref=aHR0cDovL21hcHUudm4vbmh1bmctdGFjLWR1bmctdGhhbi1raS1jdWEtc3VhLW9uZy1jaHVhLXRvcGxpZmUtcm95YWwtamVsbHktMi5odG1s";
+                        return false;
+                    }
+                });
+
+            });
+
+            $(document).ready(function () {
+                $('a.show_').click(function () {
+                    var answer = confirm('Bạn muốn hiện tin này?');
+                    if (answer) {
+                        window.location = "http://mapu.vn/quantri&view=news&layout=chucnang&chucnang=hiennews&idn=MTg4OTIxMA==&ref=aHR0cDovL21hcHUudm4vbmh1bmctdGFjLWR1bmctdGhhbi1raS1jdWEtc3VhLW9uZy1jaHVhLXRvcGxpZmUtcm95YWwtamVsbHktMi5odG1s";
+                        return false;
+                    }
+                });
+
+            });
+            $(document).ready(function () {
+                $('a.hide_').click(function () {
+                    var answer = confirm('Bạn muốn ẩn tin này?');
+                    if (answer) {
+                        window.location = "http://mapu.vn/quantri&view=news&layout=chucnang&chucnang=annews&idn=MTg4OTIxMA==&ref=aHR0cDovL21hcHUudm4vbmh1bmctdGFjLWR1bmctdGhhbi1raS1jdWEtc3VhLW9uZy1jaHVhLXRvcGxpZmUtcm95YWwtamVsbHktMi5odG1s";
+                        return false;
+                    }
+                });
+
+            });
+            $(document).ready(function () {
+                $('a.print_').click(function () {
+                    var w = window.open('', 'print', 'new', 'width=850');
+                    document.print.submit();
+                });
+            });
+        </script>
+
+        <form name='print' target='print' action='http://v1.webbnc.net/print.php' method='post'>
+            <input name='title' value='Những tác dụng thần kì của sữa ong chúa Toplife Royal Jelly' type='hidden' />
+            <input name='nd' value='><p><span style="font-size:22px;"><a href="http://mapu.vn/sua-ong-chua-2-1-759014.html" target="_blank"><strong>Sữa ong ch&uacute;a &Uacute;c</strong></a> l&acirc;u nay được biết đến l&agrave; một sản phẩm tốt được l&agrave;m từ c&aacute;c chất dinh dưỡng qu&yacute; thu thập từ mật&nbsp;</span><span style="font-size: 22px; line-height: 1em;">hoa, chất đạm v&agrave; v&ocirc; số sinh tố từ tuyến họng của những con ong thợ tạo ra. Hỗn dược n&agrave;y l&agrave; nguồn thức ăn duy nhất của con ong ch&uacute;a n&ecirc;n được gọi l&agrave; sữa ong ch&uacute;a. Đ&acirc;y cũng l&agrave; tức ăn gi&uacute;p ong ch&uacute;a sống l&acirc;u hơn những con ong thợ đến 40 lần.</span></p>
+
+            <p style="text-align: center;"><span style="font-size: 22px; line-height: 1em;"><img alt=" sữa ong chúa Toplife Royal Jelly" src="/useruploads/userfiles/513168/images/royal.jpg" style="width: 400px; height: 519px;" /></span></p>
+
+            <p><span style="font-size:22px;"><strong>Sữa ong ch&uacute;a Toplife Royal Jelly</strong>&nbsp;- <strong>h&agrave;ng x&aacute;ch tay từ &Uacute;c </strong>được đ&aacute;nh gi&aacute; l&agrave; thượng hạng v&agrave; cao cấp v&igrave; n&oacute; ch&uacute;a những&nbsp;</span><span style="font-size: 22px; line-height: 1em;">dinh dưỡng tuyệt vời bao gồm 22 Amino acids cần thiết cho hoạt động của cơ thể. Sau đ&acirc;y l&agrave; c&aacute;c t&aacute;c dụng thần k&igrave; của sữa ong ch&uacute;a &Uacute;c&nbsp; khiến bạn kh&ocirc;ng thể bỏ qua 1 sản phẩm chăm sức khỏe v&agrave; sắc đẹp tốt như thế</span><span style="font-size: 22px; line-height: 1em;">:</span></p>
+
+            <p><span style="font-size:22px;">- Tăng qu&aacute; tr&igrave;nh trao đổi chất mang lại cho bạn một sức khỏe dẻo dai, một cơ thể trẻ l&acirc;u v&agrave; l&agrave;n da mềm mại,tươi trẻ,&nbsp;</span><span style="font-size: 22px; line-height: 1em;">x&oacute;a tan nếp nhăn v&agrave; duy tr&igrave; sắc đẹp.</span></p>
+
+            <p><span style="font-size:22px;">- Bảo vệ sức khỏe, n&acirc;ng cao tuổi thọ, chống l&atilde;o h&oacute;a sớm</span></p>
+
+            <p><span style="font-size:22px;">- <a href="http://mapu.vn/sua-ong-chua-2-1-759014.html" target="_blank"><strong>Sữa ong ch&uacute;a &Uacute;c</strong></a> chứa nhiều chất kh&aacute;ng sinh tự nhi&ecirc;n gi&uacute;p da ngăn ngừa mụn, chống vi&ecirc;m da hiệu quả</span></p>
+
+            <p><span style="font-size:22px;">- Chống n&aacute;m, l&atilde;o h&oacute;a v&agrave; sạm do t&aacute;c động từ m&ocirc; trường v&agrave; nhất l&agrave; sự thay đổi nội tiết tố ở phụ nữ trong thời k&igrave; m&atilde;n&nbsp;</span><span style="font-size: 22px; line-height: 1em;">kinh. Sữa ong ch&uacute;a l&agrave;m thay đổi tận gốc nguy&ecirc;n nh&acirc;n g&acirc;y n&aacute;m v&agrave; sạm gi&uacute;p l&agrave;n da dần trở n&ecirc;n mịn mạng, trắng hồng v&agrave; căng mịn</span></p>
+
+            <p><span style="font-size:22px;">- An thần, ngủ ngon, ph&ograve;ng chống mất ngủ</span></p>
+
+            <p><span style="font-size:22px;">- C&aacute;c trường hợp như suy dinh dưỡng, tinh thần mệt mỏi, cơ thể suy nhược, kiệt quệ do lao động qu&aacute; sức th&igrave; <a href="http://mapu.vn/sua-ong-chua-2-1-759014.html" target="_blank"><strong>sữa ong&nbsp;</strong></a></span><span style="line-height: 1em; font-size: 22px;"><strong><a href="http://mapu.vn/sua-ong-chua-2-1-759014.html" target="_blank">ch&uacute;a&nbsp;&Uacute;c</a>&nbsp;</strong></span><span style="font-size: 22px; line-height: 1em;">n&agrave;y&nbsp;sẽ l&agrave; 1 giải ph&aacute;p tuyệt vời d&agrave;nh cho bạn</span></p>
+
+            <p><span style="font-size:22px;">- Trị c&aacute;c bệnh lo &acirc;u, phiền muộn v&agrave; k&iacute;ch động nhờ đ&oacute; m&agrave; bệnh gi&agrave; trước tuổi sẽ kh&ocirc;ng c&ograve;n</span></p>
+
+            <p><span style="font-size:22px;">Ngo&agrave;i sản phẩm sữa ong ch&uacute;a &Uacute;c, Mapu shop c&ograve;n cung cấp nhiều sản phẩm <a href="http://mapu..vn" target="_blank"><strong>h&agrave;ng x&aacute;ch tay &Uacute;c</strong></a> kh&aacute;c như: nhau thai&nbsp;</span><span style="font-size: 22px; line-height: 1em;">cừu, sức &Uacute;c d&agrave;nh cho b&eacute; v&agrave; người lớn,.... Mời bạn gọi tới hotline của ch&uacute;ng t&ocirc;i để được tư vấn tốt nhất.</span></p>' type='hidden'/>
+            <input name='author' value='' type='hidden' />
+            <input name='src' value='' type='hidden' />
+        </form>
+    </div>
+</div>
+<div class="clear"></div>
+
+<div class="slide_bot">  </div>
+
+<a class="gotop" href="#top">
+    <div class="top-g"> </div>
+</a>
+

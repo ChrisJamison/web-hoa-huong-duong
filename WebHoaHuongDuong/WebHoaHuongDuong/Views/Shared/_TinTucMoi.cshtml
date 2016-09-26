@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DataModel.News>
+<div class="bg_moddum">
+    <div class="tieude"><span class="b_ttnbat"></span>Tin Tức Mới</div>
+    <div class="moddum">
+        <div class="border1">
+            <span class="vach_top"></span>
+            <div class="news_new bg_news_block">
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <div class="img_album">
+                                <a href="~/News/ViewDetail/@item.News_ID" title="Nguyên nhân không ngờ khiến bạn tăng cân">
+                                    @*http://mapu.vn/nguyen-nhan-khong-ngo-khien-ban-tang-can-2.html*@
+                                    <img src='~/Images/News/@item.Thumbnail' onerror="this.onerror = null;this.src = 'https://upload.webbnc.net/view.php?image=upload/web/51/513168/news/2016/05/10/10/09/146287499839.jpg&mode=crop&size=250x156'" alt="Nguyên nhân không ngờ khiến bạn tăng cân" title="Nguyên nhân không ngờ khiến bạn tăng cân" />
+                                </a>
+                            </div>
+                            <div class="block_tit_news"><a href="~/News/ViewDetail/@item.News_ID" class="blocktin">@item.Title</a>
+                            </div> 
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <p class="clear  float_r"><a href="~/news/ViewIndex" class="xemtatca_blok" style="margin-top: 10px;"><i>Xem tất cả</i></a></p>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $(".news_new").jCarouselLite({
+            auto: 3000,
+            speed: 1000,
+            visible: 2,
+            vertical: true,
+            hoverPause: true,
+            scroll: 1
+        });
+    });
+</script>

@@ -1,0 +1,84 @@
+﻿<div class="benphai float_l">
+    <div style="display: none">
+        <img src="http://bncvn.net/index.php?mod=imgqc&domain=mapu.vn" />
+    </div>
+    <script type="text/javascript" src="http://cdn-gd-v1-1.webbnc.net/themes/default/ch/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="http://cdn-gd-v1-1.webbnc.net/themes/default/ch/js/zebra_dialog.js"></script>
+    <link rel="stylesheet" href="http://cdn-gd-v1-1.webbnc.net/themes/default/ch/css/zebra_dialog.css" type="text/css">
+    <script>
+
+        $(document).ready(function () {
+            $("#contactForm").validate({
+                submitHandler: function (form) {
+                    $.Zebra_Dialog('Cảm ơn bạn đã gửi liên hệ với chúng tôi! \n Chúng tôi sẽ nhanh chóng xem xét và trả lời bạn!', {
+                        'type': 'confirmation',
+                        'title': 'Cảm ơn bạn đã gửi liên hệ',
+                        'buttons': [
+                                        { caption: 'Đóng', callback: function () { form.submit(); } }
+                        ]
+                    });
+                }
+            });
+        });
+
+    </script>
+    <div class="bg-content-new">
+
+        <div class="module relative">
+
+            <div class="module_title">
+                <ul class="unlnavi" style="width: 94%">
+                    <li class="acti page_small"><a href="javascript:void()">LIÊN HỆ</a></li>
+
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <div class="module_body relative">
+                <div class="bg_lienhe" style="line-height: 20px;">
+                    <div style="text-align: center;">
+                        <span style="color: rgb(0, 0, 0); text-align: center; font-size: 16px;"><strong>Shop Hoa Hướng Dương- Chuyên cung cấp hàng xách tay sỉ và lẻ</strong></span><br style="color: rgb(0, 0, 0); text-align: center;" />
+                        <span style="color: rgb(0, 0, 0); text-align: center;">Địa chỉ: 69 Nguyễn Trọng Lội P4, Q.Tân Bình, TP.Hồ Chí Minh</span><br style="color: rgb(0, 0, 0); text-align: center;" />
+                        <span style="color: rgb(0, 0, 0); text-align: center;">Hotline: 0903 092 311</span><br style="color: rgb(0, 0, 0); text-align: center;" />
+                        <span style="color: rgb(0, 0, 0); text-align: center;">Email: </span>shophoahuongduong@gmail.com
+                    </div>
+                    <div class="contact">
+                        <form name="tm" enctype="multipart/form-data" id="contactForm" action="http://mapu.vn/lien_he-pass" method="POST" onsubmit="return checkinput();">
+                            <input type="hidden" name="do" value="contact" />
+                            <input type="hidden" name="idw" value="513168">
+                            <div class="title_lh_text fw">
+                                <span class=" text_dky float_l">Họ và tên <span class=" chu_red">(*)</span></span>
+                                <input type="text" class="text_lh float_l required" name="ten" />
+                            </div>
+                            <div class="title_lh_text fw clear">
+                                <span class=" text_dky float_l">Điện thoại <span class=" chu_red">(*)</span></span>
+                                <input type="text" class="text_lh float_l required" name="sdt" />
+                            </div>
+                            <div class="title_lh_text fw clear">
+                                <span class=" text_dky float_l">Email <span class=" chu_red">(*)</span></span>
+                                <input type="text" class="text_lh float_l required" name="mail" />
+                            </div>
+                            <div class="title_lh_text fw clear">
+                                <span class=" text_dky float_l">Địa chỉ <span class=" chu_red">(*)</span></span>
+                                <input type="text" class="text_lh float_l required" name="diachi" />
+                            </div>
+                            <div class="title_lh_text fw clear">
+                                <span class=" text_dky float_l">Nội dung <span class=" chu_red">(*)</span></span>
+                                <textarea name="" class="texttarea_lh float_l required" name="nd"></textarea>
+                            </div>
+                            <div class="title_lh_text clear">
+                                <input type="reset" value="Xóa hết" class="button_dky float_l radius2" style="margin-left: 150px;" />
+                                <input type="submit" value="Gửi" class="button_dky radius2 float_l" />
+                                <div class="clear"></div>
+                            </div>
+                        </form>
+                        <div id="maps" style="clear: both; margin-right: 10px;">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="clear"></div>
+            </div>
+            <span class="vach_bot2"></span>
+        </div>
+    </div>
+</div>

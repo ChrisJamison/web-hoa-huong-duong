@@ -1,0 +1,44 @@
+﻿@model BusinessEntities.CategoryEntity
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Category</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Category_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Parent_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Parent_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Level)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Level)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

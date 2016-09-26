@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=vietnamese' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cousine&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cousine|Roboto+Condensed&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Patrick+Hand&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="~/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/main2.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/toolbarstype.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/newsbar.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/DetailProduct.css" />
+    <!-- Block Search -->
+    <link rel="stylesheet" type="text/css" href="~/css/block_search.css" />
+    <link rel="stylesheet" href="~/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/list_product.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/sosanh.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/ch-css.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/sprites_all.css" />
+    <link type="text/css" media="all" rel="stylesheet" href="~/css/skitter.styles.css" />
+    <!-- css on Index-->
+    <link rel="stylesheet" type="text/css" href="~/css/index.css" />
+    <!-- Block Search -->
+    <!-- Tooltip -->
+    <link rel="stylesheet" type="text/css" href="~/css/tooltipPopup_web.css" />
+    <!-- Tooltip -->
+    <title>Shop Hoa Hướng Dương</title>
+    <script type="text/javascript" src="~/js/jquery-1.7.1.min.js"></script>
+</head>
+<body style="background: #452121; background-image: url(../images/qc_bg_0.56684000_1417675489.jpg); background-repeat: repeat; background-position: top center;" class="customer_">
+    <div id="pro_xemnhanh"></div>
+    <!--END XEM NHANH-->
+    <div id="fb-root"></div>
+    <div class="bg-top">
+        @{Html.RenderPartial("_Header");}
+        @{Html.RenderAction("_TopMenu", "Helper");}
+    </div>
+    <div class="clear"></div>
+
+    <div class="wrapper">
+        <div class='clear'></div>
+        <div class="main">
+            <div style="margin-bottom: 20px;">
+                <div class="bentrai float_l">
+                    @{Html.RenderAction("_LeftMenu", "Helper");}
+                    @{Html.RenderPartial("_FaceBook");}
+                    @{Html.RenderAction("HotestNew", "News");}
+
+                    <!-- Danh mục sản phẩm mới thanh menu bên trái -->
+                    <div class="bg_moddum">
+                        <div class="tieude"><span class="b_spmoi"></span>Sản Phẩm Mới</div>
+                        @{Html.RenderAction("_SanPhamMoi", "Helper");}
+                    </div>
+
+                    <!-- Danh mục sản phẩm nổi bât thanh menu bên trái -->
+                    <div class="bg_moddum">
+                        <div class="tieude"><span class="b_spmoi"></span>Sản Phẩm Nổi Bật</div>
+                        @{Html.RenderAction("_SanPhamNoiBat", "Helper");}
+                    </div>
+
+                    <!-- Danh mục sản phẩm ngẫu nhiênthanh menu bên trái -->
+                    <div class="bg_moddum">
+                        <div class="tieude"><span class="b_spmoi"></span>Sản Phẩm Ngẫu Nhiên</div>
+                        @{Html.RenderAction("_SanPhamNgauNhien", "Helper");}
+                    </div>
+                    <!-- tin tức ngẫu nhiên thanh bên trái-->
+                    @{Html.RenderAction("RandomNew", "News");}
+                    <!-- tin tức mới thanh bên trái-->
+                    @{Html.RenderAction("NewestNew", "News");}
+
+                    <div class="kpoll27482 hide">
+                        <img style="position: absolute; top: 15px; right: 15px; cursor: pointer;" class="_kclose" src="http://v1.webbnc.net/themes/web/212/core/imgs/x-altx-alt.png" width="24" height="24" />
+                        <div id="basic-modal-content27482"></div>
+                    </div>
+                    <script>
+                        $('.submit_poll27482').click(function (e) {
+
+                            $.post("http://mapu.vn/ajax&do=checkcap", {
+                                user_name: $("#pollcode27482").val()
+                            }, function (data) {
+                                if (data == 'no') {
+                                    alert("Vui lòng nhập đúng mã bảo vệ!");
+                                    $("#pollcode27482").focus();
+                                } else {
+                                    $('.kpoll27482').modal({
+                                        opacity: 80,
+                                        overlayCss: {
+                                            backgroundColor: "#000"
+                                        },
+                                        containerCss: {
+                                            border: 0,
+                                            width: 610,
+                                            height: 250
+                                        },
+                                        closeClass: "_kclose"
+                                    });
+                                    $('.modalCloseImg').hide();
+                                    $("#basic-modal-content27482").html("Đang tải dữ liệu, xin vui lòng chờ...").fadeIn("slow");
+                                    var actpoll = {
+                                        poll: $("input[@@name='poll_27482']:checked").attr("value"),
+                                        idpoll: '27482'
+                                    };
+
+                                    $.post("http://mapu.vn/ajax&do=poll", actpoll, function (data) {
+                                        $("#basic-modal-content27482").html(data).fadeTo(900, 1);
+                                    });
+
+                                }
+                            });
+
+                            return false;
+                        });
+
+                        $('.xem_ket_qua27482').click(function (e) {
+
+                            $('.kpoll27482').modal({
+                                opacity: 80,
+                                overlayCss: {
+                                    backgroundColor: "#000"
+                                },
+                                containerCss: {
+                                    border: 0,
+                                    width: 609,
+                                    height: 369
+                                },
+                                closeClass: "_kclose"
+                            });
+                            $('.modalCloseImg').hide();
+                            $("#basic-modal-content27482").html("Đang tải dữ liệu, xin vui lòng chờ...").fadeIn("slow");
+                            var actpoll = {
+                                idpoll: '27482'
+                            };
+                            $.post("http://mapu.vn/ajax&do=poll", actpoll, function (data) {
+                                $("#basic-modal-content27482").html(data);
+
+                            });
+                            return false;
+                        });
+                    </script>
+                    <link href="~/css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+                    <script src="~/js/jquery.mCustomScrollbar.concat.min.js"></script>
+                    <script>
+                        (function ($) {
+                            $(window).load(function () {
+                                $("#s_maps").mCustomScrollbar({
+                                    autoHideScrollbar: true,
+                                    theme: "light-thin"
+                                });
+                            });
+                        })(jQuery);
+                    </script>
+                    @{Html.RenderPartial("_TiGia");}")
+                    @{Html.RenderPartial("_ThongKe");}
+                </div>
+                @RenderBody()
+                <div class="clear"></div>
+            </div>
+            <div class="slide_bot"></div>
+        </div>
+        <a class="gotop" href="#top">
+            <div class="top-g"></div>
+        </a>
+    </div>
+    <!--wrapper-->
+    @{Html.RenderPartial("_Footer");}
+    @RenderSection("scripts", required: false)
+    <script>
+        $(function () {
+            $("#search").autocomplete({
+                source: "/Product/SearchAJX",
+                minLength: 2
+            });
+        })
+    </script>
+</body>
+</html>
+
+<script type="text/javascript" src="~/js/jquery.transform-0.9.3.min_.js"></script>
+<script type="text/javascript" src="~/js/jcarousellite_1.0.1c4.js"></script>
+<script type="text/javascript" src="~/js/tipsy-1.0.0a.js"></script>
+<script type="text/javascript" src="~/js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="~/js/jquery.RotateImageMenu.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="~/js/number_format.js"></script>
+<script type="text/javascript" src="~/js/tooltipPopup.js"></script>
+<script type="text/javascript" src="~/js/y-lab.js"></script>
+<script type="text/javascript" src="~/js/jquery.simplemodal.js"></script>
+<script type="text/javascript" src="~/js/bnc_scroll.js"></script>
+<script type="text/javascript" src="~/js/jquery.jcarousel.js"></script>
+<script type="text/javascript" src="~/js/jquery.elevatezoom.js"></script>
+<link rel="stylesheet" type="text/css" href="c~/ss/jquery.fancybox-thumbs.css" />
+<script type="text/javascript" src="~/js/jquery.fancybox.js"></script>
+<script src="~/js/jquery.fancybox-thumbs.js"></script>
+<script src="~/js/widget.js"></script>
+<script type="text/javascript">
+    $(document).ready(function (e) {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 300) {
+                $('.gotop').css('right', '0px');
+            } else {
+                $('.gotop').css('right', '-100px');
+            }
+        });
+
+    });
+</script>
+<style type="text/css">
+    #vgc_html_avg {
+        display: none !important;
+    }
+
+    .header-menu {
+        width: 100%;
+    }
+</style>

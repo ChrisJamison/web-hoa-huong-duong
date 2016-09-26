@@ -1,0 +1,94 @@
+﻿@model BusinessServices.Menu
+
+<div class="bg_moddum">
+    <div class="tieude"><span class="b_dmhhieu"></span>Danh mục sản phẩm</div>
+    <div class="moddum">
+        <ul class="block_category">
+            @foreach (var item in Model.GetCategoryLevel1)
+            {
+                <li class="dm_block">
+                    <span class="display_dmc"></span><a href="~/category/viewIndex?id=@item.Category_ID"><strong>@item.Name</strong></a>
+                    <ul class="level_1">
+                        @foreach (var item2 in Model.GetCategoryLevel2)
+                        {
+                            if (@item2.Parent_ID == item.Category_ID)
+                            {
+                            <li class=""><a href="~/category/viewIndex?id=@item2.Category_ID">@item2.Name</a>
+                                <ul class="level_2">
+                                    @foreach (var item3 in Model.GetCategoryLevel3)
+                                    {
+                                        if (@item3.Parent_ID == item2.Category_ID)
+                                        {
+                                        <li class=""><a href="~/category/viewIndex?id=@item3.Category_ID">@item3.Name</a>
+                                        </li>
+                                        }
+                                    }
+                                </ul>
+                            </li>
+                            }
+                        }
+                    </ul>
+                </li>
+            }
+        </ul>
+        <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        // Tạo các biến chứa các giá trị cần thiết
+        var acc_head = $('.block_category > li > a'),
+        acc_body = $('.block_category li > .level_1');
+
+        // Mở menu tab đầu tiên khi load trang web
+        //acc_head.first().addClass('active').next().slideDown('normal');
+
+        // Tạo sự kiện click cho các thẻ a trong tab
+        acc_head.on('click', function (event) {
+            // Không cho link đến thẻ a trong tab
+
+            // Hiển thị và ẩn tab khi ta click
+            if ($(this).attr('class') != 'active') {
+                event.preventDefault();
+
+                acc_body.slideUp('normal');
+                $(this).next().stop(true, true).slideToggle('normal');
+                acc_head.removeClass('active');
+                $(this).addClass('active');
+            }
+        });
+    });
+
+</script>
+<script>
+    $(document).ready(function () {
+        // Tạo các biến chứa các giá trị cần thiết
+        var acc_head = $('ul.level_1 > li > a'),
+        acc_body = $('ul.level_1 > li > .level_2');
+
+        // Mở menu tab đầu tiên khi load trang web
+        //acc_head.first().addClass('active').next().slideDown('normal');
+        // Tạo sự kiện click cho các thẻ a trong tab
+        acc_head.on('click', function (event) {
+            // Không cho link đến thẻ a trong tab
+
+            // Hiển thị và ẩn tab khi ta click
+            if ($(this).attr('class') != 'active1') {
+                event.preventDefault();
+
+                acc_body.slideUp('normal');
+                $(this).next().stop(true, true).slideToggle('normal');
+                acc_head.removeClass('active1');
+                $(this).addClass('active1');
+            }
+        });
+    });
+</script>
+
+
+
+
+
+

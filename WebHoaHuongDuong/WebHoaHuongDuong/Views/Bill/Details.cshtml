@@ -1,0 +1,50 @@
+﻿@model DataModel.Bill
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Bill</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bill_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bill_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cart.Cart_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cart.Cart_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateOfCreation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateOfCreation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.isPayed)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.isPayed)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.isOrdered)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.isOrdered)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

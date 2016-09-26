@@ -1,0 +1,44 @@
+﻿@model WebHoaHuongDuong.Models.LoginModel
+
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = null;
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+<section id="loginForm">
+<h2>Sử dụng tài khoản để đăng nhập</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Đăng nhập</legend>
+        <ol>
+            <li>
+                Tài khoản
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                Mật khẩu
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe,"Ghi nhớ", new { @class = "checkbox" })
+            </li>
+        </ol>
+        <input type="submit" value="Đăng nhập" />
+    </fieldset>
+}
+</section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

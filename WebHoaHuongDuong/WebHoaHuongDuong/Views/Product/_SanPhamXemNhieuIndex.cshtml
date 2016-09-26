@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BusinessEntities.ProductEntity>
+<div style="margin-bottom: 30px; overflow: hidden">
+    <div class="tit_sp_home"><a href="~/Category/SanPhamXemNhieu">Sản phẩm xem nhiều</a> </div>
+    <div class="content_xemnhanh">
+
+
+        @foreach (var item in Model)
+        {
+            <div class="sp_pro relative part item_xemnhanh" dataload="MTMxMzM5NQ==">
+                <div class="box_sp">
+                    <div class="box_img_sp">
+                        <h3 class="name_sp"><a id="tenss_1313395" class="ten_sp " title="VIÊN UỐNG NHAU THAI CỪU SHEEP PLACENTA của Healthy Care Australia 5000mg 100 viên" href="/Product/ProductDetail?id=@item.Product_ID">@item.Name</a></h3>
+                        <div class="btnxemnhanh"><a id='id_1313395' data-pjax='#huongcontent' class='xn-1313395 ' onclick="loadProduct('1313395','','http://mapu.vn','new')" href="http://mapu.vn/vien-uong-nhau-thai-cuu-sheep-placenta-cua-healthy-care-australia-5000mg-100-vien--1-1-1313395.html">Xem nhanh</a></div>
+                        <div class="bg_comparison_tr"><span id="ss_1313395_0" class="myicon btn-ss"></span></div>
+                        <div class="khung">
+                            <a href="http://mapu.vn/vien-uong-nhau-thai-cuu-sheep-placenta-cua-healthy-care-australia-5000mg-100-vien--1-1-1313395.html" class="bnc_tooltips" data-id="1313395">
+                                <img class="img" src='~/@item.Image.Trim()' onerror="this.onerror=null;this.src='https://upload.webbnc.net/view.php?image=upload/web/51/513168/product/2015/07/17/07/41/143713686779.jpg&mode=resize&size=245x235'" alt="VIÊN UỐNG NHAU THAI CỪU SHEEP PLACENTA của Healthy Care Australia 5000mg 100 viên" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pos_mr">
+                    <div class="price_new">@item.Price VNĐ</div>
+                    <div class="chitiet_sp"><a href="http://mapu.vn/vien-uong-nhau-thai-cuu-sheep-placenta-cua-healthy-care-australia-5000mg-100-vien--1-1-1313395.html" class="">đặt mua</a></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        }
+
+    </div>
+</div>

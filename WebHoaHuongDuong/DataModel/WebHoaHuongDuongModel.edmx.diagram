@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eb2f95514d5547d9abc45741f999acf5" Name="Diagram1">
+        <EntityTypeShape EntityType="WebHoaHuongDuongModel.Bill" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebHoaHuongDuongModel.Cart" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebHoaHuongDuongModel.CartDetail" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebHoaHuongDuongModel.Category" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebHoaHuongDuongModel.Customer" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebHoaHuongDuongModel.Product" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebHoaHuongDuongModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="WebHoaHuongDuongModel.FK_BILL_CART" ManuallyRouted="false" />
+        <AssociationConnector Association="WebHoaHuongDuongModel.FK_CART_CUSTOMER" ManuallyRouted="false" />
+        <AssociationConnector Association="WebHoaHuongDuongModel.FK_CART_DETAIL_CART" ManuallyRouted="false" />
+        <AssociationConnector Association="WebHoaHuongDuongModel.FK_CART_DETAIL_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="WebHoaHuongDuongModel.FK_PRODUCT_CATEGORY" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WebHoaHuongDuongModel.News" Width="1.5" PointX="7.25" PointY="4.125" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

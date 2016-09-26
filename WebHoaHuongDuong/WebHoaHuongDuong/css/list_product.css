@@ -1,0 +1,378 @@
+.list_product {
+    margin-left: 0px;
+}
+div.intro li div.infomation {
+    width: 410px;
+    float: left;
+    text-align: left;
+    margin-top: 10px;
+    display: block!important
+}
+.list_product .infomation {
+    display: none;
+}
+div.list_product li div.short_info,
+div.list_product li p.info {
+    display: none
+}
+div.intro li div.short_info {
+    width: 400px;
+    float: left;
+    text-align: justify;
+    color: #555;
+    display: block!important;
+    margin-top: 45px;
+}
+.intro .pos_mr {
+    background: none;
+    box-shadow: none;
+    position: absolute;
+    top: 48px;
+    left: 290px;
+}
+.intro .pos_mr:before {
+    display: none;
+}
+div.list_product li .infomation {
+    display: none;
+}
+.list_product .short {
+    display: none;
+}
+.block_search {
+    background: none;
+    border: none!important;
+    max-width: 980px;
+    margin: 10px auto;
+    position: relative;
+}
+.block_search2 {}.block_title {
+    background: none repeat scroll 0 0 pink;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    height: 41px;
+    left: 0;
+    line-height: 41px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: -10px;
+    width: 249px;
+}
+.block_title2 {
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+    height: 23px;
+    color: #333;
+    border-bottom: 2px solid #161616;
+}
+.block_title2 span {
+    color: #fff;
+    font-size: 13px;
+    height: 15px;
+    padding: 4px 9px;
+    text-align: left;
+    display: inline-block;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.block_wrapper {
+    padding-top: 51px;
+    margin: 0 13px;
+}
+.block_title i {
+    display: none;
+    background: url(../core/imgs/iconH.png) no-repeat -560px 0;
+    display: inline-block;
+    float: left;
+    width: 35px;
+    height: 30px;
+    margin-top: 3px;
+    margin-left: 5px;
+}
+.block_wrapper i {
+    margin: 4px!important;
+}
+.block_search input[type='button'] {
+    background: pink;
+    border: none;
+    padding: 4px 8px;
+    color: #FFF;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.block_wrapper a.reset_icon,
+.block_wrapper a.reset_icon2,
+.block_wrapper a.reset_icon3 {
+    margin-right: 80px;
+}
+.ui-widget-header {
+    background: none repeat scroll 0 0 pink!important;
+}
+.block_search input[type='button']:hover {
+    color: #FFF;
+}
+.reset_icon {
+    color: #fff!important;
+    margin-left: 175px;
+    width: 100px;
+}
+.reset_icon3 {
+    color: #FFFFFF!important;
+    position: absolute;
+    right: -60px;
+    top: 195px;
+}
+.block_wrapper #max {
+    width: 94px!important;
+}
+.block_wrapper #min {
+    width: 89px!important;
+}
+.block_search input[type='text'],
+.block_search select {
+    width: 216px!important;
+    font-size: 11px;
+}
+.icon-km {
+    background: none repeat scroll 0 0 pink;
+    border-radius: 100%;
+    color: #333;
+    display: block!important;
+    font-weight: bold;
+    height: 37px;
+    margin-bottom: 4px;
+    position: absolute;
+    visibility: hidden;
+    width: 37px;
+    z-index: 10;
+}
+.part_sp:hover .icon-km {
+    transform: translateX(250px);
+    -webkit-transform: translateX(250px);
+    -moz-transform: translateX(250px);
+    -ms-transform: translateX(250px);
+    -o-transform: translateX(250px);
+    transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    visibility: visible;
+}
+.part_sp_list:hover .hover-bg1 {
+    display: block;
+    top: 0px;
+}
+.sp_pro:hover .icon-km {
+    transform: translateX(200px);
+    -webkit-transform: translateX(200px);
+    -moz-transform: translateX(200px);
+    -ms-transform: translateX(200px);
+    -o-transform: translateX(200px);
+    transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    visibility: visible;
+}
+.km {
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    line-height: 36px;
+}
+.block_wrapper h2.title_properties {
+    color: #ff0101!important;
+}
+.block_wrapper ul li a {
+    color: #fff
+}
+.block_wrapper ul li a:hover {
+    color: #efdbad!important
+}
+div.list_product li p.short,
+div.list_product li p.info {
+    display: none
+}
+div.intro li.part {
+    float: none;
+    font-size: 13px;
+    margin-bottom: 11px;
+    margin-left: 0;
+    margin-right: 0px;
+    padding-bottom: 7px;
+    position: relative;
+    text-align: center;
+    width: 870px;
+    height: 270px;
+}
+div.intro .box_img_sp {
+    padding: 7px;
+    overflow: hidden;
+}
+div.intro .khung {
+    float: left;
+}
+div.intro li a.image {
+    background: none repeat scroll 0 0 #FFFFFF;
+    display: block;
+    float: left;
+    height: 242px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    position: relative;
+    width: 284px;
+}
+div.intro li a.image img {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-height: 242px;
+    max-width: 284px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+div.intro li h3 {
+    text-align: left;
+    float: right;
+    width: 570px;
+}
+div.intro .short {
+    float: right;
+    width: 570px;
+    text-align: left;
+    margin-top: 50px;
+}
+div.intro li div.infomation {
+    width: 570px;
+    float: right;
+    text-align: left;
+    margin-top: 15px;
+    display: block!important;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    color: #7a7a7a;
+}
+div.intro li h3 a {
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: none;
+    box-shadow: none;
+}
+div.intro li .price {
+    display: block
+}
+div.intro li h3 a:hover {
+    color: #e71e4f;
+}
+div.intro li p.old_price {
+    color: #999;
+    font-family: TAHOMA;
+    font-size: 16px;
+    height: 15px;
+    left: 468px;
+    margin: 0 0 5px;
+    position: absolute;
+    text-align: left;
+    text-decoration: line-through;
+    top: 38px;
+}
+div.intro li p.current_price {
+    color: #e71e4f;
+    float: left;
+    font-family: TAHOMA;
+    font-size: 19px;
+    height: 15px;
+    left: 292px;
+    margin: 0 0 10px;
+    position: absolute;
+    text-align: left;
+    top: 35px;
+}
+div.intro li a.more {
+    background: url(../core/imgs/other/bg_all_but.gif) repeat-x scroll 0 10%;
+    height: 22px;
+    line-height: 22px;
+    width: 80px;
+    float: left;
+    border: none;
+    border-radius: 0px;
+    padding: 0px;
+    margin-left: 5px;
+    color: #FFF;
+    float: left;
+    position: absolute;
+    top: 60px;
+    right: 12px;
+}
+div.intro li a.more:hover {
+    background: #999;
+}
+div.list_product li.part .ttprod {
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3
+}
+div.list_product li.part .ttprod .chitiet {
+    display: none
+}
+div.list_product li.part:hover .ttprod .chitiet {
+    left: 28px;
+    position: absolute;
+    top: 150px;
+    display: block
+}
+div.intro .ttprod .chitiet a span {
+    float: none;
+    margin-bottom: 10px;
+    position: relative;
+    opacity: 1;
+}
+div.intro li.part .ttprod .chitiet {
+    bottom: 21px;
+    left: -40px;
+    position: absolute;
+}
+div.intro li.part:hover.chitiet {}div.intro li.part .ttprod {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3
+}
+div.intro li.part:hover .ttprod {
+    display: block!important;
+    left: 4.7%;
+    top: 57%
+}
+div.intro li.part .ttprod .bg_comparison_tr {
+    font-weight: normal!important;
+    margin-left: 111px;
+    margin-top: 40px;
+}
+div.list_product li.part:hover .ttprod .bg_comparison_tr {}.intro .btnxemnhanh {
+    position: absolute;
+    left: 97px!important;
+}
+#map_canvas {
+    width: 782px!important
+}
+.bg_map {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 10px auto;
+    padding: 10px;
+    width: 1135px!important;
+}

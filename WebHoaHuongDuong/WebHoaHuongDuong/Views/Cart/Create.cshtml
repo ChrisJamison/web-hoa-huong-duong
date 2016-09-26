@@ -1,0 +1,52 @@
+﻿@model DataModel.Cart
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cart</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cart_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cart_ID)
+            @Html.ValidationMessageFor(model => model.Cart_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Customer_ID, "Customer")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Customer_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Customer_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateOfCreation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateOfCreation)
+            @Html.ValidationMessageFor(model => model.DateOfCreation)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

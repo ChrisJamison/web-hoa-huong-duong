@@ -1,0 +1,342 @@
+﻿@{
+    ViewBag.Title = "SanPhamXemNhieu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<BusinessEntities.ProductEntity>
+
+<div class="benphai float_l">
+    <!-- <// Xem nhanh include -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="css/product_xemnhanh.css" />
+
+    <!-- <script type="text/javascript" src="http://cdn-gd-v1-1.webbnc.net/themes/web/common/imgload/jquery.imgload.js"></script>-->
+    <script type="text/javascript" src="js/bnc_scroll.js"></script>
+    <script type="text/javascript" src="js/jquery.jcarousel.js"></script>
+    <script type="text/javascript" src="js/jquery.elevatezoom.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox-thumbs.css" />
+    <script type="text/javascript" src="js/jquery.fancybox.js"></script>
+    <script src="js/jquery.fancybox-thumbs.js"></script>
+    <script src="js/widget.js"></script>
+    <style type="text/css">
+        .btnxemnhanh {
+            position: absolute;
+            top: 120px;
+            left: 100px;
+            width: 100%;
+            text-align: center;
+            z-index: 10;
+            webkit-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            -ms-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+            opacity: 0;
+        }
+
+        .intro .btnxemnhanh {
+            position: absolute;
+            top: 85px;
+            left: 55px;
+            width: auto;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .btnxemnhanh a {
+            background: #FF83C1;
+            padding: 5px 8px;
+            border-radius: 2px;
+            color: #FFF;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            border: 1px solid #fff;
+        }
+
+            .btnxemnhanh a:hover {
+                border: 1px solid #3CF;
+            }
+
+        .item_xemnhanh:hover .btnxemnhanh {
+            left: 0px;
+            opacity: 1;
+        }
+
+        .muahang .btn-control-cart a {
+            background: #C75635 !important;
+        }
+
+        .pro_title {
+            color: #C75635 !important;
+        }
+    </style>
+    <!-- >// Xem nhanh include -->
+    <div id="huongcontent">
+        <div class="module relative" style="margin-bottom: 10px;">
+            <div class="clear"></div>
+            <div class="module relative">
+                <div class="module_title">
+                    <ul class="unlnavi" style="width: 94%">
+                        <li class="acti page_small"><span class="icon_sb"></span>
+                            <h1><a href="javascript:void()">Sản phẩm</a></h1>
+                        </li>
+                        <script>
+                            $(document).ready(function () {
+                                $(".chongrid").click(function () {
+                                    $(".jsstyle").addClass("list_product");
+                                    $(".jsstyle").removeClass("intro");
+                                    $(".chongrid").addClass("active");
+                                    $(".chonlist").removeClass("active");
+                                });
+                                $(".chonlist").click(function () {
+                                    $(".jsstyle").addClass("intro");
+                                    $(".jsstyle").removeClass("list_product");
+                                    $(".chonlist").addClass("active");
+                                    $(".chongrid").removeClass("active");
+                                });
+
+
+                            });
+                        </script>
+                    </ul>
+                    <div class="right_show">
+                        <a href="#" class=" icon_xo showlist">
+                            <img src="~/imgs/icon_xoxuong1.png" /></a>
+                        <a href="#" class=" icon_xo hidelist">
+                            <img src="~/imgs/icon_len1.png" /></a>
+                    </div>
+                    <div class="chon">
+
+                        <div class="p_view">
+                            <span>Kiểu xem:</span>
+                            <a href="javascript:void()" class="chongrid active">
+                                <img src="~/imgs/grid.png">
+                            </a>
+                            <a href="javascript:void()" class="chonlist">
+                                <img src="~/imgs/list.png">
+                            </a>
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="clear"></div>
+                @*<div class="content-list">
+                    <div class="listcat">
+                        <div class="bo_goc">
+
+                            <ul class="clear">
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/top-cac-san-pham-ban-chay--2-1-871361.html">TOP CÁC SẢN PHẨM BÁN CHẠY</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/cam-cum-2-1-875520.html">CẢM CÚM</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/giam-can-an-toan--2-1-866379.html">GIẢM CÂN AN TOÀN</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/my-pham-cham-soc-da-2-1-852007.html">MỸ PHẨM CHĂM SÓC DA</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/skin-doctors-cua-uc-2-1-853325.html">SKIN DOCTORS CỦA ÚC</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/my-pham-lanopearl--2-1-853326.html">MY PHẨM LANOPEARL</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/thuc-pham-chuc-nang-2-1-754361.html">THỰC PHẨM CHỨC NĂNG</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/sua-ong-chua-2-1-759014.html">SỮA ONG CHÚA</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/san-pham-danh-cho-ba-bau-2-1-759005.html">SẢN PHẨM CHO BÀ BẦU</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/vitamin-2-1-759024.html">VITAMIN</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/collagen-2-1-805734.html">COLLAGEN ĐẸP DA</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/kem-cuu-uc-2-1-869630.html">KEM CỪU ÚC</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/mat-ong-manuka--2-1-871586.html">MẬT ONG MANUKA</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/kem-danh-rng-2-1-765157.html">ĐỒ DÙNG HÀNG NGÀY</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/hang-cho-be-2-1-754402.html">HÀNG CHO BÉ</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/hang-hieu-sang-chanh-2-1-857144.html">HÀNG HIỆU SANG CHẢNH</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/my-pham-uc-xach-tay-2-1-754380.html">MỸ PHẨM ÚC XÁCH TAY</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/nhau-cuu-2-1-803904.html">NHAU THAI CỪU ÚC</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/sua-uc-2-1-761118.html">SỮA ÚC</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/serum-dep-da-2-1-803906.html">SERUM ĐẸP DA</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/thuc-pham-dinh-duong-2-1-761120.html">THỰC PHẨM DINH DƯỠNG</a></h2>
+                                </li>
+                                <li>
+                                    <h2>
+                                        <a href="http://mapu.vn/san-pham-cham-soc-toc-2-1-761134.html">SẢN PHẨM CHĂM SÓC TÓC</a></h2>
+                                </li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>*@
+                <div class="clear tab_show">
+                    <div class="showop float_r">
+                        <div class="clear"></div>
+                    </div>
+                    <div class="tab_ul float_l">
+                        <!-- code mới -->
+                        <div class="box-sort" id="box-sort">
+                            <select id="sort-product" class="form-control">
+                                <option value="latest" selected>Sản phẩm mới nhất</option>
+                                <option value="earliest">Sản phẩm cũ nhất</option>
+                                <option value="best-selling">Sản phẩm bán chạy nhất</option>
+                                <option value="view">Sản phẩm xem nhiều</option>
+                                <option value="hot">Sản phẩm nổi bật</option>
+                                <option value="hight-to-low">Giá từ cao đến thấp</option>
+                                <option value="low-to-height">Giá từ thấp đến cao</option>
+                                <option value="more-to-less">Khuyến mãi từ nhiều đến ít</option>
+                                <option value="less-to-more">Khuyến mãi từ ít đến nhiều</option>
+                                <option value="a-z">Sắp xếp từ A - Z</option>
+                                <option value="z-a">Sắp xếp từ Z - A</option>
+                            </select>
+                            <select id="number-product" class="form-control">
+                                <option value="9">9 sản phẩm mỗi trang</option>
+                                <option value="12">12 sản phẩm mỗi trang</option>
+                                <option value="15">15 sản phẩm mỗi trang</option>
+                                <option value="20" selected>20 sản phẩm mỗi trang</option>
+                                <option value="24">24 sản phẩm mỗi trang</option>
+                                <option value="30">30 sản phẩm mỗi trang</option>
+                                <option value="40">40 sản phẩm mỗi trang</option>
+                                <option value="50">50 sản phẩm mỗi trang</option>
+                                <option value="60">60 sản phẩm mỗi trang</option>
+                                <option value="80">80 sản phẩm mỗi trang</option>
+                                <option value="100">100 sản phẩm mỗi trang</option>
+                            </select>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- code mới -->
+                    </div>
+                    <!--<div class="border_bottom2"></div>-->
+                </div>
+                <div class="clear"></div>
+                <div class="content_main_sp">
+                    <div class='jsstyle content_xemnhanh list_product  ' id='product_new'>
+                        <div class="content _tab-05 tab_link-01_01" id="list-product">
+
+                            <ul>
+
+
+                                @foreach (var item in Model)
+                                {
+                                    <li class="sp_pro relative part item_xemnhanh" dataload="MTQ5NzAyNA==">
+                                        <div class="box_sp">
+                                            <div class="box_img_sp">
+                                                <h3 class="name_sp"><a id="tenss_1497024" class="ten_sp " title="ELEVIT BREASTFEEDING - ELEVIT DÀNH CHO PHỤ NỮ CHO CON BÚ" href="~/product/productdetail?id=@item.Product_ID">@item.Name</a></h3>
+                                                <div class="btnxemnhanh"><a id='id_1497024' data-pjax='#huongcontent' class='xn-1497024 ' onclick="loadProduct('1497024','','http://mapu.vn','new')" href="~/product/productdetail?id=@item.Product_ID">Xem nhanh</a></div>
+                                                <div class="bg_comparison_tr"><span id="ss_1497024_" class="myicon btn-ss"></span></div>
+                                                <div class="khung">
+                                                    <a href="http://mapu.vn/elevit-breastfeeding-elevit-danh-cho-phu-nu-cho-con-bu--1-1-1497024.html" class="bnc_tooltips" data-id="1497024">
+                                                        <img class="img" src='~/@item.Image' onerror="this.onerror=null;this.src='https://upload.webbnc.net/view.php?image=upload/web/51/513168/product/2016/04/20/10/40/146119204234.jpg&mode=resize&size=245x235'" alt="ELEVIT BREASTFEEDING - ELEVIT DÀNH CHO PHỤ NỮ CHO CON BÚ" />
+                                                    </a>
+                                                </div>
+                                                <div class='short'></div>
+                                                <div class='infomation'>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pos_mr">
+                                            <div class="price_new">@item.Price</div>
+                                            <div class="chitiet_sp"><a href="http://mapu.vn/elevit-breastfeeding-elevit-danh-cho-phu-nu-cho-con-bu--1-1-1497024.html" class="">đặt mua</a></div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </li>
+                                }
+
+                            </ul>
+
+                            <div class="clearfix"></div>
+                            <div class="f-pagging text-right row">
+                                <ul class="pagination" id="pagination">
+
+                                    <li class="active"><a data-page="0">1</a></li>
+
+
+                                    <li><a data-page="1">2</a></li>
+
+
+                                    <li><a data-page="2">3</a></li>
+
+
+                                    <li><a data-page="3">4</a></li>
+
+
+                                    <li><a data-page="4">5</a></li>
+
+
+                                    <li><a data-page="5">Sau</a></li>
+
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <span class="vach_bot2"></span>
+        </div>
+
+
+
+    </div>
+    <!-- Xem nhanh script -->
+    <script type="text/javascript" src="~/js/product_xemnhanh.js"></script>
+</div>
+
