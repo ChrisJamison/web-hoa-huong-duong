@@ -79,7 +79,8 @@
                     <script>
                         $('.submit_poll27482').click(function (e) {
 
-                            $.post("http://mapu.vn/ajax&do=checkcap", {
+                            //$.post("http://mapu.vn/ajax&do=checkcap", {
+                            $.post("", {
                                 user_name: $("#pollcode27482").val()
                             }, function (data) {
                                 if (data == 'no') {
@@ -105,7 +106,8 @@
                                         idpoll: '27482'
                                     };
 
-                                    $.post("http://mapu.vn/ajax&do=poll", actpoll, function (data) {
+                                    //$.post("http://mapu.vn/ajax&do=poll", actpoll, function (data) {
+                                    $.post("", actpoll, function (data) {
                                         $("#basic-modal-content27482").html(data).fadeTo(900, 1);
                                     });
 
@@ -134,7 +136,8 @@
                             var actpoll = {
                                 idpoll: '27482'
                             };
-                            $.post("http://mapu.vn/ajax&do=poll", actpoll, function (data) {
+                            //$.post("http://mapu.vn/ajax&do=poll", actpoll, function (data) {
+                            $.post("", actpoll, function (data) {
                                 $("#basic-modal-content27482").html(data);
 
                             });
