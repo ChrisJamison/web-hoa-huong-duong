@@ -331,8 +331,6 @@
                                             <option value="99">99</option>
                                             <option value="100">100</option>
                                         </select>
-
-
                                     </div>
                                     <div class="clproduct2"></div>
 
@@ -340,13 +338,9 @@
                                     <div class="optionProduct clproduct">
 
                                         <div class="buy" id="buy"><span onclick="order('buy')">Mua ngay</span></div>
-                                        <div class="addtocart" id="add_to_cart" data-id="@Model.Product.Product_ID"><span @*onclick="addCart(@Model.Product.Product_ID)"*@>Thêm vào giỏ hàng</span></div>
+                                        <div class="addtocart" id="add_to_cart" data-id="@Model.Product.Product_ID"><span @*onclick="addCart(@Model.Product.Product_ID)"*@>Thêm vào giỏ</span></div>
                                     </div>
-
                                 </div>
-
-
-
                             </div>
                         </div>
                     </div>
@@ -651,13 +645,13 @@
                                     <div class="sp_pro relative part" style="height: 385px;">
                                         <div class="box_sp" style="margin: 30px 0 0;">
                                             <div class="box_img_sp">
-                                                <h3 class="name_sp"><a id="tenss_1228174" class="ten_sp " title="" href="/Product/ProductDetail?id=@item.Product_ID">@item.Name</a>
+                                                <h3 class="name_sp"><a id="tenss_1228174" class="ten_sp " title="" href="~/Product/ProductDetail?id=@item.Product_ID">@item.Name</a>
                                                 </h3>
-                                                <div class="btnxemnhanh"><a id='id_1228174' data-pjax='#huongcontent' class='xn-1228174 ' onclick="loadProduct('1228174', '', '', 'new')" href="/Product/ProductDetail?id=@item.Product_ID">Xem nhanh</a>
+                                                <div class="btnxemnhanh"><a id='id_1228174' data-pjax='#huongcontent' class='xn-1228174 ' onclick="loadProduct('1228174', '', '', 'new')" href="~/Product/ProductDetail?id=@item.Product_ID">Xem nhanh</a>
                                                 </div>
                                                 <div class="bg_comparison_tr"><span id="ss_1228174_0" class="myicon btn-ss"></span></div>
                                                 <div class="khung">
-                                                    <a href="/Product/ProductDetail?id=@item.Product_ID" class="bnc_tooltips" data-id="1228174">
+                                                    <a href="~/Product/ProductDetail?id=@item.Product_ID" class="bnc_tooltips" data-id="1228174">
                                                         <img class="img" src='~/@item.Image' onerror="this.onerror = null;this.src = ''" alt="@item.Name" />
                                                     </a>
                                                 </div>
