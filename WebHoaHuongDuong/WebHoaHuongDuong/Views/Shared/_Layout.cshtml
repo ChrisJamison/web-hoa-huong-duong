@@ -4,8 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<meta name="format-detection" content="telephone=no">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=vietnamese' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Cousine&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
@@ -33,8 +33,10 @@
     <!-- Tooltip -->
     <title>Sunflower Shop</title>
     <script type="text/javascript" src="~/js/jquery-1.7.1.min.js"></script>
-   <link rel="stylesheet" type="text/css" href="~/content/theme-color.css" />
-    <link rel="stylesheet" type="text/css" href="~/content/responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="~/content/theme-color.css" />
+    <link rel="stylesheet" type="text/css" href="~/content/responsive.css" />
+
+    <script lang="javascript">(function () { var pname = ((document.title != '') ? document.title : document.querySelector('h1').innerHTML); var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = 1; ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=b5bb28724d4c3f4e5c1ecbd5444b6df1&data=eyJzc29faWQiOjQ3NTQ2NTIsImhhc2giOiI3NjUxYmY5NDQ4NjY5NzNjYWUzYmFlMmIyMGU4NGY3YSJ9&pname=' + pname; var s = document.getElementsByTagName('script'); s[0].parentNode.insertBefore(ga, s[0]); })();</script>
 </head>
 <body style="background: #452121; background-image: url(/images/qc_bg_0.56684000_1417675489.jpg); background-repeat: repeat; background-position: top center;" class="customer_">
     <div id="pro_xemnhanh"></div>
@@ -50,7 +52,7 @@
         <div class='clear'></div>
         <div class="main">
             <div style="margin-bottom: 20px;">
- @RenderBody()
+                @RenderBody()
                 <div class="bentrai float_l">
                     @{Html.RenderAction("_LeftMenu", "Helper");}
                     @{Html.RenderPartial("_FaceBook");}
@@ -159,10 +161,10 @@
                             });
                         })(jQuery);
                     </script>
-                   
-                  
+
+
                 </div>
-               
+
                 <div class="clear"></div>
             </div>
             <div class="slide_bot"></div>
