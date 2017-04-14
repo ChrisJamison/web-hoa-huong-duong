@@ -3121,3 +3121,7 @@ ul.block_category li ul {
 #table-cart {
     border-bottom: 1px solid #E5E5E5 !important;  
 }
+
+.ui-autocomplete {
+    background: antiquewhite !important;
+}
