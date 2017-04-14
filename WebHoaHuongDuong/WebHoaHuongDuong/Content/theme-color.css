@@ -1,0 +1,108 @@
+.content-top, .bentrai, .box_img_sp, .show .content_tin li, 
+.skitter-clean .info_slide_dots .image_number_select, .skitter-clean .info_slide_dots .image_number_select:hover {
+	background: #fdf1a5;
+}
+
+.nut_search {
+	background-color: #fdf1a5;
+}
+
+.module_title li.acti a {
+	color: rgb(249, 211, 37);
+}
+
+.skitter-clean .info_slide_dots .image_number_select, .skitter-clean .info_slide_dots .image_number_select:hover {
+	color: #f9d225 !important;
+}
+
+.btnxemnhanh a {
+	background: #8edc77;
+}
+
+.chitiet_sp a:hover {
+	color: #8edc77;
+}
+
+.top-g {
+	background-color: #f9d325;
+}
+
+.box_skitter .label_skitter {
+	background: rgba(249,211,37,.8);
+}
+
+
+.tieude, .blocktin, .xemtatca_blok, .tieude, .blocktin, .space5s a.ten_sp, ul.menu_bot li a {
+	color: #524343 !important;
+}
+
+.tieude {
+	border-bottom: 1px solid #524343;
+}
+
+ul.menu_bot li {
+	border-right: 1px solid #524343;
+}
+
+.top-g {
+    background-color: #8edc77;
+}
+
+.ten_sp {
+	overflow: hidden;
+	box-shadow: 0 1px 1px rgb(253, 241, 165);
+}
+
+.bg_news_block li {
+    border-bottom: 1px dashed #8edc77;
+}
+
+
+
+.tab_category li.begin a {
+	color: #94d16d;
+}
+
+
+.khung {
+	box-shadow: 0 1px 1px rgb(146, 217, 105);
+}
+
+.ten_sp {
+	box-shadow: 0 1px 1px rgb(146, 219, 104);
+}
+
+.topmenu li > ul li:hover {
+    background: #b9dba2;
+}
+
+ul.topmenu li > a:hover, ul.topmenu li > a.active, ul.topmenu li:hover > a {
+    color: #fff;
+    background: rgb(239, 246, 198);
+}
+ul.block_category li a:hover, ul.block_category li a:active {
+    color: #fff;
+    background: rgb(185, 219, 162);
+    padding: 0 0 0 5px;
+}
+.top-g:hover {
+    background: url(../imgs/arrow-t.png) 50% 50% no-repeat rgb(253, 241, 165);
+    opacity: 1;
+}
+.module_title li.acti a {
+    color: rgb(166, 215, 143);
+}
+
+.color-red {
+    color: rgb(185, 219, 162)!important;
+}
+
+.button_dky {background: #b9dba2;}
+ul.ulnavi2 li a:hover, ul.ulnavi2 li.acti2 a {
+    color: #fff;
+    background: rgb(147, 193, 125);
+}
+ul.ulnavi2 li {
+    background: none repeat scroll 0 0 #b9dba2;}
+.bg_comparison_tr {
+    display: none;}

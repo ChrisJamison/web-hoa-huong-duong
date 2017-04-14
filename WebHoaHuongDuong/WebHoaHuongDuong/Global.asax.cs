@@ -40,17 +40,6 @@ namespace WebHoaHuongDuong
             Mapper.CreateMap<Category, CategoryEntity>();
             Mapper.CreateMap<CategoryEntity, Category>();
 
-            Mapper.CreateMap<Cart, CartEntity>();
-            Mapper.CreateMap<CartEntity, Cart>();
-
-            Mapper.CreateMap<CartDetail, CartDetailEntity>();
-            Mapper.CreateMap<CartDetailEntity, CartDetail>();
-
-            Mapper.CreateMap<Customer, CustomerEntity>();
-            Mapper.CreateMap<CustomerEntity, Customer>();
-
-            Mapper.CreateMap<Bill, BillEntity>();
-            Mapper.CreateMap<BillEntity, Bill>();
         }
     }
 }

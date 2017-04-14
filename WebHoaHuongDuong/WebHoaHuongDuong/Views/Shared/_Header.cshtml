@@ -1,67 +1,54 @@
 ﻿@using WebHoaHuongDuong.Models
 <div class="top">
     <div class="head_top">
-        <div class="login">
-            <ul>
-                <li>
-                    <a href="javascript:void()" id="dangnhap" class="icon_dn">Đăng nhập</a>
-                    <div class="dangnhap1 hide">
-                        <div id="b_login" class="box-support">
-                            <h3 class="title-sup">Đăng nhập vào hệ thống</h3>
-                            <img class="btnclose" src="images/arrow-lg.png" style="position: absolute; top: 23px; right: 23px; cursor: pointer; width: 11px; height: 11px; margin-top: 15px;">
-                            <div class="content-sup">
-                                <div class="img_login">
-                                    <a href="#"> @*https://id.vatgia.com/dang-nhap/?_cont=http://bncvn.net/sso-aHR0cDovL21hcHUudm4vfGh0dHA6Ly9tYXB1LnZu.html&service=webbnc*@
-                                        <img src="images/vg.png">
-                                    </a>
-                                    <a href="#" style="margin-left: 10px;"> @*http://bncvn.net/dang-nhap-aHR0cDovL21hcHUudm4v.html*@
-                                        <img src="images/bnc.png">
-                                    </a>
-                                </div>
-                                <ul class="control_b_login">
-                                    <li><a href="#" class="enter">Đăng nhập với ID Vật Giá</a></li> @*https://id.vatgia.com/dang-nhap/?_cont=http://bncvn.net/sso-aHR0cDovL21hcHUudm4vfGh0dHA6Ly9tYXB1LnZu.html&service=webbnc*@
-                                    <li><a href="#" class="enter">Đăng nhập tài khoản BNC</a></li>@*http://bncvn.net/dang-nhap-aHR0cDovL21hcHUudm4v.html*@
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="#" id="dangky" class="icon_dn">&nbsp;Đăng ký</a> </li>@*https://id.vatgia.com/dang-ky/?service=webbnc&_cont=http%3A%2F%2Fbncvn.net/tao-web-vg.html*@
-            </ul>
-        </div>
-        <!--login-->
+
         <div class="search">
-            <form method="post" id="idf" action="/Product/Search" name="form_timkiem_sp">
-                @*javascript:$('#idf').submit();*@
+            <form method="post" id="idf" action="~/Product/Search" name="form_timkiem_sp">
                 <input value="" class="top_input input-group input-group-lg" id="search" type="text" placeholder="Tìm kiếm từ khóa..." name="keywords" />
-                <a href="javascript:void()" class="nut_search" onclick=""></a>@*javascript:$('#idf').submit();*@
+                <button class="nut_search" type="submit" form="idf"></button>
             </form>
-            @*<form class="navbar-form navbar-left" role="search" action="/Product/Search">
-                <div class="input-group input-group-lg">
-                    <input id="search" name="keywords" class="form-control" placeholder="search" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-                    </span>
-                </div>
-            </form>*@
         </div>
         <!--search-->
         <div class="cart">
-            <div id="cart_expand"><a class="cart_link" href="javascript:void()">Giỏ hàng:<span id="in_cart"> @ShoppingCart.Cart.Count</span>Sản phẩm</a> </div>
+            <div id="cart_expand"><a class="cart_link" href="#">Giỏ hàng:<span id="in_cart"> @ShoppingCart.Cart.Count</span>Sản phẩm</a> </div>
             <style type="text/css">
-                  </style>
-           @* [if IE 7]>*@
-                  <style>
-                     .cart-mini { display: none; }    
-                  </style>
-                @*  <![endif]*@
+            </style>
+            @* [if IE 7]>*@
+            <style>
+                .cart-mini {
+                    display: none;
+                }
+            </style>
+            @*  <![endif]*@
             <div class="cart-mini" id="cart_mini">
                 <h3 class="title">Giỏ hàng mini</h3>
                 <span class="close" title="Đóng lại"></span>
                 <div id="cart_loader">
-                    <center>Hiện bạn không có sản phẩm nào trong giỏ hàng.</center>
+                    <ul id="cart-list">
+                        @foreach (var item in ShoppingCart.Cart.Items)
+                        {
+
+                            <li id="gio_hang_sp_1563913">
+                                <div>
+                                    <a href="" target="_blank" title="@item.Name"><img src="/@item.Image" alt="@item.Name" class="cart-img" title="@item.Name"></a>
+                                    <h3>
+                                        <a href="" title="@item.Name" target="_blank">@Html.Truncate(item.Name, 20)</a>
+                                    </h3>
+                                    <h2>
+                                        @item.Price <u>đ</u>
+                                    </h2>
+                                    <a href="javascript:;" class="cart-less">x</a><span class="sluong_1563913">@item.NumberInStock</span>
+                                    <a href="javascript:;" class="cart-remove" onclick="delorder_gh(1563913, 'Mặc định');" title="Xóa sản phẩm">Xóa</a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </li>
+
+                        }
+                    </ul>
+                    <p class="total">
+                        Tổng đơn hàng:
+                        <b id="gio_hang_tong">@ShoppingCart.Cart.Total</b>
+                    </p>
                 </div>
                 <a href="~/Cart/Index" class="cart-enter">Vào giỏ hàng</a>
             </div>
@@ -91,4 +78,3 @@
         <!--cart-->
     </div>
 </div>
-

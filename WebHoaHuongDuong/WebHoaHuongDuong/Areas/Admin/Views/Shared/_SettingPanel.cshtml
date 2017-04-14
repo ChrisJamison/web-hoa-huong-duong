@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "_SettingPanel";
+}
+
+<ul>
+    <li><a href="#">Dashboard</a></li>
+    <li>
+        @Html.ActionLink("Sản phẩm", "Index", "Product")
+        <a href="#" class="expand-btn"><span class="fa fa-chevron-right"></span></a>
+        <ul>
+            <li>@Html.ActionLink("Tất cả sản phẩm", "Index", "Product")</li>
+            <li>@Html.ActionLink("Thêm mới sản phẩm", "Create", "Product")</li>
+        </ul>
+    </li>
+    <li>
+        @Html.ActionLink("Doanh mục", "Index", "Category")
+        <a href="#" class="expand-btn"><span class="fa fa-chevron-right"></span></a>
+        <ul>
+            <li>@Html.ActionLink("Tất cả Danh mục", "Index", "Category")</li>
+            <li>@Html.ActionLink("Thêm mới", "Create", "Category")</li>
+        </ul>
+    </li>
+    <li>
+        @Html.ActionLink("Tin tức", "Index", "News")
+        <a href="#" class="expand-btn"><span class="fa fa-chevron-right"></span></a>
+        <ul>
+            <li>@Html.ActionLink("Tất cả Tin tức", "Index", "News")</li>
+            <li>@Html.ActionLink("Thêm mới", "Create", "News")</li>
+        </ul>
+    </li>
+    <li><a href="#">Thiết lập</a>
+        <a href="#" class="expand-btn"><span class="fa fa-chevron-right"></span></a>
+        <ul>
+            <li><a>Slider</a></li>
+            <li><a>Khác</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    $('.expand-btn').click(function () {
+        $('ul', this.parentElement).slideToggle(200);
+        var btn = $('span', this);
+
+        if ($(this).hasClass('is-show')) {
+            $(this).removeClass('is-show')
+            btn.css({
+                'transform': 'rotate(0deg)'
+            });
+        }
+        else {
+            $(this).addClass('is-show')
+            btn.css({
+                'transform': 'rotate(90deg)'
+            });
+        }
+    });
+</script>

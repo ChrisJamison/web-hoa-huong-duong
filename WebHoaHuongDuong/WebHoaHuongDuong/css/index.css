@@ -205,7 +205,7 @@ html {
     display: block;
     width: 11px;
     height: 10px;
-    background: url(images/close.gif) no-repeat;
+    background: url(http://v1.webbnc.net/themes/web/43/cart/close.gif) no-repeat;
     cursor: pointer;
     position: absolute;
     top: 10px;
@@ -245,7 +245,7 @@ html {
     color: #ac0404;
     font-weight: bold;
     font-size: 13px;
-    margin: 5px 70px;
+    margin: -15px 70px;
 }
 
 .cart-mini li p {

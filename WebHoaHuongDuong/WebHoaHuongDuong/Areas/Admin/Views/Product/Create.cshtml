@@ -1,0 +1,110 @@
+﻿@model BusinessEntities.ProductEntity
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Thêm mới sản phẩm</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <br/>
+
+    <fieldset>
+
+@*        <div class="editor-label">
+            @Html.LabelFor(model => model.Product_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Product_ID)
+            @Html.ValidationMessageFor(model => model.Product_ID)
+        </div>*@
+
+        <div class="editor-label">
+            Tên sản phẩm
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            Danh mục
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Category_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Category_ID)
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Mô tả", htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextArea("Description", new { @class = "ckeditor", @id = "editor" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Ảnh sản phẩm*", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <section>
+                    <div id="FormContent">
+                        <form id="FormUpload"
+                              enctype="multipart/form-data" method="post">
+                            <input type="file"
+                                   name="UploadedFile" id="UploadedFile" />
+                            <button class="btn btn-primary start" onclick="UploadFile();"
+                                    type="button" id="Submit_btn" style="margin-top: 10px;">
+                                <i class="glyphicon glyphicon-upload"></i>
+                                <span>Upload</span>
+                            </button>
+                        </form>
+                        <div class="progress CustomProgress">
+                            <div id="FileProgress"
+                                 class="progress-bar" role="progressbar"
+                                 aria-valuenow="0" aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 0%;">
+                            </div>
+                        </div>
+                        <p id="messageUpload"></p>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.Image, new { @readonly = true, Styles = "background-color: #C5EFF7" })
+                                @Html.ValidationMessageFor(model => model.Image)
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="editor-label">
+            Giá
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+
+        <div class="editor-label">
+            Số lượng 
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NumberInStock)
+            @Html.ValidationMessageFor(model => model.NumberInStock)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Quay về danh sách", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

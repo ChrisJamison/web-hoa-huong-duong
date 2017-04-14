@@ -1,0 +1,64 @@
+﻿@model BusinessEntities.ProductEntity
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+<br/>
+<fieldset>
+
+    <div class="display-label">
+         Tên sản phẩm
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         Tên doanh mục
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category.Name)
+    </div>
+
+    <div class="display-label">
+         Mô tả
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         Hình ảnh
+    </div>
+    <div class="display-field">
+        <img src='~/@Model.Image.Trim()' alt="@Model.Name" style="width: 30%;" />
+    </div>
+
+    <div class="display-label">
+         Ngày tạo
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateUpload)
+    </div>
+
+    <div class="display-label">
+         Giá
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+         Số lượng trong kho
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberInStock)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Cập nhật", "Edit", new { id=Model.Product_ID }) |
+    @Html.ActionLink("Về danh sách", "Index")
+</p>

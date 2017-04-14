@@ -3,7 +3,7 @@
     <div class="module_title">
         <ul class="cate_sp">
             <li class="begin">
-                <h2><a href="~/Category/ViewIndex">TOP CÁC SẢN PHẨM BÁN CHẠY</a></h2>
+                <h2><a href="~/Category/ViewIndex">SẢN PHẨM BÁN CHẠY</a></h2>
             </li>
         </ul>
         <p class="space3s float_r" style="position: absolute; right: 15px; top: 80px;"><a href="" class="viewall">&raquo;Xem tất cả</a></p>
@@ -21,7 +21,7 @@
                             <div class="box_img_sp">
                                 <h3 class="name_sp"><a id="tenss_1313395" class="ten_sp " title="" href="~/Product/ProductDetail?id=@item.Product_ID">@item.Name</a></h3>
                                 <div class="btnxemnhanh"><a id='id_1313395' data-pjax='#huongcontent' class='xn-1313395 ' onclick="loadProduct('1313395','','','new')" href="~/Product/ProductDetail?id=@item.Product_ID">Xem nhanh</a></div>
-                                <div class="bg_comparison_tr"><span id="ss_1313395_0" class="myicon btn-ss"></span></div>
+                               
                                 <div class="khung">
                                     <a href="~/Product/ProductDetail?id=@item.Product_ID" class="bnc_tooltips" data-id="1313395">
                                         <img class="img" src='~/@item.Image.Trim()' onerror="this.onerror=null;this.src=''" alt="" />
@@ -30,8 +30,8 @@
                             </div>
                         </div>
                         <div class="pos_mr">
-                            <div class="price_new">@item.Price VNĐ</div>
-                            <div class="chitiet_sp"><a href="#" class="">đặt mua</a></div>
+                            <div class="price_new price-format"><span>@item.Price</span> VNĐ</div>
+                            <div class="chitiet_sp"><a href="~/product/productdetail/@item.Product_ID" class="">đặt mua</a></div>
                         </div>
                         <div class="clear"></div>
                     </div>

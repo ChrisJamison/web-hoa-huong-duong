@@ -129,7 +129,6 @@
                         <!--[if lte IE 7]>
                                             <link rel="stylesheet" type="text/css" href="http://v1.webbnc.net/themes/web/common/product_detail/css/ie7-and-down.css" />
                                         <![endif]-->
-
                         <!--end scroll thumbnail-->
                         <div class="detailProduct">
                             <div class="thumnailProduct">
@@ -205,7 +204,7 @@
                                 <h1 class="tip" title="@Model.Product.Name">@Model.Product.Name</h1>
                                 <div class="compare">
                                     <a href="javascript:void()" title="Theo dõi sản phẩm" onclick="alert('Chức năng đang được cập nhật');">Theo dõi</a>&nbsp;&nbsp;|&nbsp;
-                                                    <label id="tenss_1497024" class="block_sp_new_tensp" style="display: none">@Model.Product.Name</label>
+                                    <label id="tenss_1497024" class="block_sp_new_tensp" style="display: none">@Model.Product.Name</label>
                                     <a href="javascript:void()" title="So sánh sản phẩm" class="btn_ss_vsp" id="ss_1497024_0">So sánh</a>&nbsp;&nbsp;|&nbsp; Lượt xem : <span class="view">@Model.Product.Views</span>&nbsp;&nbsp;|&nbsp; Ngày đăng : <span class="view">@Model.Product.DateUpload</span>
                                 </div>
                                 <div class="clear"></div>
@@ -213,7 +212,7 @@
                                 <br />
                                 <div class="txPro ui-mark">
                                     <span class="lbLeft">Giá sản phẩm</span>
-                                    <span id="_giasp" class="color-red font-bigger">@Model.Product.Price<b>VNĐ</b></span>
+                                    <span id="_giasp" class="color-red font-bigger price-format"><span>@Model.Product.Price</span><b> VNĐ</b></span>
                                 </div>
 
 
@@ -331,6 +330,8 @@
                                             <option value="99">99</option>
                                             <option value="100">100</option>
                                         </select>
+
+
                                     </div>
                                     <div class="clproduct2"></div>
 
@@ -340,7 +341,11 @@
                                         <div class="buy" id="buy"><span onclick="order('buy')">Mua ngay</span></div>
                                         <div class="addtocart" id="add_to_cart" data-id="@Model.Product.Product_ID"><span @*onclick="addCart(@Model.Product.Product_ID)"*@>Thêm vào giỏ</span></div>
                                     </div>
+
                                 </div>
+
+
+
                             </div>
                         </div>
                     </div>
@@ -364,7 +369,6 @@
                             <li id="tab_link-05_01"><a href="javascript:void()">Bình chọn</a></li>
 
                             <!-- multi description stat -->
-
                             <!-- multi description end -->
                             <div class="clear"></div>
                         </ul>
@@ -387,7 +391,7 @@
                             </style>
                             <div class="_mota">
                                 @Html.Raw(@Model.Product.Description);
-                                           <div style="clear: both"></div>
+                                <div style="clear: both"></div>
                             </div>
 
 
@@ -435,8 +439,7 @@
 
                             <div class="bg_top_lhe">
                                 <div class="listcat2">
-                                    <ul class="clear">
-                                    </ul>
+                                    <ul class="clear"></ul>
                                     <div class="clear"></div>
                                     <div class="clear"></div>
                                 </div>
@@ -536,7 +539,6 @@
                             $('.tab_link-09_01').addClass('hide');
                         </script>
                         <!-- multi description stat -->
-
                         <!-- multi description end -->
 
                     </div>
@@ -628,8 +630,10 @@
         <div class="module relative">
             <div class="module_title">
                 <ul class="unlnavi" style="margin-bottom: 0px; width: 97%; padding-bottom: 0px;">
-                    <li class="acti"><span class="icon_lien_quan"></span>
-                        <a href="javascript:void()">Sản phẩm cùng danh mục</a></li>
+                    <li class="acti">
+                        <span class="icon_lien_quan"></span>
+                        <a href="javascript:void()">Sản phẩm cùng danh mục</a>
+                    </li>
                 </ul>
             </div>
             <div class="clear"></div>
@@ -645,11 +649,13 @@
                                     <div class="sp_pro relative part" style="height: 385px;">
                                         <div class="box_sp" style="margin: 30px 0 0;">
                                             <div class="box_img_sp">
-                                                <h3 class="name_sp"><a id="tenss_1228174" class="ten_sp " title="" href="~/Product/ProductDetail?id=@item.Product_ID">@item.Name</a>
+                                                <h3 class="name_sp">
+                                                    <a id="tenss_1228174" class="ten_sp " title="" href="~/Product/ProductDetail?id=@item.Product_ID">@item.Name</a>
                                                 </h3>
-                                                <div class="btnxemnhanh"><a id='id_1228174' data-pjax='#huongcontent' class='xn-1228174 ' onclick="loadProduct('1228174', '', '', 'new')" href="~/Product/ProductDetail?id=@item.Product_ID">Xem nhanh</a>
+                                                <div class="btnxemnhanh">
+                                                    <a id='id_1228174' data-pjax='#huongcontent' class='xn-1228174' href="~/Product/ProductDetail?id=@item.Product_ID">Xem nhanh</a>
                                                 </div>
-                                                <div class="bg_comparison_tr"><span id="ss_1228174_0" class="myicon btn-ss"></span></div>
+
                                                 <div class="khung">
                                                     <a href="~/Product/ProductDetail?id=@item.Product_ID" class="bnc_tooltips" data-id="1228174">
                                                         <img class="img" src='~/@item.Image' onerror="this.onerror = null;this.src = ''" alt="@item.Name" />
@@ -661,8 +667,9 @@
                                             </div>
                                         </div>
                                         <div class="pos_mr">
-                                            <div class="price_new">@item.Price VNĐ</div>
-                                            <div class="chitiet_sp"><a href="" class="">đặt mua</a>
+                                            <div class="price_new price-format"><span>@item.Price</span> VNĐ</div>
+                                            <div class="chitiet_sp">
+                                                <a href="~/product/productdetail/@item.Product_ID" class="">đặt mua</a>
                                             </div>
                                         </div>
                                         <div class="clear"></div>
@@ -814,11 +821,11 @@
 <script>
     //function addCart(product_id) {
     //    alert(product_id);
-    //    $.post("../Cart/Add", { "id": product_id },
+    //    $.post("../shophoahuongduong.vn/Cart/Add", { "id": product_id },
     //        function (data) {
     //            // Successful requests get here
     //            // Update the page elements
-     
+
     //            //if (data.ItemCount == 0) {
     //            //    $('#row-' + data.DeleteId).fadeOut('slow');
     //            //} else {
@@ -848,6 +855,32 @@
             success: function (response) {
                 $("#in_cart").html(response.Count);
                 $("#nn-cart-total").html(response.Total);
+                $("#cart-list").html("");
+                var cartHtml = "";
+                $.each(response.Items,
+                    function (index, item) {
+                        cartHtml += '<li id="gio_hang_sp_1563913">' +
+                           '<div>' + 
+                           '<a href="" target="_blank"><img src="/' +
+                           item.Image +
+                           '"class="cart-img">' +
+                           item.Name +
+                           '</a>' +
+                           '<h3><a href="" target="_blank" title=""></a></h3>' +
+                           '<h2>' +
+                           item.Price +
+                           '</h2>' +
+                           '<a href="javascript:;" class="cart-less">x</a><span class="sluong_1563919">' +
+                           item.NumberInStock +
+                           '</span>' +
+                           '<a href="javascript:;" class="cart-remove" onclick="" title="Xóa sản phẩm">Xóa</a>' +
+                           '<div class="clearfix"></div>' +
+                           '</div>' +
+                           '</li>';
+                    });
+                $("#cart-list").append(cartHtml);
+                $('#cart_mini').show(500);
+
             }
         });
 

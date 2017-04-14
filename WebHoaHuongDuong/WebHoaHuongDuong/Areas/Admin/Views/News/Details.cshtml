@@ -1,0 +1,65 @@
+﻿@model DataModel.News
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>News</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.News_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.News_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_active)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_active)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateUpload)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateUpload)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateUpdate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateUpdate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_savedraft)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_savedraft)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Views)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Views)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Cập nhật", "Edit", new {  id=Model.News_ID}) |
+    @Html.ActionLink("Về danh sách", "Index")
+</p>

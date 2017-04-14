@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Import";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="form-group">
+    @Html.Label("Import Dữ liệu sản phẩm", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        <section>
+            <div id="FormContent">
+                <form id="FormUpload"
+                      enctype="multipart/form-data" method="post">
+                    <input type="file"
+                           name="UploadedFile" id="UploadedFile" />
+                    <button class="btn btn-primary start" onclick="ImportProduct();"
+                            type="button" id="Submit_btn" style="margin-top:10px;">
+                        <i class="glyphicon glyphicon-upload"></i>
+                        <span>Import</span>
+                    </button>
+                </form>
+                <div class="progress CustomProgress">
+                    <div id="FileProgress"
+                         class="progress-bar" role="progressbar"
+                         aria-valuenow="0" aria-valuemin="0"
+                         aria-valuemax="100" style="width: 0%;">
+                    </div>
+                </div>
+                <p id="messageUpload"></p>
+            </div>
+        </section>
+    </div>
+</div>

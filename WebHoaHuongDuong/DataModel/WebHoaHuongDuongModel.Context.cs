@@ -33,5 +33,10 @@ namespace DataModel
         public DbSet<Product> Products { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<News> News { get; set; }
+        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<webpages_Membership> webpages_Membership { get; set; }
+        public DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
+        public DbSet<webpages_Roles> webpages_Roles { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }

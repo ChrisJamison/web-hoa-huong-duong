@@ -43,16 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BillServices.cs" />
-    <Compile Include="CartDetailServices.cs" />
-    <Compile Include="CartServices.cs" />
     <Compile Include="CategoryServices.cs" />
-    <Compile Include="CustomerServices.cs" />
-    <Compile Include="IBillServices.cs" />
-    <Compile Include="ICartDetailServices.cs" />
-    <Compile Include="ICartServices.cs" />
     <Compile Include="ICategoryServices.cs" />
-    <Compile Include="ICustomerServices.cs" />
     <Compile Include="INewsServices.cs" />
     <Compile Include="IProductServices.cs" />
     <Compile Include="Menu.cs" />

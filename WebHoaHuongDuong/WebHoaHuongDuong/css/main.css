@@ -1,4 +1,4 @@
-
+﻿
 /*############## MENU BOTTOM NEW 12/04/2013 ###############*/
 ul.nav_bottom {
     padding-bottom: 20px;
@@ -477,7 +477,7 @@ border: 1px solid #000;
     z-index: 99;
     background: #FFF;
     padding-bottom: 2px;
-    display: none;
+    /*display: none;*/
 }
 
 .header-inner {
@@ -492,7 +492,7 @@ border: 1px solid #000;
 
     .header-logo img {
         max-width: 980px;
-        max-height: 100px;
+        /*max-height: 100px;*/
         width: auto !important;
         height: auto !important;
     }
@@ -595,8 +595,8 @@ ul.header-topmenu > li {
 }
 
     .header-menu > ul > li > div.icon_menu img {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 7	0px;
     }
 
 .menuLeft {
@@ -1483,7 +1483,7 @@ ul.header-topmenu > li {
 }
 
 .nut_search {
-    background: pink url(../../imgs/search.png) center no-repeat;
+    background: pink url(/imgs/search.png) center no-repeat;
     border: medium none;
     height: 27px;
     width: 27px;
@@ -1957,7 +1957,7 @@ nav ul li.end a {
         width: 153px;
         height: 36px;
         margin: -20px 0 0 -10px;
-        background-image: url(../../imgs/sprites.png);
+        background-image: url(/imgs/sprites.png);
         background-repeat: no-repeat;
         background-size: auto;
         background-position: 0 -103px;
@@ -2076,7 +2076,7 @@ ul.topmenu {
         display: inline-block;
         position: relative;
         height: 110px;
-        background: url(../../imgs/sprites.png) -22px -460px no-repeat;
+        background: url(/imgs/sprites.png) -22px -460px no-repeat;
     }
 
         ul.topmenu li:hover {
@@ -2085,7 +2085,7 @@ ul.topmenu {
         ul.topmenu li > a {
             color: #ffffff;
             line-height: 110px;
-            height: 110px;
+            height: 90px;
             line-height: 135px;
             color: #505050;
             font-family: OpenSans-B;
@@ -2095,10 +2095,11 @@ ul.topmenu {
             text-shadow: none;
             padding: 0 35px;
             white-space: nowrap;
+padding-top: 22px; 
         }
 
         ul.topmenu li.haveSub a {
-            background-image: url(../imgs/submenu.png);
+            background-image: url(/imgs/submenu.png);
             background-repeat: no-repeat;
             background-position: center 37px;
         }
@@ -2623,7 +2624,7 @@ ul.topmenu {
 .pos_mr {
     margin-top: 9px;
     box-shadow: 0 3px 5px #999;
-    background: url(../../imgs/price-bg.png) repeat left top;
+    background: url(/imgs/price-bg.png) repeat left top;
     height: 37px;
 }
 
@@ -2634,7 +2635,7 @@ ul.topmenu {
         height: 11px;
         position: absolute;
         margin-top: -10px;
-        background: url(../../imgs/price-top.png) no-repeat center top transparent;
+        background: url(/imgs/price-top.png) no-repeat center top transparent;
     }
 
 .float_l.chitiet > a {
@@ -3094,4 +3095,29 @@ ul.block_category li ul {
     z-index: 1000;
     display: none;
     margin-left: 15px;
+}
+
+
+
+
+/* Updated at 11/12/2016 by Linh Pham */
+/* For banner chrismas */
+.header-inner .auto980px,
+.header-inner .auto980px .header-logo {
+    width: 100%;
+}
+.header-logo img {
+    max-width: 100%;
+}
+
+#cart-product-thumb img{
+    max-width: 100px;
+}
+
+.hide-id {
+    display:none;
+}
+
+#table-cart {
+    border-bottom: 1px solid #E5E5E5 !important;  
 }

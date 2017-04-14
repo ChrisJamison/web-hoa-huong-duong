@@ -377,7 +377,7 @@ ul.sub-item li a
 
 footer {
     background: #222428;
-    padding: 20px 0;
+    padding: 20px 10px;
 }
 
 footer p {
@@ -788,8 +788,9 @@ td.text-right {
     color: #fff;
     margin-right: 20px;
     margin-top: -20px;
-    min-height: 300px;
+    min-height: 1000px;
     width: 240px;
+    /*display: none;*/
 }
 
 .setting-panel a {
@@ -856,7 +857,7 @@ td.text-right {
 }
 
 .setting-content {
-    overflow-x: scroll;
+    /*overflow-x: scroll;*/
 }
 .setting-content .wrap {
     margin: 10px;
@@ -1228,4 +1229,112 @@ td.text-right {
 
 .color-title {
     color: #ff6a00;
+}
+
+.pagination-container li {
+    display: inline-block !important;
+    padding: 15px;
+    border: 1px solid #ccc
+}
+
+.setting-content .form-group {
+    display: inline-block;
+}
+.setting-content .btn {
+    height: 31px;
+}
+
+
+
+#body {
+    text-align: center;
+}
+
+#body h1 {
+    font-size: 20px;
+}
+
+#loginForm {
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+#loginForm legend {
+    display: none;
+}
+
+#loginForm ol {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#loginForm ol li {
+    margin-bottom: 5px;
+}
+
+#loginForm ol li input {
+    height: 25px;
+    padding: 0px 5px;
+}
+
+
+.setting-content {
+    text-align: left;
+    padding: 10px;
+}
+
+
+.setting-content .form-control {
+    height: 25px;
+    padding: 0px 5px;
+}
+
+.setting-content .btn {
+    height: 29px;
+    padding: 0px 5px;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+}
+
+
+.sidebar-toggle {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    background-color: #ccc;
+    padding: 10px;
+}
+
+.setting-content table {
+    width: 100%;
+}
+
+.table-responsive {
+    overflow: auto;
+}
+
+.editor-label, .control-label {
+    color:#f45f42
+}
+
+
+@media all and (max-width: 768px) {
+    tr:nth-child(even) td a {
+        display: block;
+        margin-bottom: 5px;
+        padding: 2px;
+        background-color: #eaeaea;
+    }
+
+    tr:nth-child(odd) td a {
+        display: block;
+        margin-bottom: 5px;
+        padding: 2px;
+        background-color: #ffffff;
+    }
 }

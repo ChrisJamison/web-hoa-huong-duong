@@ -1,4 +1,4 @@
-h1 {
+﻿h1 {
     font-weight: normal;
 }
 @media (min-width: 979px) {
@@ -570,7 +570,7 @@ html>body .khung img {}.ten_sp:hover {
     height: 35px;
     line-height: 37px;
     width: 80px;
-    background: url(../../imgs/cart-bg.png) repeat-x left center;
+    background: url(/imgs/cart-bg.png) repeat-x left center;
     box-shadow: 0 1px 1px pink;
     webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
@@ -579,7 +579,7 @@ html>body .khung img {}.ten_sp:hover {
     transition: all 0.4s ease;
 }
 .chitiet_sp a:hover {
-    background: url(../../imgs/cart_icon.png) 5px center no-repeat, url(../../imgs/cart-bg.png) repeat-x left center;
+    background: url(/imgs/cart_icon.png) 5px center no-repeat, url(/imgs/cart-bg.png) repeat-x left center;
     color: #fff;
     padding-left: 29px;
 }
@@ -1577,7 +1577,7 @@ ul.block_category li>ul>li>ul>li {
     left: -10px;
     top: -16px;
     width: 229px;
-    background-image: url(../../imgs/sprites.png);
+    background-image: url(/imgs/sprites.png);
     background-repeat: no-repeat;
     background-size: auto;
     background-position: -5px 0;
@@ -1590,7 +1590,7 @@ ul.block_category li>ul>li>ul>li {
     bottom: -12px;
     left: 40px;
     width: 242px;
-    background-image: url(../../imgs/sprites.png);
+    background-image: url(/imgs/sprites.png);
     background-repeat: no-repeat;
     background-size: auto;
     background-position: -249px -1px;
@@ -3161,7 +3161,7 @@ ul.ulnavi2 li.acti6 a {
     width: auto!important;
 }
 .buy span {
-    background: url(../../imgs/repeat-bg.png) 0 -247px repeat-x;
+    background: url(../imgs/repeat-bg.png) 0 -247px repeat-x;
     box-shadow: 0 1px 0 pink;
     display: inline-block!important;
     color: #fff;
@@ -3185,7 +3185,7 @@ ul.ulnavi2 li.acti6 a {
 .buy span:before,
 .addtocart span:before {
     content: "";
-    background: url(../../imgs/cart_icon.png) center left no-repeat;
+    background: url(../imgs/cart_icon.png) center left no-repeat;
     height: 52px;
     width: 0px;
     position: absolute;
@@ -3204,7 +3204,7 @@ ul.ulnavi2 li.acti6 a {
     display: block;
 }
 .addtocart span {
-    background: url(../../imgs/repeat-bg.png) 0 -247px repeat-x;
+    background: url(../imgs/repeat-bg.png) 0 -247px repeat-x;
     box-shadow: 0 1px 0 pink;
     display: inline-block!important;
     color: #fff;
@@ -4489,7 +4489,7 @@ td {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../../imgs/sprites.png) -11px -307px no-repeat;
+    background: url(/imgs/sprites.png) -11px -307px no-repeat;
     line-height: 26px;
     background-size: auto;
     width: 25px;
@@ -4517,7 +4517,7 @@ td {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../../imgs/sprites.png) -11px -307px no-repeat;
+    background: url(/imgs/sprites.png) -11px -307px no-repeat;
     line-height: 26px;
     background-size: auto;
     width: 25px;
@@ -4602,7 +4602,7 @@ td {
 .footer {
     margin-top: 130px;
     min-height: 100px;
-    background: url(../../imgs/footer-bg.jpg) center repeat;
+    background: url(/imgs/footer-bg.jpg) center repeat;
     background-color: #fff;
     position: relative;
     clear: both;
@@ -4614,7 +4614,7 @@ td {
     height: 100px;
     position: absolute;
     top: -110px;
-    background: url(../../imgs/footer-top.png) repeat-x left top transparent;
+    background: url(/imgs/footer-top.png) repeat-x left top transparent;
     border-bottom: 12px solid #FFF;
 }
 .box_footer {
@@ -5419,13 +5419,14 @@ ul li.sosanh-box a .right_tit1 {
     border-right: none;
 }
 .tab_category ul li span {
-    color: #666;
+       color: #01313d;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
+    font-size: 20px;
 }
 .tab_category ul li span:hover {
     color: pink;

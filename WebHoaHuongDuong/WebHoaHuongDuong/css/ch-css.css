@@ -1,5 +1,7 @@
 .table,tr,td {
-    font-size: 12px;
+    /*font-size: 12px;*/
+        margin: 10px 0px;
+    font-size: 20px;
 }
 
 ul,li {

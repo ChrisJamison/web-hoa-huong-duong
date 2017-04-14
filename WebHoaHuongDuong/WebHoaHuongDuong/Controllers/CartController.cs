@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using DataModel;
-using BusinessServices;
-using BusinessEntities;
+using Ninject.Infrastructure.Language;
 using WebHoaHuongDuong.Models;
 
 namespace WebHoaHuongDuong.Controllers
@@ -25,8 +19,7 @@ namespace WebHoaHuongDuong.Controllers
         {
             var cart = ShoppingCart.Cart;
             cart.Add(id);
-
-            var info = new { cart.Count, cart.Total };
+            var info = new { cart.Count, cart.Total, cart.Items};
             return Json(info, JsonRequestBehavior.AllowGet);
         }
 
@@ -35,7 +28,7 @@ namespace WebHoaHuongDuong.Controllers
             var cart = ShoppingCart.Cart;
             cart.Remove(id);
 
-            var info = new { cart.Count, cart.Total };
+            var info = new { cart.Count, cart.Total};
             return Json(info, JsonRequestBehavior.AllowGet);
         }
 

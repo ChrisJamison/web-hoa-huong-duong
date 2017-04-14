@@ -39,6 +39,10 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +62,9 @@
     <Compile Include="Category.cs">
       <DependentUpon>WebHoaHuongDuongModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Contact.cs">
+      <DependentUpon>WebHoaHuongDuongModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>WebHoaHuongDuongModel.tt</DependentUpon>
     </Compile>
@@ -73,6 +80,9 @@
       <DependentUpon>WebHoaHuongDuongModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="UserProfile.cs">
+      <DependentUpon>WebHoaHuongDuongModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="WebHoaHuongDuongModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,6 +97,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WebHoaHuongDuongModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_Membership.cs">
+      <DependentUpon>WebHoaHuongDuongModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_OAuthMembership.cs">
+      <DependentUpon>WebHoaHuongDuongModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_Roles.cs">
+      <DependentUpon>WebHoaHuongDuongModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

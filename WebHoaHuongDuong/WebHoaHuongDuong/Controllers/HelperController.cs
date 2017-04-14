@@ -1,23 +1,18 @@
-﻿using BusinessEntities;
-using BusinessServices;
+﻿using BusinessServices;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace WebHoaHuongDuong.Controllers
 {
     public class HelperController : Controller
     {
-        //
-        // GET: /Helper/
         private readonly ICategoryServices _iCategoryServices;
         private readonly IProductServices _iProductServices;
         public HelperController(ICategoryServices iCategoryServices, IProductServices iProductServices)
         {
-            this._iCategoryServices = iCategoryServices;
-            this._iProductServices = iProductServices;
+            _iCategoryServices = iCategoryServices;
+            _iProductServices = iProductServices;
         }
 
         [ChildActionOnly]

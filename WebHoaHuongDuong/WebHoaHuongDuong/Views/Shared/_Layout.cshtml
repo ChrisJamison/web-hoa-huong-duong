@@ -3,7 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=vietnamese' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Cousine&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
@@ -22,16 +24,19 @@
     <link rel="stylesheet" type="text/css" href="~/css/ch-css.css" />
     <link rel="stylesheet" type="text/css" href="~/css/sprites_all.css" />
     <link type="text/css" media="all" rel="stylesheet" href="~/css/skitter.styles.css" />
+
     <!-- css on Index-->
     <link rel="stylesheet" type="text/css" href="~/css/index.css" />
     <!-- Block Search -->
     <!-- Tooltip -->
     <link rel="stylesheet" type="text/css" href="~/css/tooltipPopup_web.css" />
     <!-- Tooltip -->
-    <title>Shop Hoa Hướng Dương</title>
+    <title>Sunflower Shop</title>
     <script type="text/javascript" src="~/js/jquery-1.7.1.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="~/content/theme-color.css" />
+    <link rel="stylesheet" type="text/css" href="~/content/responsive.css"/>
 </head>
-<body style="background: #452121; background-image: url(../images/qc_bg_0.56684000_1417675489.jpg); background-repeat: repeat; background-position: top center;" class="customer_">
+<body style="background: #452121; background-image: url(/images/qc_bg_0.56684000_1417675489.jpg); background-repeat: repeat; background-position: top center;" class="customer_">
     <div id="pro_xemnhanh"></div>
     <!--END XEM NHANH-->
     <div id="fb-root"></div>
@@ -45,6 +50,7 @@
         <div class='clear'></div>
         <div class="main">
             <div style="margin-bottom: 20px;">
+ @RenderBody()
                 <div class="bentrai float_l">
                     @{Html.RenderAction("_LeftMenu", "Helper");}
                     @{Html.RenderPartial("_FaceBook");}
@@ -79,7 +85,6 @@
                     <script>
                         $('.submit_poll27482').click(function (e) {
 
-                            //$.post("http://mapu.vn/ajax&do=checkcap", {
                             $.post("", {
                                 user_name: $("#pollcode27482").val()
                             }, function (data) {
@@ -106,7 +111,6 @@
                                         idpoll: '27482'
                                     };
 
-                                    //$.post("http://mapu.vn/ajax&do=poll", actpoll, function (data) {
                                     $.post("", actpoll, function (data) {
                                         $("#basic-modal-content27482").html(data).fadeTo(900, 1);
                                     });
@@ -136,7 +140,6 @@
                             var actpoll = {
                                 idpoll: '27482'
                             };
-                            //$.post("http://mapu.vn/ajax&do=poll", actpoll, function (data) {
                             $.post("", actpoll, function (data) {
                                 $("#basic-modal-content27482").html(data);
 
@@ -156,10 +159,10 @@
                             });
                         })(jQuery);
                     </script>
-                    @{Html.RenderPartial("_TiGia");}")
-                    @{Html.RenderPartial("_ThongKe");}
+                   
+                  
                 </div>
-                @RenderBody()
+               
                 <div class="clear"></div>
             </div>
             <div class="slide_bot"></div>
@@ -174,8 +177,12 @@
     <script>
         $(function () {
             $("#search").autocomplete({
-                source: "/Product/SearchAJX",
-                minLength: 2
+                source: "../Product/SearchAJX",
+                minLength: 1,
+                select: function (event, ui) {
+                    console.log("Selected: " + ui.item.value);
+                    $("input[name='keywords']").val(ui.item.value);
+                }
             });
         })
     </script>
@@ -187,15 +194,14 @@
 <script type="text/javascript" src="~/js/tipsy-1.0.0a.js"></script>
 <script type="text/javascript" src="~/js/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="~/js/jquery.RotateImageMenu.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script type="text/javascript" src="~/js/number_format.js"></script>
+<script src="~/js/jquery-ui.js"></script>
 <script type="text/javascript" src="~/js/tooltipPopup.js"></script>
 <script type="text/javascript" src="~/js/y-lab.js"></script>
 <script type="text/javascript" src="~/js/jquery.simplemodal.js"></script>
 <script type="text/javascript" src="~/js/bnc_scroll.js"></script>
 <script type="text/javascript" src="~/js/jquery.jcarousel.js"></script>
 <script type="text/javascript" src="~/js/jquery.elevatezoom.js"></script>
-<link rel="stylesheet" type="text/css" href="c~/ss/jquery.fancybox-thumbs.css" />
+<link rel="stylesheet" type="text/css" href="~/css/jquery.fancybox-thumbs.css" />
 <script type="text/javascript" src="~/js/jquery.fancybox.js"></script>
 <script src="~/js/jquery.fancybox-thumbs.js"></script>
 <script src="~/js/widget.js"></script>
@@ -208,9 +214,9 @@
                 $('.gotop').css('right', '-100px');
             }
         });
-
     });
 </script>
+<script type="text/javascript" src="~/js/number_format.js"></script>
 <style type="text/css">
     #vgc_html_avg {
         display: none !important;

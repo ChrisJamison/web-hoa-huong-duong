@@ -64,10 +64,6 @@ namespace WebHoaHuongDuong.App_Start
         {
             kernel.Bind<IProductServices>().To<ProductServices>();
             kernel.Bind<ICategoryServices>().To<CategoryServices>();
-            kernel.Bind<IBillServices>().To<BillServices>();
-            kernel.Bind<ICartServices>().To<CartServices>();
-            kernel.Bind<ICartDetailServices>().To<CartDetailServices>();
-            kernel.Bind<ICustomerServices>().To<CustomerServices>();
         }        
     }
 }

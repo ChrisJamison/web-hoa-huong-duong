@@ -111,7 +111,10 @@ ul#thumblist li a.zoomThumbActive{
 	float: left;
 }
 .txPro span._vat { width: auto !important; }
-.txPro span span{float:none !important}
+.txPro span span{
+float:none !important;
+font-size:17px;
+}
 .spanSize{position: absolute;margin-top: 0px;margin-bottom: 0px;padding-top: 5px;padding-bottom: 0px;}
 .txPro-ie{/*margin-top:47px*/;margin-top:15px\9\0;*margin-bottom:15px;margin-bottom:15px\9;}	
 .colorP{

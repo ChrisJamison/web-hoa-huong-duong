@@ -39,6 +39,7 @@ namespace WebHoaHuongDuong.Models
             catch // chưa có trong giỏ -> truy vấn CSDL và bỏ vào giỏ
             {
                 var db = new WebHoaHuongDuongDBEntities();
+                db.Configuration.LazyLoadingEnabled = false;
                 var item = db.Products.Find(id);
                 item.NumberInStock = 1;
                 Items.Add(item);

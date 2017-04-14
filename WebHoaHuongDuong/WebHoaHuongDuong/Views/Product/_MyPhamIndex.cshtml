@@ -23,17 +23,16 @@
                             <div class="box_img_sp">
                                 <h3 class="name_sp"><a id="tenss_1247752" class="ten_sp " title="" href="~/Product/ProductDetail?id=@item.Product_ID">@item.Name</a></h3>
                                 <div class="btnxemnhanh"><a id='id_1247752' data-pjax='#huongcontent' class='xn-1247752 ' onclick="loadProduct('1247752','','.vn','new')" href="~/Product/ProductDetail?id=@item.Product_ID">Xem nhanh</a></div>
-                                <div class="bg_comparison_tr"><span id="ss_1247752_0" class="myicon btn-ss"></span></div>
                                 <div class="khung">
-                                    <a href="~Product/ProductDetail?id=@item.Product_ID">@item.Name class="bnc_tooltips" data-id="1247752">
+                                    <a href="~/Product/ProductDetail?id=@item.Product_ID">
                                         <img class="img" src='~/@item.Image.Trim()' onerror="this.onerror=null;this.src=''" />
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="pos_mr">
-                            <div class="price_new">@item.Price VNĐ</div>
-                            <div class="chitiet_sp"><a href="" class="">Đặt mua</a></div>
+                            <div class="price_new price-format"><span>@item.Price</span> VNĐ</div>
+                            <div class="chitiet_sp"><a href="~/product/productdetail/@item.Product_ID" class="">Đặt mua</a></div>
                         </div>
                         <div class="clear"></div>
                     </div>

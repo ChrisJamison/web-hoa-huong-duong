@@ -1,0 +1,88 @@
+﻿@model WebHoaHuongDuong.Models.LoginModel
+
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Control Panel</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Styles.css" />
+
+    <script type="text/javascript" src="~/Scripts/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/myScripts.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="second-menu setting-top-panel">
+            <div class="setting-content">
+                <ul class="level-1-menu">
+                    <li class="home-button">
+                        <span class="fa fa-home home-icon"></span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <div id="body">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+        </hgroup>
+
+        <section id="loginForm">
+            <h2>Sử dụng tài khoản để đăng nhập</h2>
+            @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                <fieldset>
+                    <legend>Đăng nhập</legend>
+                    <ol>
+                        <li>
+                            Tài khoản
+                            @Html.TextBoxFor(m => m.UserName)
+                            @Html.ValidationMessageFor(m => m.UserName)
+                        </li>
+                        <li>
+                            Mật khẩu
+                            @Html.PasswordFor(m => m.Password)
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </li>
+                        <li>
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe, "Ghi nhớ", new { @class = "checkbox" })
+                        </li>
+                    </ol>
+                    <input type="submit" value="Đăng nhập" />
+                </fieldset>
+            }
+        </section>
+
+
+        @* ReSharper disable once Razor.SectionNotResolved *@
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    </div>
+    <footer>
+        <div class="container">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - Web Hoa Huong Duong</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+</body>
+</html>
