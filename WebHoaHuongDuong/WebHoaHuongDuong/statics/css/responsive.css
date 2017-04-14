@@ -77,7 +77,7 @@
 	ul.topmenu li {
 		width: 15%;
 		height: 48px;
-		/*background: url(~/statics/images/sprites.png) -22px -490px no-repeat;*/
+		/*background: url(/statics/images/sprites.png) -22px -490px no-repeat;*/
 		background: none;
 	}
 

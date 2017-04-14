@@ -24,19 +24,19 @@ namespace WebHoaHuongDuong.Controllers
         public ActionResult HotestNew()
         {
             var model = db.News.OrderBy(c => c.Views).Take(6);
-            return PartialView("_TinNoiBat", model);
+            return PartialView("_NewsListBlock", model);
         }
 
         public ActionResult NewestNew()
         {
             var model = db.News.OrderBy(c => c.DateUpload).Take(6);
-            return PartialView("_TinTucMoi", model);
+            return PartialView("_NewsListBlock", model);
         }
 
         public ActionResult RandomNew()
         {
             var model = db.News.OrderBy(c => Guid.NewGuid()).Take(6);
-            return PartialView("_TinTucNgauNhien", model);
+            return PartialView("_NewsListBlock", model);
         }
         
     }

@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1542,27 +1543,12 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Product\Details.cshtml" />
-    <Content Include="Views\Product\Create.cshtml" />
-    <Content Include="Views\Product\Edit.cshtml" />
-    <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Category\Details.cshtml" />
@@ -1579,28 +1565,14 @@
     <Content Include="Views\Shared\_LeftMenu.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Shared\_TinTucNgauNhien.cshtml" />
-    <Content Include="Views\Shared\_TinTucMoi.cshtml" />
-    <Content Include="Views\Shared\_TinNoiBat.cshtml" />
     <Content Include="Views\Shared\_FaceBook.cshtml" />
     <Content Include="Views\Shared\_TiGia.cshtml" />
     <Content Include="Views\Shared\_ThongKe.cshtml" />
-    <Content Include="Views\Product\_SanPhamMoiIndex.cshtml" />
-    <Content Include="Views\Product\_SanPhamXemNhieuIndex.cshtml" />
-    <Content Include="Views\Product\_SanPhamBanChayIndex.cshtml" />
-    <Content Include="Views\Product\_MyPhamIndex.cshtml" />
-    <Content Include="Views\Product\_SuaXachTayChoBeYeuIndex.cshtml" />
-    <Content Include="Views\Product\_ThucPhamDinhDuongIndex.cshtml" />
     <Content Include="Views\Shared\_SanPham.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_SettingPanel.cshtml" />
     <Content Include="Views\Category\ViewIndex.cshtml" />
     <Content Include="Views\Product\ProductDetail.cshtml" />
     <Content Include="Views\Introduce\Index.cshtml" />
-    <Content Include="Views\News\Index.cshtml" />
-    <Content Include="Views\News\Details.cshtml" />
-    <Content Include="Views\News\Create.cshtml" />
-    <Content Include="Views\News\Edit.cshtml" />
-    <Content Include="Views\News\Delete.cshtml" />
     <Content Include="Views\News\ViewIndex.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Category\SanPhamMoi.cshtml" />
@@ -1608,13 +1580,13 @@
     <Content Include="Views\Category\SanPhamBanChay.cshtml" />
     <Content Include="Views\Category\MyPham.cshtml" />
     <Content Include="Views\Category\SuaXachTayChoBeYeu.cshtml" />
-    <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\Home\ExternalPage.cshtml" />
     <Content Include="Views\News\ViewDetail.cshtml" />
     <Content Include="Views\Home\Promotion.cshtml" />
     <Content Include="Views\Contact\SubmitContact.cshtml" />
-    <None Include="Views\Product\Import.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
+    <Content Include="Views\Shared\_ProductListBlock.cshtml" />
+    <Content Include="Views\Shared\_NewsListBlock.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

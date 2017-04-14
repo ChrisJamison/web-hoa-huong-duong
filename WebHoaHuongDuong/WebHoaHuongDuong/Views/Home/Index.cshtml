@@ -2,22 +2,100 @@
 
 <div class="benphai float_l">
     <!-- <// Xem nhanh include -->
-    <link rel="stylesheet" type="text/css" href="~/css/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/jquery.fancybox.css" />
     <!-- <script type="text/javascript" src="~/images/imgload/jquery.imgload.js"></script>
                      -->
     <!-- >// Xem nhanh include -->
     <div class="clear"></div>
     <div id="huongcontent">
-        @{Html.RenderAction("_SanPhamMoi", "Product");}
+        <div style="margin-bottom: 30px; overflow: hidden">
+            <div class="tit_sp_home"><a href="~/Category/SanPhamMoi">Sản phẩm mới</a> </div>
+            @{Html.RenderAction("_SanPhamMoi", "Product");}
+        </div>
         <div class="clr"></div>
-        @{Html.RenderAction("_SanPhamXemNhieu", "Product");}
-        <div class="clr"></div>
-        @{Html.RenderAction("_SanPhamBanChay", "Product");}
-        <!-- xuat san pham ra trang chu theo danh mục -->
 
-        @{Html.RenderAction("_MyPham", "Product");}
-        @{Html.RenderAction("_SuaXachTayChoBeYeu", "Product");}
-        @{Html.RenderAction("_ThucPhamDinhDuong", "Product");}
+        <div style="margin-bottom: 30px; overflow: hidden">
+            <div class="tit_sp_home"><a href="~/Category/SanPhamXemNhieu">Sản phẩm xem nhiều</a> </div>
+            @{Html.RenderAction("_SanPhamXemNhieu", "Product");}
+        </div>
+        <div class="clr"></div>
+
+        <div style="margin-bottom: 30px; overflow: hidden">
+            <div class="tit_sp_home"><a href="~/Category/SanPhamBanChay">Sản phẩm bán chạy</a> </div>
+            @{Html.RenderAction("_SanPhamBanChay", "Product");}
+            <!-- xuat san pham ra trang chu theo danh mục -->
+        </div>
+        <div class="clr"></div>
+
+        <div class="tab_category">
+            <div class="module_title">
+                <ul class="cate_sp">
+                    <li class="begin">
+                        <h2><a href="~/Category/MyPham">MỸ PHẨM</a></h2>
+                    </li>
+                </ul>
+                <p class="space3s float_r" style="position: absolute; right: 15px; top: 80px;"><a href="" class="viewall">&raquo;Xem tất cả</a></p>
+            </div>
+            <div class="clear"></div>
+            <div class="module_body">
+                <!--show sản pham co menu con-->
+                <div class="module_body">
+                    <!-- show sản phẩm ko co menu con-->
+                    @{Html.RenderAction("_MyPham", "Product");}
+                    <div class="clearfix"></div>
+                    <!--<p class="spacesp float_r"><a style="right:-58px" href="" class="viewall">&raquo; Xem tất cả</a></p>
+                    <div class="clearfix"></div>-->
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="tab_category">
+            <div class="module_title">
+                <ul class="cate_sp">
+                    <li class="begin">
+                        <h2><a href="">SỮA XÁCH TAY CHO BÉ YÊU</a></h2>
+                    </li>
+                </ul>
+                <p class="space3s float_r" style="position: absolute; right: 15px; top: 80px;"><a href="" class="viewall">&raquo;Xem tất cả</a></p>
+            </div>
+            <div class="clear"></div>
+            <div class="module_body">
+                <!--show sản pham co menu con-->
+                <div class="module_body">
+                    <!-- show sản phẩm ko co menu con-->
+                    @{Html.RenderAction("_SuaXachTayChoBeYeu", "Product");}
+                    <div class="clearfix"></div>
+                    <!--<p class="spacesp float_r"><a style="right:-58px" href="" class="viewall">&raquo; Xem tất cả</a></p>
+                                         <div class="clearfix"></div>-->
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="tab_category">
+            <div class="module_title">
+                <ul class="cate_sp">
+                    <li class="begin">
+                        <h2><a href="">THỰC PHẨM DINH DƯỠNG</a></h2>
+                    </li>
+                </ul>
+                <p class="space3s float_r" style="position: absolute; right: 15px; top: 80px;"><a href="" class="viewall">&raquo;Xem tất cả</a></p>
+            </div>
+            <div class="clear"></div>
+            <div class="module_body">
+                <!--show sản pham co menu con-->
+                <div class="module_body">
+                    <!-- show sản phẩm ko co menu con-->
+                    @{Html.RenderAction("_ThucPhamDinhDuong", "Product");}
+                    <div class="clearfix"></div>
+                    <!--<p class="spacesp float_r"><a style="right:-58px" href="" class="viewall">&raquo; Xem tất cả</a></p>
+                                         <div class="clearfix"></div>-->
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
 
         <script type="text/javascript">
             $(document).ready(function () {
@@ -30,12 +108,15 @@
             });
         </script>
     </div>
+
     <div class="module relative">
         <div class="module_title">
             <ul id="tab-02" class="unlnavi box_tit">
-                <li id="tab_link-04_02" class="acti"><a href="javascript:void()">TIN TỨC MỚI</a>
-                </li>   
-                <li id="tab_link-05_02"><a href="javascript:void()">TIN TỨC XEM NHIỀU</a>
+                <li id="tab_link-04_02" class="acti">
+                    <a href="javascript:void()">TIN TỨC MỚI</a>
+                </li>
+                <li id="tab_link-05_02">
+                    <a href="javascript:void()">TIN TỨC XEM NHIỀU</a>
                 </li>
             </ul>
         </div>
@@ -48,8 +129,9 @@
             <ul class="content_tin _tab-02 tab_link-04_02 ">
                 <li>
                     <div class="box_new">
-                        <a href="~/News/ViewDetail/1" title="Nghe chia sẻ từ 5 cô nàng "người thật việc thật" để biết con gái Hàn làm đẹp như thế nào?">
-                            <img class="sts" src='~/images/News/1a-1471857286030.jpg' onerror="this.onerror=null;this.src='https://upload.webbnc.net/view.php?image=upload/web/51/513168/news/2016/05/10/10/09/146287499839.jpg&mode=crop&size=265x200'" alt="Nghe chia sẻ từ 5 cô nàng "người thật việc thật" để biết con gái Hàn làm đẹp như thế nào?" /></a>
+                        <a href="~/News/ViewDetail/1" title="Nghe chia sẻ từ 5 cô nàng " người thật việc thật" để biết con gái Hàn làm đẹp như thế nào?">
+                            <img class="sts" src='~/images/News/1a-1471857286030.jpg' onerror="this.onerror=null;this.src='https://upload.webbnc.net/view.php?image=upload/web/51/513168/news/2016/05/10/10/09/146287499839.jpg&mode=crop&size=265x200'" alt="Nghe chia sẻ từ 5 cô nàng " người thật việc thật" để biết con gái Hàn làm đẹp như thế nào?" />
+                        </a>
                     </div>
                     <!--box_news-->
                     <h3 class="title_new"><a href="~/News/ViewDetail/1" class="chu_tin">Nghe chia sẻ từ 5 cô nàng "người thật việc thật" để biết con gái Hàn làm đẹp như thế nào?</a></h3>
@@ -57,8 +139,9 @@
                 </li>
                 <li>
                     <div class="box_new">
-                        <a href="~/News/ViewDetail/2" title="16 màu son "hot" nhất của Charlotte Tilbury đánh lên môi trông sẽ thế nào?">
-                            <img class="sts" src='~/images/News/1-1474949225446.jpg' onerror="this.onerror=null;this.src='https://upload.webbnc.net/view.php?image=upload/web/51/513168/news/2016/05/10/07/52/146286672017.jpg&mode=crop&size=265x200'" alt="16 màu son "hot" nhất của Charlotte Tilbury đánh lên môi trông sẽ thế nào?" /></a>
+                        <a href="~/News/ViewDetail/2" title="16 màu son " hot" nhất của Charlotte Tilbury đánh lên môi trông sẽ thế nào?">
+                            <img class="sts" src='~/images/News/1-1474949225446.jpg' onerror="this.onerror=null;this.src='https://upload.webbnc.net/view.php?image=upload/web/51/513168/news/2016/05/10/07/52/146286672017.jpg&mode=crop&size=265x200'" alt="16 màu son " hot" nhất của Charlotte Tilbury đánh lên môi trông sẽ thế nào?" />
+                        </a>
                     </div>
                     <!--box_news-->
                     <h3 class="title_new"><a href="~/News/ViewDetail/2" class="chu_tin">16 màu son "hot" nhất của Charlotte Tilbury đánh lên môi trông sẽ thế nào?</a></h3>
@@ -67,7 +150,8 @@
                 <li>
                     <div class="box_new">
                         <a href="~/News/ViewDetail/3" title="Quên son đỏ & son nude đi, son hồng san hô mới là màu son được con gái châu Á mê nhất bây giờ">
-                            <img class="sts" src='~/images/News/01-1469458849903.jpg' onerror="this.onerror=null;this.src='https://upload.webbnc.net/view.php?image=upload/web/51/513168/news/2016/05/09/04/25/146276790828.jpg&mode=crop&size=265x200'" alt="Quên son đỏ & son nude đi, son hồng san hô mới là màu son được con gái châu Á mê nhất bây giờả" /></a>
+                            <img class="sts" src='~/images/News/01-1469458849903.jpg' onerror="this.onerror=null;this.src='https://upload.webbnc.net/view.php?image=upload/web/51/513168/news/2016/05/09/04/25/146276790828.jpg&mode=crop&size=265x200'" alt="Quên son đỏ & son nude đi, son hồng san hô mới là màu son được con gái châu Á mê nhất bây giờả" />
+                        </a>
                     </div>
                     <!--box_news-->
                     <h3 class="title_new"><a href="~/News/ViewDetail/3" class="chu_tin">Quên son đỏ & son nude đi, son hồng san hô mới là màu son được con gái châu Á mê nhất bây giờ</a></h3>
@@ -79,7 +163,8 @@
                 <li>
                     <div class="box_new">
                         <a href="~/News/ViewDetail/4" title="9 loại thực phẩm là cứu tinh cho công cuộc giảm cân của bạn">
-                            <img class="sts" src='~/images/News/rustic-gazpacho-3-1474990306001.jpg' onerror="this.onerror=null;this.src='images/145855437939.jpg&mode=crop&size=265x200'" alt="9 loại thực phẩm là cứu tinh cho công cuộc giảm cân của bạn" /></a>
+                            <img class="sts" src='~/images/News/rustic-gazpacho-3-1474990306001.jpg' onerror="this.onerror=null;this.src='images/145855437939.jpg&mode=crop&size=265x200'" alt="9 loại thực phẩm là cứu tinh cho công cuộc giảm cân của bạn" />
+                        </a>
                     </div>
                     <!--box_news-->
                     <h3 class="title_new"><a href="~/News/ViewDetail/4" class="chu_tin">9 loại thực phẩm là cứu tinh cho công cuộc giảm cân của bạn</a></h3>
@@ -88,7 +173,8 @@
                 <li>
                     <div class="box_new">
                         <a href="~/News/ViewDetail/6" title="Xếp hạng 6 thói quen khiến da bạn già đi trông thấy">
-                            <img class="sts" src='~/images/News/anh-2-1474899688093.jpg' onerror="this.onerror=null;this.src='images/144585325963.jpg&mode=crop&size=265x200'" alt="Xếp hạng 6 thói quen khiến da bạn già đi trông thấy" /></a>
+                            <img class="sts" src='~/images/News/anh-2-1474899688093.jpg' onerror="this.onerror=null;this.src='images/144585325963.jpg&mode=crop&size=265x200'" alt="Xếp hạng 6 thói quen khiến da bạn già đi trông thấy" />
+                        </a>
                     </div>
                     <!--box_news-->
                     <h3 class="title_new"><a href="~/News/ViewDetail/6" class="chu_tin">Xếp hạng 6 thói quen khiến da bạn già đi trông thấy</a></h3>
@@ -97,7 +183,8 @@
                 <li>
                     <div class="box_new">
                         <a href="#" title="Mẹo phân biệt hàng xách tay Úc chính hãng">
-                            <img class="sts" src='images/144539620742.jpg_crop265x200.jpg' onerror="this.onerror=null;this.src='images/144539620742.jpg&mode=crop&size=265x200'" alt="Mẹo phân biệt hàng xách tay Úc chính hãng" /></a>
+                            <img class="sts" src='' onerror="this.onerror=null;this.src=''" alt="Mẹo phân biệt hàng xách tay Úc chính hãng" />
+                        </a>
                     </div>
                     <!--box_news-->
                     <h3 class="title_new"><a href="#" class="chu_tin">Mẹo phân biệt hàng xách tay Úc chính hãng</a></h3>

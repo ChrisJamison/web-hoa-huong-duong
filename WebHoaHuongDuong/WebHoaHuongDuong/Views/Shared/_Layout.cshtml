@@ -11,28 +11,28 @@
     <link href='http://fonts.googleapis.com/css?family=Cousine&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Cousine|Roboto+Condensed&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Patrick+Hand&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="~/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/main2.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/toolbarstype.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/newsbar.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/DetailProduct.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/main2.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/toolbarstype.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/newsbar.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/DetailProduct.css" />
     <!-- Block Search -->
-    <link rel="stylesheet" type="text/css" href="~/css/block_search.css" />
-    <link rel="stylesheet" href="~/css/jquery-ui.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/list_product.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/sosanh.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/ch-css.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/sprites_all.css" />
-    <link type="text/css" media="all" rel="stylesheet" href="~/css/skitter.styles.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/block_search.css" />
+    <link rel="stylesheet" href="~/statics/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/list_product.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/sosanh.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/ch-css.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/sprites_all.css" />
+    <link type="text/css" media="all" rel="stylesheet" href="~/statics/css/skitter.styles.css" />
 
     <!-- css on Index-->
-    <link rel="stylesheet" type="text/css" href="~/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/index.css" />
     <!-- Block Search -->
     <!-- Tooltip -->
-    <link rel="stylesheet" type="text/css" href="~/css/tooltipPopup_web.css" />
+    <link rel="stylesheet" type="text/css" href="~/statics/css/tooltipPopup_web.css" />
     <!-- Tooltip -->
     <title>Sunflower Shop</title>
-    <script type="text/javascript" src="~/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="~/statics/js/jquery-1.7.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="~/content/theme-color.css" />
     <link rel="stylesheet" type="text/css" href="~/content/responsive.css" />
 
@@ -56,8 +56,10 @@
                 <div class="bentrai float_l">
                     @{Html.RenderAction("_LeftMenu", "Helper");}
                     @{Html.RenderPartial("_FaceBook");}
-                    @{Html.RenderAction("HotestNew", "News");}
-
+                    <div class="bg_moddum">
+                        <div class="tieude"><span class="b_ttnbat"></span>Tin nổi bật</div>
+                        @{Html.RenderAction("HotestNew", "News");}
+                    </div>
                     <!-- Danh mục sản phẩm mới thanh menu bên trái -->
                     <div class="bg_moddum">
                         <div class="tieude"><span class="b_spmoi"></span>Sản Phẩm Mới</div>
@@ -76,10 +78,15 @@
                         @{Html.RenderAction("_SanPhamNgauNhien", "Helper");}
                     </div>
                     <!-- tin tức ngẫu nhiên thanh bên trái-->
-                    @{Html.RenderAction("RandomNew", "News");}
+                    <div class="bg_moddum">
+                        <div class="tieude"><span class="b_ttnbat"></span>Tin Tức Ngẫu Nhiên</div>
+                        @{Html.RenderAction("RandomNew", "News");}
+                    </div>
                     <!-- tin tức mới thanh bên trái-->
-                    @{Html.RenderAction("NewestNew", "News");}
-
+                    <div class="bg_moddum">
+                        <div class="tieude"><span class="b_ttnbat"></span>Tin Tức Mới</div>
+                        @{Html.RenderAction("NewestNew", "News");}
+                    </div>
                     <div class="kpoll27482 hide">
                         <img style="position: absolute; top: 15px; right: 15px; cursor: pointer;" class="_kclose" src="http://v1.webbnc.net/themes/web/212/core/imgs/x-altx-alt.png" width="24" height="24" />
                         <div id="basic-modal-content27482"></div>
@@ -149,8 +156,8 @@
                             return false;
                         });
                     </script>
-                    <link href="~/css/jquery.mCustomScrollbar.css" rel="stylesheet" />
-                    <script src="~/js/jquery.mCustomScrollbar.concat.min.js"></script>
+                    <link href="~/statics/css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+                    <script src="~/statics/js/jquery.mCustomScrollbar.concat.min.js"></script>
                     <script>
                         (function ($) {
                             $(window).load(function () {
@@ -191,22 +198,22 @@
 </body>
 </html>
 
-<script type="text/javascript" src="~/js/jquery.transform-0.9.3.min_.js"></script>
-<script type="text/javascript" src="~/js/jcarousellite_1.0.1c4.js"></script>
-<script type="text/javascript" src="~/js/tipsy-1.0.0a.js"></script>
-<script type="text/javascript" src="~/js/jquery.mousewheel.js"></script>
-<script type="text/javascript" src="~/js/jquery.RotateImageMenu.js"></script>
-<script src="~/js/jquery-ui.js"></script>
-<script type="text/javascript" src="~/js/tooltipPopup.js"></script>
-<script type="text/javascript" src="~/js/y-lab.js"></script>
-<script type="text/javascript" src="~/js/jquery.simplemodal.js"></script>
-<script type="text/javascript" src="~/js/bnc_scroll.js"></script>
-<script type="text/javascript" src="~/js/jquery.jcarousel.js"></script>
-<script type="text/javascript" src="~/js/jquery.elevatezoom.js"></script>
-<link rel="stylesheet" type="text/css" href="~/css/jquery.fancybox-thumbs.css" />
-<script type="text/javascript" src="~/js/jquery.fancybox.js"></script>
-<script src="~/js/jquery.fancybox-thumbs.js"></script>
-<script src="~/js/widget.js"></script>
+<script type="text/javascript" src="~/statics/js/jquery.transform-0.9.3.min_.js"></script>
+<script type="text/javascript" src="~/statics/js/jcarousellite_1.0.1c4.js"></script>
+<script type="text/javascript" src="~/statics/js/tipsy-1.0.0a.js"></script>
+<script type="text/javascript" src="~/statics/js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="~/statics/js/jquery.RotateImageMenu.js"></script>
+<script src="~/statics/js/jquery-ui.js"></script>
+<script type="text/javascript" src="~/statics/js/tooltipPopup.js"></script>
+<script type="text/javascript" src="~/statics/js/y-lab.js"></script>
+<script type="text/javascript" src="~/statics/js/jquery.simplemodal.js"></script>
+<script type="text/javascript" src="~/statics/js/bnc_scroll.js"></script>
+<script type="text/javascript" src="~/statics/js/jquery.jcarousel.js"></script>
+<script type="text/javascript" src="~/statics/js/jquery.elevatezoom.js"></script>
+<link rel="stylesheet" type="text/css" href="~/statics/css/jquery.fancybox-thumbs.css" />
+<script type="text/javascript" src="~/statics/js/jquery.fancybox.js"></script>
+<script src="~/statics/js/jquery.fancybox-thumbs.js"></script>
+<script src="~/statics/js/widget.js"></script>
 <script type="text/javascript">
     $(document).ready(function (e) {
         $(window).scroll(function () {
@@ -218,7 +225,7 @@
         });
     });
 </script>
-<script type="text/javascript" src="~/js/number_format.js"></script>
+<script type="text/javascript" src="~/statics/js/number_format.js"></script>
 <style type="text/css">
     #vgc_html_avg {
         display: none !important;

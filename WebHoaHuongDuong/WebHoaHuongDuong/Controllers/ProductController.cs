@@ -27,21 +27,21 @@ namespace WebHoaHuongDuong.Controllers
         {
             var model = _iProductServices.GetAllProduct().Where(c => c.Price != 0).OrderBy(c => c.DateUpdate).ThenBy(c => Guid.NewGuid()).Take(9);
                 
-            return PartialView("_SanPhamMoiIndex", model);
+            return PartialView("_ProductListBlock", model);
         }
 
         [ChildActionOnly]
         public ActionResult _SanPhamXemNhieu()
         {
             var model = _iProductServices.GetAllProduct().Where(c => c.Price != 0).OrderByDescending(c => c.Views).ThenBy(c => Guid.NewGuid()).Take(9);
-            return PartialView("_SanPhamXemNhieuIndex", model);
+            return PartialView("_ProductListBlock", model);
         }
 
         [ChildActionOnly]
         public ActionResult _SanPhamBanChay()
         {
             var model = _iProductServices.GetAllProduct().Where(c => c.Price != 0).OrderBy(c => Guid.NewGuid()).Take(9);
-            return PartialView("_SanPhamBanChayIndex", model);
+            return PartialView("_ProductListBlock", model);
         }
 
         [ChildActionOnly]
@@ -53,7 +53,7 @@ namespace WebHoaHuongDuong.Controllers
             var model = products.Join(categories, product => product.Category_ID, category => category.Category_ID,
                 (product, category) => product).Where(c => c.Price != 0).OrderBy(c => Guid.NewGuid()).Take(9);
 
-            return PartialView("_MyPhamIndex", model);
+            return PartialView("_ProductListBlock", model);
         }
 
         [ChildActionOnly]
@@ -65,7 +65,7 @@ namespace WebHoaHuongDuong.Controllers
             var model = products.Join(categories, product => product.Category_ID, category => category.Category_ID,
                 (product, category) => product).Where(c => c.Price != 0).OrderBy(c => Guid.NewGuid()).Take(9);
 
-            return PartialView("_SuaXachTayChoBeYeuIndex", model);
+            return PartialView("_ProductListBlock", model);
         }
 
         [ChildActionOnly]
@@ -77,7 +77,7 @@ namespace WebHoaHuongDuong.Controllers
             var model = products.Join(categories, product => product.Category_ID, category => category.Category_ID,
                 (product, category) => product).Where(c => c.Price != 0).OrderBy(c => Guid.NewGuid()).Take(9);
 
-            return PartialView("_ThucPhamDinhDuongIndex", model);
+            return PartialView("_ProductListBlock", model);
         }
 
         public ActionResult ViewIndex()
