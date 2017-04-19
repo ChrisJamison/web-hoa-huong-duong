@@ -21,6 +21,7 @@ namespace BusinessEntities
         public Nullable<bool> Is_active { get; set; }
         public Nullable<System.DateTime> Date_create { get; set; }
 
+        public string ParentName { get; set; }
         public virtual ICollection<ProductEntity> Products { get; set; }
     }
 }

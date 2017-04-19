@@ -38,5 +38,6 @@ namespace DataModel
         public DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
         public DbSet<webpages_Roles> webpages_Roles { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Banner> Banners { get; set; }
     }
 }

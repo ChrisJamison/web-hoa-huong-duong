@@ -5,44 +5,17 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
 <fieldset>
-    <legend>Category</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Category_ID)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Category_ID)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Parent_ID)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Parent_ID)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Level)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Level)
-    </div>
+    <h1>@Model.Name</h1>
 </fieldset>
-@using (Html.BeginForm()) {
+
+<h3 class="editor-label">Bạn chắc chắn muốn xóa danh mục này không?</h3>
+
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     <p>
         <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Quay về danh sách", "Index")
     </p>
 }

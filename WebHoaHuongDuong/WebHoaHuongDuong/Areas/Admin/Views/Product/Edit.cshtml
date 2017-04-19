@@ -6,8 +6,9 @@
 }
 
 <h2>Cập nhật</h2>
-<br/>
-@using (Html.BeginForm()) {
+<br />
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -41,7 +42,10 @@
             Hình ảnh
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Image)
+            <img src="/@Model.Image" alt="@Model.Name" style="width: 100px"/>
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.Image)
             @Html.ValidationMessageFor(model => model.Image)
         </div>
 

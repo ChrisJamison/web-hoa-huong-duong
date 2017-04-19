@@ -5,25 +5,15 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Create</h2>
-
+<h1>Tạo danh mục mới</h1>
+<br/>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Category</legend>
-
         <div class="editor-label">
-            @Html.LabelFor(model => model.Category_ID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Category_ID)
-            @Html.ValidationMessageFor(model => model.Category_ID)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
+           Tên danh mục
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Name)
@@ -31,29 +21,21 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Parent_ID)
+            Chọn danh mục cha
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Parent_ID)
+            @Html.DropDownListFor(model => model.Parent_ID, new SelectList(ViewBag.CategoryDropdown, "Category_ID", "Name"), "Không có danh mục cha")
             @Html.ValidationMessageFor(model => model.Parent_ID)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Level)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Level)
-            @Html.ValidationMessageFor(model => model.Level)
-        </div>
-
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Tạo" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Về danh sách danh mục", "Index")
 </div>
 
 @section Scripts {
