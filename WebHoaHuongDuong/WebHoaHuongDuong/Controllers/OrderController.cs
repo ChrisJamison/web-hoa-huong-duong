@@ -30,7 +30,7 @@ namespace WebHoaHuongDuong.Controllers
             {
                 var customer = new Customer();
                 customer.Email = model.Email;
-                customer.IdentifyCardNumber = "test";
+                customer.IdentifyCardNumber = Guid.NewGuid().ToString();
                 _db.Customers.Add(customer);
                 _db.SaveChanges();
                 return RedirectToAction("Step", new { step = WellknownConstant.Information });

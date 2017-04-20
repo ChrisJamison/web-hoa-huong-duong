@@ -16,7 +16,8 @@
                     <p>Xin vui lòng cung cấp số điện thoại của bạn. Sunflowershop sẽ thông báo thông tin giao hàng qua số điện thoại này.</p>
                 </div>
                 <form id="delivery_information_form" action="/Order/Information" method="post">
-                    <input type="hidden" value="55c10a0b57dfa733f3a4755a58951be74df99555" name="FORM_TOKEN" /><div class="sku-delivery-notification"></div>
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
 
                     <input type="hidden" name="ThreeStepShippingAddressForm[shipping_to]" value="residential">
 
@@ -168,7 +169,7 @@
                                         </label>
                                     </div>
                                     <div class="checkout-field _input-wrapper">
-                                        <input class="checkout-field _input-phone -no-prefix" maxlength="20" placeholder="Số điện thoại" data-field="input" name="phone" id="ThreeStepShippingAddressForm_phone" type="text" required />
+                                        <input class="checkout-field _input-phone -no-prefix" maxlength="20" placeholder="Số điện thoại" data-field="input" name="phone" id="ThreeStepShippingAddressForm_phone" type="text" required pattern="\d{7,11}" title="Bạn cần nhập đúng số điện thoại"/>
                                     </div>
                                     <div class="checkout-field _message" data-field="message"></div>
                                 </div>
