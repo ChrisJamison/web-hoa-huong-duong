@@ -8,10 +8,63 @@
 @if (Model.step == WellknownConstant.Registration)
 {
     @Html.Partial("_Registration")
+    @section Steps
+{
+        <div class="checkout-header _progress-bar">
+            <ol class="step-breadcrumb _list">
+                <li class="step-breadcrumb _item -current">
+                    <span class="step-breadcrumb _text">1. Đăng ký</span>
+                </li>
+                <li class="step-breadcrumb _item">
+                    <span class="step-breadcrumb _text">2. Địa chỉ</span>
+                </li>
+                <li class="step-breadcrumb _item">
+                    <span class="step-breadcrumb _text">3. Đặt hàng</span>
+                </li>
+            </ol>
+        </div>
+    }
 }
 
 @if (Model.step == WellknownConstant.Information)
 {
     @Html.Partial("_Information")
+    @section Steps
+{
+        <div class="checkout-header _progress-bar">
+            <ol class="step-breadcrumb _list">
+                <li class="step-breadcrumb _item -past">
+                    <span class="step-breadcrumb _text">1. Đăng ký</span>
+                </li>
+                <li class="step-breadcrumb _item -current">
+                    <span class="step-breadcrumb _text">2. Địa chỉ</span>
+                </li>
+                <li class="step-breadcrumb _item">
+                    <span class="step-breadcrumb _text">3. Đặt hàng</span>
+                </li>
+            </ol>
+        </div>
+    }
+}
+
+@if (Model.step == WellknownConstant.Checkout)
+{
+    @Html.Partial("_Checkout")
+    @section Steps
+{
+    <div class="checkout-header _progress-bar">
+        <ol class="step-breadcrumb _list">
+            <li class="step-breadcrumb _item -past">
+                <span class="step-breadcrumb _text">1. Đăng ký</span>
+            </li>
+            <li class="step-breadcrumb _item -past">
+                <span class="step-breadcrumb _text">2. Địa chỉ</span>
+            </li>
+            <li class="step-breadcrumb _item -current">
+                <span class="step-breadcrumb _text">3. Đặt hàng</span>
+            </li>
+        </ol>
+    </div>
+}
 }
 

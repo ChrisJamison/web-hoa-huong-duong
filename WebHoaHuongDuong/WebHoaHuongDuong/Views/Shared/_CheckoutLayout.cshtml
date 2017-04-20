@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using WebHoaHuongDuong.Models
+<!DOCTYPE html>
 <!--[if lt IE 7]> <html xmlns:fb="https://ogp.me/ns/fb#" class="no-js ie6 oldie" lang="vi" version="HTML+RDFa 1.1"> <![endif]-->
 <!--[if IE 7]>    <html xmlns:fb="https://ogp.me/ns/fb#" class="no-js ie7 oldie" lang="vi" version="HTML+RDFa 1.1"> <![endif]-->
 <!--[if IE 8]>    <html xmlns:fb="https://ogp.me/ns/fb#" class="no-js ie8 oldie" lang="vi" version="HTML+RDFa 1.1"> <![endif]-->
@@ -61,62 +62,60 @@
     <!-- END RENDER FROM THEME CONFIG FILE! -->
 
 
-    <link rel="stylesheet" href="https://vn-live-01.slatic.net/css/live/alice-min-bundle-common-a29858b27f.css" />
-    <link rel="stylesheet" href="https://vn-live-01.slatic.net/css/live/alice-min-bundle-checkout-f5fe13b1c6.css" />
-
+    <link rel="stylesheet" href="https://vn-live-03.slatic.net/css/live/alice-min-bundle-common-86dc992296.css" />
+    <link rel="stylesheet" href="https://vn-live-03.slatic.net/css/live/alice-min-bundle-checkout-d5d93f938b.css" />
+    <script type="text/javascript" src="~/statics/js/jquery-1.7.1.min.js"></script>
     <!--[if lte IE 8]><script src="/js/es5polyfill.js"></script><![endif]-->
 </head>
 <body class="l-full-hd ui-page-bg  chrome os_windows chrome-57 thm-core thm-spinbasket thm-ventures/vn/spinbasket thm-2014 thm-ventures/vn/2014 thm-local  static-design    ui-desktop"
       data-control="StepCheckout">
-<!-- Begin Google Tag Manager -->
-<div id="page" class="l-page checkout-page">
-    <div class="checkout-header _block">
+    <!-- Begin Google Tag Manager -->
+    @if (ShoppingCart.Cart.Total == 0.0)
+    {
+        <script type="text/javascript">
+            location.href = "/";
+        </script>
+    }
+   @* @if (HttpContext.Current.Session["UserGuid"] == null)
+    {
+        <script type="text/javascript">
+            location.href = "/Order/Step?step=Registration";
+        </script>
+    }*@
 
-        <div class="checkout-header _container">
+    <div id="page" class="l-page checkout-page">
+        <div class="checkout-header _block">
 
-            <a href="/" class="checkout-header _logo">
-                <img src="/images/logo.png"
-                     class="checkout-header _logo-image"
-                     width="125"
-                     height="39"
-                     alt=".www.sunflowershop.vn" />
-            </a>
+            <div class="checkout-header _container">
 
-            <div class="checkout-header _progress-bar">
-                <ol class="step-breadcrumb _list">
-                    <li class="step-breadcrumb _item -current">
-                        <span class="step-breadcrumb _text">1. Đăng nhập</span>
-                    </li>
-                    <li class="step-breadcrumb _item">
-                        <span class="step-breadcrumb _text">2. Địa chỉ</span>
-                    </li>
-                    <li class="step-breadcrumb _item">
-                        <span class="step-breadcrumb _text">3. Thanh toán</span>
-                    </li>
-                </ol>
+                <a href="/" class="checkout-header _logo">
+                    <img src="/images/logo.png"
+                         class="checkout-header _logo-image"
+                         width="125"
+                         height="39"
+                         alt=".www.sunflowershop.vn" />
+                </a>
+                @RenderSection("Steps", false)
             </div>
 
         </div>
+        <div id="content">
+            <div id="three_step_checkout" class="ch-container">
+                <div role="main" class="container_24">
 
-    </div>
-    <div id="content">
-        <div id="three_step_checkout" class="ch-container">
-            <div role="main" class="container_24">
+                    <input type="hidden" id="checkout-step" value="1">
 
-                <input type="hidden" id="checkout-step" value="1">
-
-                <div class="checkout-main">
-                    <div class="checkout-main _wrapper">        
-                        @RenderBody()
-                        @Html.Partial("_OrderBlock")
+                    <div class="checkout-main">
+                        <div class="checkout-main _wrapper">
+                            @RenderBody()
+                            @Html.Partial("_OrderBlock")
+                        </div>
                     </div>
                 </div>
+                <div class="checkout-footer">Bạn cần hỗ trợ? Gọi Hotline <strong> 090.309.2311  </strong> <br> &copy; Copyright 2013 - 2017, sunflowershop.vn</div>
             </div>
-            <div class="checkout-footer">Bạn cần hỗ trợ? Gọi Hotline <strong> 090.309.2311  </strong> <br> &copy; Copyright 2013 - 2017, sunflowershop.vn</div>
         </div>
     </div>
-</div>
 </body>
 </html>
-<script type="text/javascript" src="~/statics/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="~/statics/js/number_format.js"></script>
