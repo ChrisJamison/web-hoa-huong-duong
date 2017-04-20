@@ -30,9 +30,9 @@
 
                             <li id="gio_hang_sp_1563913">
                                 <div>
-                                    <a href="" target="_blank" title="@item.Name"><img src="/@item.Image" alt="@item.Name" class="cart-img" title="@item.Name"></a>
+                                    <a href="@Url.Action("ProductDetail","Product",new {id = item.Product_ID})" target="_blank" title="@item.Name"><img src="/@item.Image" alt="@item.Name" class="cart-img" title="@item.Name"></a>
                                     <h3>
-                                        <a href="" title="@item.Name" target="_blank">@Html.Truncate(item.Name, 20)</a>
+                                        <a href="@Url.Action("ProductDetail","Product",new {id = item.Product_ID})" title="@item.Name" target="_blank">@Html.Truncate(item.Name, 20)</a>
                                     </h3>
                                     <h2>
                                         @item.Price <u>đ</u>
@@ -47,7 +47,7 @@
                     </ul>
                     <p class="total">
                         Tổng đơn hàng:
-                        <b id="gio_hang_tong">@ShoppingCart.Cart.Total</b>
+                        <b id="gio_hang_tong" class="price-format"><span>@ShoppingCart.Cart.Total</span> <u>đ</u></b>
                     </p>
                 </div>
                 <a href="~/Cart/Index" class="cart-enter">Vào giỏ hàng</a>

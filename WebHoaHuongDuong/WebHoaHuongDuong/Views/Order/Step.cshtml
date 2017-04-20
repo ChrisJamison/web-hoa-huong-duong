@@ -1,0 +1,17 @@
+﻿@using WebHoaHuongDuong.AppConstants
+@model BusinessEntities.CheckoutEntity
+@{
+    ViewBag.Title = "Đặt Hàng";
+    Layout = "~/Views/Shared/_CheckoutLayout.cshtml";
+}
+
+@if (Model.step == WellknownConstant.Registration)
+{
+    @Html.Partial("_Registration")
+}
+
+@if (Model.step == WellknownConstant.Information)
+{
+    @Html.Partial("_Information")
+}
+

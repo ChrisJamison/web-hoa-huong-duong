@@ -1,0 +1,61 @@
+﻿@using WebHoaHuongDuong.Models
+<div class="checkout-main _sidebar">
+    <div id="mini-cart" class="ch-box">
+        <div class="order_sum_container">
+            <form>
+                <h3 class="ch-main-title">Thông tin đơn hàng<span>(@ShoppingCart.Cart.Count sản phẩm)</span></h3>
+                <div class="order_sum">
+                    <input type="hidden" name="num_cart_item" id="num_cart_item" value="1" />
+
+                    <table class="order_scroll_table_header">
+                        <thead>
+                            <tr>
+                                <th class="left_align">Sản phẩm</th>
+                                <th class="qty">Số lượng</th>
+                                <th class="right_align">Giá</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <div class="order_scrollable">
+                        <table class="order_scroll_table">
+                            @foreach (var item in ShoppingCart.Cart.Items)
+                            {
+                                <tr class=" first_item ">
+                                    <td>
+                                        @item.Name
+                                    </td>
+                                    <td class="qty">
+                                        @item.NumberInStock
+                                    </td>
+                                    <td class="right_align sel-cart-item-total-SA937ELAA311KGVNAMZ-5269288 price-format">
+                                        <span>@item.Price</span>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div class="ch-cart-conclusion">
+                        <table class="total_item">
+
+                            <tr class="first_subtotal">
+                                <td class="subtotal sel-subtotal">Tạm tính</td>
+                                <td colspan="2" class="right_align price-format"><span>@ShoppingCart.Cart.Total</span> VND</td>
+                            </tr>
+                            <tr class="total">
+                                <td class="total">
+                                    <strong class="total-label">Total</strong>
+                                    <span class="vat-minicart">(Tổng số tiền thanh toán)</span>
+                                </td>
+                                <td colspan="2" class="total right_align sel-total price-format">
+                                    <strong class="total-price"><span>@ShoppingCart.Cart.Total</span> VND</strong>
+                                </td>
+                            </tr>
+                            <div style="display: none;"></div>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

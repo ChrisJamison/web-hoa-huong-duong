@@ -1,11 +1,13 @@
-﻿@using WebHoaHuongDuong.Models
+﻿@using WebHoaHuongDuong.AppConstants
+@using WebHoaHuongDuong.Models
 @model IEnumerable<DataModel.Product>
 @{
     ViewBag.Title = "Shopping Cart ";
 }
 <div class="benphai float_l">
     <div class="bg_detail_sp">
-        <div class="module_title"><ul class="unlnavi" style="width: 94%">
+        <div class="module_title">
+            <ul class="unlnavi" style="width: 94%">
                 <li class="acti page_small"><a href="javascript:void()">Giỏ Hàng Của Bạn</a></li>
             </ul>
         </div>
@@ -23,11 +25,11 @@
             {
                 <tr>
                     <td class="hide-id">@p.Product_ID</td>
-                    <td id="cart-product-thumb"><img src="/@p.Image"/></td>
-                    <td>@p.Name</td>
-                    <td>@p.Price VNĐ</td>
+                    <td id="cart-product-thumb"><img src="/@p.Image" /></td>
+                    <td><a href="@Url.Action("ProductDetail", "Product", new {id = p.Product_ID})" target="_blank">@p.Name</a></td>
+                    <td class="price-format cart-price"><span>@p.Price</span>đ</td>
                     <td><input class="quantity" value="@p.NumberInStock" data-id="@p.Product_ID" size="3"></td>
-                    <td id="@p.Product_ID">@Html.FormatValue(p.Price * p.NumberInStock, "{0}") VNĐ</td>
+                    <td id="@p.Product_ID" class="price-format cart-price"><span>@Html.FormatValue(p.Price * p.NumberInStock, "{0}")</span>đ</td>
                     <td>
                         <img class="remove-from-cart" data-id="@p.Product_ID" src="http://v1.webbnc.net/themes/web/43/cart/cart-remove.jpg" />
                     </td>
@@ -35,20 +37,25 @@
             }
             <tr>
                 <th colspan="5" style="text-align: right">Total:</th>
-                <th id="nn-cart-amount">@ShoppingCart.Cart.Total VNĐ</th>
+                <th id="nn-cart-amount" class="price-format cart-price"><span>@ShoppingCart.Cart.Total</span>đ</th>
                 <th></th>
             </tr>
         </table>
-        <form action="/Cart/Clear" method="post">
-            <button class="btn btn-default">
-                <span class="glyphicon glyphicon-th-list"></span>
-                Refresh Giỏ Hàng
-            </button>
-           @* <a href="/Order/Checkout" class="btn btn-default">
-                <span class="glyphicon glyphicon-th-list"></span>
-                Thanh Toán
-            </a>*@
-        </form>
+        @{
+            if (ShoppingCart.Cart.Total == 0.0)
+            {
+                    <a class="button-cart disabled">Đặt Hàng</a>
+                    <button class="button-cart disabled">Xóa Giỏ Hàng</button>
+            }
+            else
+            {
+                <form action="/Cart/Clear" method="post" id="clear-cart">
+                    <a class="button-cart" href="@Url.Action("Step", "Order", new {step = WellknownConstant.Registration})">Đặt Hàng</a>
+                    <button class="button-cart opacity" form="clear-cart">Xóa Giỏ Hàng</button>
+                </form>
+            }
+        }
+
     </div>
 </div>
 @section scripts{
@@ -62,9 +69,10 @@
                     url: "/Cart/Remove",
                     data: { id: pid },
                     success: function (response) {
-                        $("#in_cart").html(response.Count);
-                        $("#nn-cart-amount").html(response.Total + " VNĐ");
+                        $("#in_cart span").html(response.Count);
+                        $("#nn-cart-amount span").html(response.Total);
                         tr.hide(500);
+                        location.reload();
                     }
                 });
             });
@@ -76,9 +84,10 @@
                     url: "/Cart/Update",
                     data: { id: pid, quantity: qty },
                     success: function (response) {
-                        $("#in_cart").html(response.Count);
-                        $("#nn-cart-amount").html(response.Total + " VNĐ");
-                        $("#" + pid).html(response.Amount + " VNĐ");
+                        $("#in_cart span").html(response.Count);
+                        $("#nn-cart-amount span").html(response.Total);
+                        $("#" + pid).html(response.Amount);
+                        location.reload();
                     }
                 });
             });

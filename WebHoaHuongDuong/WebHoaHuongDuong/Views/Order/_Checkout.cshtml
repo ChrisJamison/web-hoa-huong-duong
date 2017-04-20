@@ -1,0 +1,432 @@
+﻿<div class="left-col big-col left_module">
+    <form id="payment_information_form" action="/checkout/step/paymentinformation/" method="post">
+        <input type="hidden" value="55c10a0b57dfa733f3a4755a58951be74df99555" name="FORM_TOKEN" /><input type="hidden" name="PaymentMethod[empty]" value="1" />
+        <input type="hidden" name="fingerprint" class="js-fingerprint-input" />
+
+
+
+        <div class="ch-box payment_form" data-payment="form">
+            <h3 class="ch-main-title" data-payment="title">
+                Chọn phương thức thanh toán
+            </h3>
+            <div id="tabs-container" class="hidden payment_method_select">
+                <div class="payment-options-holder-loading hide" style="display: none;">
+                    <div class="loaddingHolder">
+                        <span class="i-loader"></span>
+                    </div>
+                </div>
+                <!-- form with global payment method icons -->
+                <div id="tabs">
+                    <ul class="payment-options-list cf" data-payment-methods="tabs-menu">
+
+                        <li>
+                            <a href="#tabs-unselected" id="tab_unselected_option"
+                               style="height: 0px"><span></span></a>
+                        </li>
+
+
+
+                        <li><a href="#tabs-CashOnDelivery" id="tab_CashOnDelivery_option"><div class="tab_pseudo-elems"><span>Thanh toán khi nhận hàng</span></div><div class="radio-wrap"><input type="radio"><input type="radio" checked></div></a></li>
+
+
+
+                        <li><a href="#tabs-Cybersource" id="tab_Cybersource_option"><div class="tab_pseudo-elems"><span>Thẻ tín dụng/ghi nợ</span></div><div class="radio-wrap"><input type="radio"><input type="radio" checked></div></a></li>
+
+
+                        <li><a href="#tabs-VN123Pay" id="tab_VN123Pay_option"><div class="tab_pseudo-elems"><span>Thẻ ATM nội địa/Internet banking</span></div><div class="radio-wrap"><input type="radio"><input type="radio" checked></div></a></li>
+
+
+                        <li><a href="#tabs-Smartlink" id="tab_Smartlink_option"><div class="tab_pseudo-elems"><span>Thẻ ATM <br /> nội địa</span></div><div class="radio-wrap"><input type="radio"><input type="radio" checked></div></a></li>
+
+
+                        <li><a href="#tabs-ManualInstallmentsCC" id="tab_ManualInstallmentsCC_option"><div class="tab_pseudo-elems"><span>Trả góp bằng <br> thẻ tín dụng</span></div><div class="radio-wrap"><input type="radio"><input type="radio" checked></div></a></li>
+
+                    </ul>
+                </div>
+                <!-- global payment methods settings forms -->
+                <div class="cf tab-wrapper">
+
+                    <div id="payments-tabs-wrapper">
+                        <div id="tabs-unselected" class="tab hidden">
+                            <div class="payment_notavail_page">
+                                <div class="payment_wrap">
+                                    <div class="notavail_announcement">
+                                        Xin vui lòng chọn một phương thức thanh toán
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space_35"></div>
+                        </div>
+
+
+                        <div id="tabs-CashOnDelivery" class="tab ">
+                            <div class="cod_page">
+                                <div class="payment_wrap">
+                                    <div class="row">
+                                        <input id="CashOnDelivery" value="CashOnDelivery" class="hidden" checked="checked" type="radio" name="PaymentMethodForm[payment_method]" />                    Quý khách sẽ thanh toán bằng tiền mặt khi nhận hàng tại nhà
+                                    </div>
+                                    <div class="row cod_aditional_info">
+                                        <u>Lưu ý:</u> <br />- Bạn nhớ kiểm tra kỹ thông tin của đơn hàng bên phải vì thông tin này sẽ không thể thay đổi sau khi đơn hàng được xác nhận thành công.<br>
+                                        - Lazada.vn sẽ không gửi tin nhắn xác nhận đơn hàng nên bạn vui lòng xem lại thông tin trong xác nhận đơn hàng được gửi qua email.<br />
+                                        - Nhằm đảm bảo quyền lợi mua sắm cho các khách hàng cá nhân, Lazada sẽ giới hạn số lượng sản phẩm trong mỗi đơn hàng và chúng tôi xin phép từ chối đơn hàng có dấu hiệu mua đi bán lại.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div id="tabs-Cybersource" class="tab hidden">
+                            <div class="payment_page">
+
+                                <div class="payment_wrap">
+                                    <div class="clear"></div>
+                                </div>
+
+
+                                <div class="newcard_wrap">
+                                    <div class="tb_credit_cart_new">
+                                        <div class="newcard_wrap t_footer">
+                                            <div style="display: none;">
+                                                <input id="Cybersource" class="payment-method-option ui-inputRadio lfloat select_payment_option" value="Cybersource" type="radio" name="PaymentMethodForm[payment_method]" />
+                                            </div>
+
+                                            <input id="PaymentMethodForm_parameter_cc_type" type="hidden" name="PaymentMethodForm[parameter][cc_type]" value="" />
+                                            <div id="newCreditCard" class="payment_new_credit_form hidden">
+                                                <div class="t_row">
+                                                    <div class="t_label">
+                                                        <div class="card-number">
+                                                            <label for="PaymentMethodForm_parameter_cc_number">Số thẻ</label>
+                                                        </div>
+                                                        <div class="card_t cardLayout">
+                                                            <div class="card_icon card_type"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="t_input">
+                                                        <input name="PaymentMethodForm[parameter][cc_number]" class="input_field short_input checkFraud" size="50" maxlength="30" data-default="" id="PaymentMethodForm_parameter_cc_number" type="text" />
+                                                    </div>
+                                                    <div class="t_validation"></div>
+                                                </div>
+
+                                                <div class="t_row">
+                                                    <div class="t_label"><label for="PaymentMethodForm_parameter_cc_holder">Tên in trên thẻ</label></div>
+                                                    <div class="t_input">
+                                                        <input name="PaymentMethodForm[parameter][cc_holder]" class="input_field short_input " autocomplete="off" placeholder="Tên in trên thẻ" size="50" maxlength="50" id="PaymentMethodForm_parameter_cc_holder" type="text" value="sadadada" />
+                                                    </div>
+                                                    <div class="t_validation"></div>
+                                                </div>
+
+                                                <div class="t_row payment_exp-row">
+                                                    <div class="t_label">
+                                                        <label>Ngày hết hạn</label>
+                                                    </div>
+                                                    <div class="t_input">
+                                                        <input name="PaymentMethodForm[parameter][cc_exp_month]" class="input_field short_input " autocomplete="off" placeholder="Mm" size="2" maxlength="2" id="PaymentMethodForm_parameter_cc_exp_month" type="text" />                                    &nbsp;
+                                                        <input name="PaymentMethodForm[parameter][cc_exp_year]" class="input_field short_input " autocomplete="off" placeholder="Yy" size="2" maxlength="2" id="PaymentMethodForm_parameter_cc_exp_year" type="text" />
+                                                    </div>
+                                                    <div class="t_validation"></div>
+                                                </div>
+
+                                                <div class="t_row payment_cc_code-row">
+                                                    <div class="t_label">
+                                                        <label for="PaymentMethodForm_parameter_cc_security_code">CCV / CVV</label>                                    <div class="hint_t_icon" id="cvv-what-is-this">
+                                                            <a href="javascript:void(0)" class="hint_icon">?</a>
+                                                            <div id="payment-tool-tip" class="checkout-tool-tip" style="display: none">
+                                                                <div class="block-content"><div class="ccv_img"></div></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="t_input">
+                                                        <input name="PaymentMethodForm[parameter][cc_security_code]" class="input_field short_input_2 checkFraud" size="50" maxlength="30" id="PaymentMethodForm_parameter_cc_security_code" type="text" />
+                                                    </div>
+                                                    <div class="t_validation"></div>
+                                                </div>
+
+                                                <div class="clear"></div>
+
+                                                <input type="hidden" name="PaymentMethodForm[parameter][is_cc_pasted]" id="isCCPasted" value="" />
+
+                                            </div>
+
+                                            <div class="clear"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_logo-wrapper">
+                                <div class="card_logo master"></div>
+                                <div class="card_logo visa"></div>
+                            </div>
+                        </div>
+
+                        <div id="tabs-VN123Pay" class="tab hidden">
+                            <div class="VN123Pay_page">
+                                <div class="payment_wrap">
+                                    <div class="t_row">
+                                        <input id="VN123Pay" value="VN123Pay" class="hidden" type="radio" name="PaymentMethodForm[payment_method]" />                    <strong>Để thực hiện việc thanh toán, bắt buộc thẻ ATM của bạn đã có đăng ký sử dụng dịch vụ Internet Banking.</strong>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="t_row text-bold">Chọn ngân hàng của bạn</div>
+                                    <div class="t_row">
+                                        <div class="t_input">
+                                            <div class="ui-formRow payment-method-form">
+                                                <span class="payment-method-icon i-nologo" title=""></span>
+                                                <div class="clearfix">
+                                                    <select id="vn123PayOptions" class="dropdownValidation" name="PaymentMethodForm[parameter][vn123PayBank]" autocomplete="off">
+                                                        <option value="">Vui lòng chọn ngân hàng</option>
+                                                        <option value="123PVCB">Ngân hàng Ngoại Thương Việt Nam (Vietcombank)</option>
+                                                        <option value="123PDAB">Đông Á (DAB)</option>
+                                                        <option value="123PVTB">Ngân hàng Công Thương Việt Nam (Vietinbank)</option>
+                                                        <option value="123PTCB">Ngân hàng Kỹ Thương Việt Nam (Techcombank)</option>
+                                                        <option value="123PEIB">Ngân hàng Xuất Nhập Khẩu Việt Nam (Eximbank)</option>
+                                                        <option value="123PSCB">Ngân hàng Sài Gòn Thương Tín (Sacombank)</option>
+                                                        <option value="123PVIB">Ngân hàng quốc tế (VIB)</option>
+                                                        <option value="123PBIDV">Ngân hàng đầu tư và phát triển Việt Nam (BIDV)</option>
+                                                        <option value="123PMB">Ngân hàng quân đội (MB)</option>
+                                                        <option value="123PACB">Ngân hàng Á Châu (ACB)</option>
+                                                        <option value="123PMRTB">Ngân hàng TMCP Hàng Hải (Maritime Bank)</option>
+                                                        <option value="123PGPB">Ngân Hàng Dầu Khí Toàn Cầu (GPBank)</option>
+                                                        <option value="123PHDB">Ngân Hàng TMCP Phát Triển TPHCM (HDBank)</option>
+                                                        <option value="123PNVB">Ngân hàng TMCP Nam Việt (NaviBank)</option>
+                                                        <option value="123PVAB">Ngân hàng TMCP Việt Á</option>
+                                                        <option value="123PVPB">Ngân hàng Việt Nam Thịnh Vượng (VPBank)</option>
+                                                        <option value="123PBAB">Ngân hàng TMCP Bắc Á</option>
+                                                        <option value="123POCEB">Ngân hàng TMCP Đại Dương (OceanBank)</option>
+                                                        <option value="123PABB">Ngân hàng TMCP An Bình (ABB)</option>
+                                                        <option value="123PNAB">Ngân hàng TMCP Nam Á (Nam A Bank)</option>
+                                                        <option value="123PSGB">Ngân hàng TMCP Sài Gòn Công Thương (SaigonBank)</option>
+                                                        <option value="123PPGB">Ngân hàng Dầu Khí (PG Bank)</option>
+                                                        <option value="123POCB">Ngân hàng TMCP Phương Đông (OCB)</option>
+                                                        <option value="123PTPB">Ngân hàng Tiền Phong (Tien Phong Bank)</option>
+                                                        <option value="123PLPB">Ngân hàng TMCP Bưu điện Liên Việt (Lienviet Post Bank)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bank_validation t_validation"></div>
+                                    </div>
+                                    <p class="pay-message">Bạn có thể sẽ được chuyển hướng về cổng thanh toán 123Pay để hoàn tất thanh toán. 123Pay hiện đã hỗ trợ thanh toán qua 25 ngân hàng tại Việt Nam. Thẻ ATM của bạn cần phải được đăng ký sử dụng Internet Banking để sử dụng tính năng này.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tabs-Smartlink" class="tab hidden">
+                            <div class="btransfer_page">
+                                <div class="payment_wrap">
+                                    <div class="row">
+                                        <input id="Smartlink" value="Smartlink" class="hidden" type="radio" name="PaymentMethodForm[payment_method]" />                    <strong>Để thực hiện việc thanh toán, bắt buộc thẻ ATM của bạn đã có đăng ký sử dụng dịch vụ Internet Banking.</strong>
+                                    </div>
+                                    <div>
+                                        Lazada hiện đã hỗ trợ thanh toán qua 25 ngân hàng tại Việt Nam. Thẻ ATM của bạn cần phải được đăng ký sử dụng Internet Banking để sử dụng tính năng này.</br>
+                                        <a href="http://www.lazada.vn/huong-dan-thanh-toan-smartlink/" target="_blank">Xem thêm thông tin</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div id="tabs-ManualInstallmentsCC" class="tab hidden">
+                            <div class="payment_page">
+
+                                <div class="payment_wrap">
+                                    <p class="payment_title_card">Chương trình trả góp lãi suất 0% chỉ áp dụng khi thanh toán bằng thẻ tín dụng của những ngân hàng sau:</p>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="list-installment">
+                                    <a href="https://www.lazada.vn/tra-gop-0-phan-tram-sacombank/" target="_blank" title="Xem thể lệ mua trả góp bằng thẻ tín dụng Sacombank" onclick="_gaq.push(['_trackEvent', 'desktop_checkout', 'payment', 'payment_installments_clicks_1']);"><img src="https://vn-live.slatic.net/cms/campaign/campaign-1114/logo-sacombank.jpg" alt="Xem thể lệ mua trả góp bằng thẻ tín dụng Sacombank"></a>
+
+                                    <a style="margin-left: -4px;" href="https://www.lazada.vn/tra-gop-0-phan-tram-hsbc/" target="_blank" title="Xem thể lệ mua trả góp bằng thẻ tín dụng HSBC" onclick="_gaq.push(['_trackEvent', 'desktop_checkout', 'payment', 'payment_installments_clicks_2']);"><img src="https://vn-live.slatic.net/cms/campaign/campaign-1114/logo-partner_3.jpg" alt="Xem thể lệ mua trả góp bằng thẻ tín dụng HSBC"></a>
+
+                                    <a href="https://www.lazada.vn/tra-gop-0-phan-tram-shinhan-bank/" target="_blank" title="Xem thể lệ mua trả góp bằng thẻ tín dụng Shinhanbank" onclick="_gaq.push(['_trackEvent', 'desktop_checkout', 'payment', 'payment_installments_clicks_3']);"><img src="https://vn-live.slatic.net/cms/campaign/campaign-1114/shinhanbank.jpg" alt="Xem thể lệ mua trả góp bằng thẻ tín dụng Shinhanbank"></a>
+
+                                    <a href="https://www.lazada.vn/tra-gop-0-phan-tram-citibank/" target="_blank" title="Xem thể lệ mua trả góp bằng thẻ tín dụng Citibank" onclick="_gaq.push(['_trackEvent', 'desktop_checkout', 'payment', 'payment_installments_clicks_4']);"><img src="https://vn-live.slatic.net/cms/campaign/campaign-1114/logo-citibank.jpg" alt="Xem thể lệ mua trả góp bằng thẻ tín dụng Citibank"></a>
+
+                                    <a href="https://www.lazada.vn/tra-gop-0-phan-tram-vpbank/" target="_blank" title="Xem thể lệ mua trả góp bằng thẻ tín dụng VPBANK" onclick="_gaq.push(['_trackEvent', 'desktop_checkout', 'payment', 'payment_installments_clicks_5']);"><img src="https://vn-live.slatic.net/cms/campaign/campaign-1114/logo_VPBank-2.jpg" alt="Xem thể lệ mua trả góp bằng thẻ tín dụng VPBANK"></a>
+
+                                    <a href="https://www.lazada.vn/tra-gop-0-phan-tram-vib/" target="_blank" title="Xem thể lệ mua trả góp bằng thẻ tín dụng VIB" onclick="_gaq.push(['_trackEvent', 'desktop_checkout', 'payment', 'payment_installments_clicks_6']);"><img src="https://vn-live.slatic.net/cms/campaign/campaign-1114/logo-partner_20.jpg" alt="Xem thể lệ mua trả góp bằng thẻ tín dụng VIB"></a>
+
+                                    <a href="https://www.lazada.vn/tra-gop-0-phan-tram-eximbank/" target="_blank" title="Xem thể lệ mua trả góp bằng thẻ tín dụng EXIMBANK" onclick="_gaq.push(['_trackEvent', 'desktop_checkout', 'payment', 'payment_installments_clicks_7']);"><img src="https://vn-live.slatic.net/cms/campaign/campaign-1114/Eximbank-logo-2607.jpg" alt="Xem thể lệ mua trả góp bằng thẻ tín dụng EXIMBANK"></a>
+
+                                    <!--a href="https://www.lazada.vn/tra-gop-0-phan-tram-anz/" target="_blank" title="Xem thể lệ mua trả góp bằng thẻ tín dụng ANZ" onclick="_gaq.push(['_trackEvent', 'desktop_checkout', 'payment', 'payment_installments_clicks_8']);"><img src="https://vn-live.slatic.net/cms/campaign/campaign-1114/logo-partner_4.jpg" alt="Xem thể lệ mua trả góp bằng thẻ tín dụng ANZ"></a-->
+
+                                    <a href="https://www.lazada.vn/tra-gop-0-phan-tram-vietinbank/" target="_blank" title="Xem thể lệ mua trả góp bằng thẻ tín dụng Vietinbank" onclick="_gaq.push(['_trackEvent', 'desktop_checkout', 'payment', 'payment_installments_clicks_9']);"><img src="https://static.lazada.vn/cms/campaign/campaign-1114/logo-partner_19.jpg" alt="Xem thể lệ mua trả góp bằng thẻ tín dụng Vietinbank"></a>
+                                </div>
+
+                                <div class="card_logo-wrapper" style="top:132px">
+                                    <div class="card_logo master"></div>
+                                    <div class="card_logo visa"></div>
+                                </div>
+                                <div>
+                                    <p style="line-height: 1.5">
+                                        <strong>Đơn hàng của bạn chỉ được thực hiện nếu:</strong><br>
+                                        - Đơn hàng có duy nhất 1 sản phẩm và giá trị thanh toán cuối cùng (sau khuyến mãi) lớn hơn hoặc bằng 3 triệu đồng.  <br>
+                                        - Bạn đã có tài khoản đăng ký Dịch vụ Ngân hàng điện tử (Internet banking).<br>
+                                        - Hạn mức tín dụng của bạn đủ để chi trả cho số tiền trả góp hàng tháng.<br>
+                                        <strong>Lưu ý:</strong> Đối với đơn hàng trên 33 triệu đồng, vui lòng liên hệ ngân hàng phát hành thẻ để xác nhận giao dịch nhằm tránh trường hợp đơn hàng của bạn bị hủy ngoài ý muốn.
+                                        <a href="https://www.lazada.vn/tra-gop-0-phan-tram/" title="Xem thể lệ trả góp" target="_blank">
+                                            Xem thêm thể lệ trả góp
+                                        </a>
+                                    </p>
+                                </div>
+                                <style>
+                                    #three_step_checkout #tabs a span {
+                                        line-height: 16px;
+                                    }
+
+                                    .payment_title_card {
+                                        float: none !important;
+                                    }
+
+                                    .list-installment {
+                                        overflow: hidden;
+                                        margin-top: 20px !important;
+                                    }
+
+                                        .list-installment a {
+                                            display: inline-block;
+                                            margin: 0 2px 4px 0;
+                                            position: relative;
+                                            color: #333;
+                                        }
+
+                                            .list-installment a:hover {
+                                                color: #ffb319;
+                                            }
+
+                                        .list-installment p {
+                                            left: 24%;
+                                            position: absolute;
+                                            top: 61%;
+                                        }
+                                </style>
+                                <div class="newcard_wrap">
+                                    <input id="ManualInstallmentsCC" class="hidden" value="ManualInstallmentsCC" type="radio" name="PaymentMethodForm[payment_method]" />
+                                    <div id="mbCreditCard" class="hidden">
+                                        <div class="t_row">
+                                            <div class="t_label"><label for="PaymentMethodForm_parameter_mi_cc_bank">Chọn ngân hàng</label></div>
+                                            <div class="t_input">
+                                                <select id="PaymentMethodForm_parameter_mi_cc_bank" name="PaymentMethodForm[parameter][mi_cc_bank]" class="input_field">
+                                                    <option value="HSBC">HSBC</option>
+                                                    <option value="Shinhanbank">Shinhanbank</option>
+                                                    <option value="Sacombank (Chỉ áp dụng kì hạn 6 tháng và 9 tháng)">Sacombank (Chỉ áp dụng kì hạn 6 tháng và 9 tháng)</option>
+                                                    <option value="VietinBank">VietinBank</option>
+                                                    <option value="Citibank (Chỉ áp dụng kì hạn 3 &amp; 6 tháng)">Citibank (Chỉ áp dụng kì hạn 3 &amp; 6 tháng)</option>
+                                                    <option value="VPBank (Chỉ áp dụng kì hạn 3 tháng và 6 tháng)">VPBank (Chỉ áp dụng kì hạn 3 tháng và 6 tháng)</option>
+                                                    <option value="VIB (Áp dụng kì hạn 3 tháng, 6 tháng &amp; 12 tháng)">VIB (Áp dụng kì hạn 3 tháng, 6 tháng &amp; 12 tháng)</option>
+                                                    <option value="Eximbank (Chỉ áp dụng kì hạn 3 &amp; 6 tháng)">Eximbank (Chỉ áp dụng kì hạn 3 &amp; 6 tháng)</option>
+                                                </select>
+                                            </div>
+                                            <div class="t_validation"></div>
+                                        </div>
+
+                                        <div class="t_row">
+                                            <div class="t_label">Chọn số tháng bạn muốn trả góp</div>
+                                            <div class="t_input">
+                                                <select class="applyInstallmentsPaymentMethodForm" name="PaymentMethodForm[parameter][tenor]" id="PaymentMethodForm_parameter_tenor">
+                                                    <option value="3">Trả trong 3 tháng, 6.163.333 VND / tháng</option>
+                                                    <option value="6">Trả trong 6 tháng, 3.081.667 VND / tháng</option>
+                                                    <option value="12" selected="selected">Trả trong 12 tháng, 1.540.833 VND / tháng</option>
+                                                    <option value="9">Trả trong 9 tháng, 2.054.444 VND / tháng</option>
+                                                </select>
+                                            </div>
+                                            <div class="t_validation"></div>
+                                        </div>
+
+                                        <div class="t_row">
+                                            <div class="t_label"><label for="PaymentMethodForm_parameter_mi_cc_holder">Tên in trên thẻ</label></div>
+                                            <div class="t_input">
+                                                <input name="PaymentMethodForm[parameter][mi_cc_holder]" class="input_field short_input " autocomplete="off" size="50" maxlength="30" id="PaymentMethodForm_parameter_mi_cc_holder" type="text" />
+                                            </div>
+                                            <div class="t_validation"></div>
+                                        </div>
+
+                                        <div class="t_row">
+                                            <div class="t_label">
+                                                <label for="PaymentMethodForm_parameter_mi_cc_number">Số thẻ</label>                            <div class="card_t"><div class="card_icon card_type"></div></div>
+                                            </div>
+                                            <div class="t_input">
+                                                <input id="PaymentMethodForm_parameter_mi_cc_number" name="PaymentMethodForm[parameter][mi_cc_number]" class="input_field short_input" size="50" maxlength="30" type="text" />
+                                            </div>
+                                            <div class="t_validation"></div>
+                                        </div>
+
+                                        <div class="t_row payment_exp-row">
+                                            <div class="t_label"><label>Ngày hết hạn</label></div>
+                                            <div class="t_input">
+                                                <input id="PaymentMethodForm_parameter_mi_cc_exp_month" name="PaymentMethodForm[parameter][mi_cc_exp_month]" class="input_field short_select" autocomplete="off" placeholder="Mm" size="2" maxlength="2" type="text" />                            &nbsp;
+                                                <input name="PaymentMethodForm[parameter][mi_cc_exp_year]" class="input_field short_select" autocomplete="off" placeholder="Yy" size="2" maxlength="2" id="PaymentMethodForm_parameter_mi_cc_exp_year" type="text" />
+                                            </div>
+                                            <div class="t_validation"></div>
+                                        </div>
+
+                                        <div class="t_row payment_cc_code-row">
+                                            <div class="t_label">
+                                                <label for="PaymentMethodForm_parameter_mi_cc_security_code">CCV / CVV</label>                            <div class="hint_t_icon" id="cvv-what-is-this">
+                                                    <a href="javascript:void(0)" class="hint_icon">?</a>
+                                                    <div id="payment-tool-tip" class="checkout-tool-tip">
+                                                        <div class="block-content"><div class="ccv_img"></div></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="t_input">
+                                                <input id="PaymentMethodForm_parameter_mi_cc_security_code" name="PaymentMethodForm[parameter][mi_cc_security_code]" class="input_field short_input_2" size="50" maxlength="30" type="text" />
+                                            </div>
+                                            <div class="t_validation"></div>
+                                        </div>
+                                        <div class="t_row">
+                                            <div class="payment_radio_check">
+                                                <input id="ytPaymentMethodForm_parameter_mi_terms_conditions" type="hidden" value="0" name="PaymentMethodForm[parameter][mi_terms_conditions]" /><input name="PaymentMethodForm[parameter][mi_terms_conditions]" value="1" id="PaymentMethodForm_parameter_mi_terms_conditions" type="checkbox" />
+                                            </div>
+                                            <div class="payment_form_title">
+                                                Tôi đã đọc và đồng ý với <a href="http://www.lazada.vn/terms-of-use/" target="_blank">Chính sách & điều kiện</a>
+                                            </div>
+                                            <div class="t_validation"></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="clear"></div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" id="ActiveTabIndexValue" data-paymentmethod=""
+                               value="1" />
+                    </div>
+                    <div id="tab-common" class="tab tab-common" style="">
+                        <div class="payment_page">
+
+                            <!-- No Tax info required -->
+                            <div id="place_order_default" class="place_order_default">
+                                <div class="action_btn">
+                                    <div class="row">
+                                        <input type="hidden" name="send" value="1">
+                                        <button id="placeYourOrderBtn" type="submit" class="submit_btn cod_btn js-place-your-order-buttons">
+                                            <span class="submit_btn_icon"></span>
+                                            <span id="placeYourOrderButtonText" class="submit_btn_text">Đặt hàng</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newsletter">
+                                <div class="row">
+                                    <div class="payment_radio_check"><input id="ytThreeStepNewsletterSignupForm_newsletter_signup" type="hidden" value="0" name="ThreeStepNewsletterSignupForm[newsletter_signup]" /><input checked="checked" name="ThreeStepNewsletterSignupForm[newsletter_signup]" id="ThreeStepNewsletterSignupForm_newsletter_signup" value="1" type="checkbox" /></div>
+                                    <div class="payment_form_title"><label for="ThreeStepNewsletterSignupForm_newsletter_signup">Đăng ký nhận thông tin từ Lazada để biết các khuyến mãi hấp dẫn*</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-notice _block" data-payment="notice">
+            Bằng cách đặt hàng, bạn đồng ý với <a href="http://www.lazada.vn/privacy/" target="_blank">Chính sách bảo mật</a> và <a href="http://www.lazada.vn/terms-of-use/" target="_blank">Điều khoản sử dụng</a> của Lazada Việt Nam.
+        </div>
+    </form>
+</div>

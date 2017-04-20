@@ -213,7 +213,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
-    <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
@@ -224,6 +223,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IntroduceController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Filters\AuthorizeFilterHelper.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -781,11 +781,6 @@
     <Content Include="ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="ckeditor\skins\moono-lisa\readme.md" />
-    <Content Include="Areas\Admin\Views\Banner\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Banner\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Banner\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Banner\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Banner\Delete.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\about\1.JPG" />
     <Content Include="Images\about\2.JPG" />
@@ -1287,6 +1282,8 @@
     <Content Include="Scripts\myScripts.js" />
     <Content Include="statics\css\block_search.css" />
     <Content Include="statics\css\ch-css.css" />
+    <Content Include="statics\css\checkout-min.css" />
+    <Content Include="statics\css\checkout.css" />
     <Content Include="statics\css\contentdetail.css" />
     <Content Include="statics\css\css.css" />
     <Content Include="statics\css\css_1.css" />
@@ -1445,6 +1442,13 @@
     <Content Include="statics\fonts\b9QBgL0iMZfDSpmcXcE8nHm2hrkyco9jQ3NKMXpgOBg.woff2" />
     <Content Include="statics\fonts\OpenSans-CondBold.ttf" />
     <Content Include="statics\fonts\Roboto-Bold.ttf" />
+    <Content Include="Views\Order\Step.cshtml" />
+    <Content Include="Views\Shared\_CheckoutLayout.cshtml" />
+    <Content Include="Views\Shared\_OrderBlock.cshtml" />
+    <Content Include="Views\Order\_Registration.cshtml" />
+    <Content Include="Views\Order\_Information.cshtml" />
+    <Content Include="Views\Order\_Checkout.cshtml" />
+    <Content Include="Views\Order\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

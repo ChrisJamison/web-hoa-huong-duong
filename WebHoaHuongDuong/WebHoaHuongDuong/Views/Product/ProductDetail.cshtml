@@ -854,19 +854,19 @@
             data: { id: pid },
             success: function (response) {
                 $("#in_cart").html(response.Count);
-                $("#nn-cart-total").html(response.Total);
+                $("#gio_hang_tong span").html(response.Total);
                 $("#cart-list").html("");
                 var cartHtml = "";
                 $.each(response.Items,
                     function (index, item) {
                         cartHtml += '<li id="gio_hang_sp_1563913">' +
                            '<div>' + 
-                           '<a href="" target="_blank"><img src="/' +
+                           '<a href="/Product/ProductDetail/' + item.Product_ID + '" target="_blank" id="cart-box"><img src="/' +
                            item.Image +
                            '"class="cart-img">' +
-                           item.Name +
+                           item.Name.trimToLength(20) +
                            '</a>' +
-                           '<h3><a href="" target="_blank" title=""></a></h3>' +
+                           '<h3><a href="/Product/ProductDetail/' + item.Product_ID + ' target="_blank" title=""></a></h3>' +
                            '<h2>' +
                            item.Price +
                            '</h2>' +
@@ -892,5 +892,11 @@
 
         //options = { to: "#nn-cart-image", className: "fly-effect" };
         //$("#i" + pid).effect("transfer", options, 500, function () { });
+
+        String.prototype.trimToLength = function (m) {
+            return (this.length > m)
+              ? jQuery.trim(this).substring(0, m).split(" ").slice(0, -1).join(" ") + "..."
+              : this;
+        };
     });
 </script>

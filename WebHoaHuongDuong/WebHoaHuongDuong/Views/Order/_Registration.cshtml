@@ -1,0 +1,53 @@
+﻿<div class="checkout-main _primary">
+
+    <div class="checkout-box _box">
+
+        <div class="checkout-box _heading">
+            <h3 class="checkout-box _title">Đăng nhập hoặc Đặt hàng không cần đăng ký</h3>
+        </div>
+        <div class="checkout-box _content">
+            <div class="checkout-login">
+                <form class="email_login_form" id="email_login_form" action="/Order/Registration" method="post">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+                    <div class="login_wrap">
+                        <div class="login_t_row">
+
+                            <div class="login_t_label">Xin vui lòng nhập email:</div>
+                            <!-- The "valid" class will be disable in normal condition and will become "invalid" when user input error -->
+                            <div class="login_t_input">
+                                <input type="email" class="login_input_field" size="30" placeholder="Xin vui lòng nhập email:" name="email" id="EmailLoginForm_email" required/>
+                            </div>
+                            <!-- The "valid" class will be disable in normal condition and will become "invalid" when user input error -->
+                            <div class="login_t_validation"></div>
+                            <div class="clear"></div>
+
+                        </div>
+                        <div class="login_row">
+                            <div id="helptooltip">
+                                <h3>Email của bạn là cần thiết</h3>
+                                <p>Xin vui lòng cung cấp email của bạn. sunflowershop.vn sẽ thông báo thông tin giao hàng qua email này.</p>
+                            </div>
+                            <div class="login_input">
+                                <div class="radio_check" id="usernotregister">
+                                    <input class="customer_type" checked="checked" type="radio" value="1" name="EmailLoginForm[isGuestCheckout]" id="EmailLoginForm_isGuestCheckout"/>
+                                </div>
+                                <p id="newCustomerLabel">
+                                    Đặt hàng mà không cần đăng ký <!-- <span class="description">(--><!--)</span>-->
+                                </p>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="login_row space_30">
+                        </div>
+                        <button type="submit" name="send" value="1" class="submit_btn login_btn">
+                            <span class="submit_btn_text">Tiếp tục »</span>
+                            <span class="submit_btn_icon"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

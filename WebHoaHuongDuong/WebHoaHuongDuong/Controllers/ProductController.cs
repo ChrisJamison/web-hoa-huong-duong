@@ -89,7 +89,7 @@ namespace WebHoaHuongDuong.Controllers
         {
             var product = _iProductServices.GetProductById(id);
             var sameProducts =
-                _db.Products.Where(p => p.Category_ID == product.Category_ID).OrderBy(c => Guid.NewGuid()).Take(6);
+                _db.Products.Where(p => p.Category_ID == product.Category_ID && p.Price != 0 && p.Price != 1).OrderBy(c => Guid.NewGuid()).Take(6);
             var result = new ProductViewModel { Product = product };
             result.SameProducts = new List<Product>(sameProducts);
             return View(result);

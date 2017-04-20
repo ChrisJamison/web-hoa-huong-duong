@@ -17,6 +17,10 @@
 	color: #fdf1a5;
 }
 
+#cart-box{
+	color: black !important;
+}
+
 .cart a span {
 	display: inline-block;
     margin-right: 5px;
