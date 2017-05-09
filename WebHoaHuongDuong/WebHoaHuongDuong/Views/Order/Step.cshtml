@@ -1,7 +1,6 @@
 ﻿@using WebHoaHuongDuong.AppConstants
 @model BusinessEntities.CheckoutEntity
 @{
-    ViewBag.Title = "Đặt Hàng";
     Layout = "~/Views/Shared/_CheckoutLayout.cshtml";
 }
 
@@ -28,6 +27,12 @@
 
 @if (Model.step == WellknownConstant.Information)
 {
+    if (System.Web.HttpContext.Current.Session["UserGuid"] == null)
+    {
+        <script type="text/javascript">
+            location.href = "/Order/Step?step=Registration";
+        </script>
+    }
     @Html.Partial("_Information")
     @section Steps
 {
@@ -49,7 +54,13 @@
 
 @if (Model.step == WellknownConstant.Checkout)
 {
-    @Html.Partial("_Checkout")
+    if (System.Web.HttpContext.Current.Session["UserGuid"] == null)
+    {
+        <script type="text/javascript">
+            location.href = "/Order/Step?step=Registration";
+        </script>
+    }
+    @Html.Partial("_Checkout", Model)
     @section Steps
 {
     <div class="checkout-header _progress-bar">

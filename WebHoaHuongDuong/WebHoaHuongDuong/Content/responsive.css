@@ -310,7 +310,9 @@
 	}
 
 	.head_top .cart {
-		display: none;
+		/*display: none;*/
+            margin-top: -38px;
+    float: left;
 	}
 
 	ul.topmenu li > a {
@@ -340,6 +342,10 @@
 	.list_product li.item_xemnhanh {
 		width: 45%;
 	}
+
+    .box-important {
+        width: 350px !important;
+    }
 }
 
 

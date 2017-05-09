@@ -1,0 +1,114 @@
+﻿@model DataModel.Bill
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Chi tiết Đơn Hàng</h1>
+<br />
+<fieldset>
+    <div class="display-label editor-label">
+        Mã Đơn Hàng
+    </div>
+    <div class="display-field">
+        @String.Format("#0000{0}", Model.Bill_ID)
+    </div>
+
+    <div class="display-label editor-label">
+        Khách Hàng
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cart.Customer.FirstName)
+    </div>
+
+    <div class="display-label editor-label">
+        Số Điện Thoại
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cart.Customer.Phone)
+    </div>
+    <div class="display-label editor-label">
+        Email
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cart.Customer.Email)
+    </div>
+    <div class="display-label editor-label">
+        Địa Chỉ
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cart.Customer.Address)
+    </div>
+    <div class="display-label editor-label">
+        Ngày Đặt
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateOfCreation)
+    </div>
+    <div class="display-label editor-label">
+        Tổng Tiền
+    </div>
+    <div class="display-field">
+        @String.Format("{0:N0}", Model.BillTotal)
+    </div>
+
+    <div class="display-label editor-label">
+        Trạng Thái
+    </div>
+    <div class="display-field">
+        @{
+            var isPay = Model.isPayed ? "Đã thanh toán" : "Chưa thanh toán";
+        }
+        @isPay
+    </div>
+    <div class="display-label editor-label">
+        Sản Phẩm Đã Đặt
+    </div>
+    <table>
+        <tr>
+            <th>
+                Ảnh sản phẩm
+            </th>
+            <th>
+                Tên sản phẩm
+            </th>
+            <th>
+                Đơn giá
+            </th>
+            <th>
+                Số lượng
+            </th>
+            <th>
+                Tổng tiền
+            </th>
+        </tr>
+        @foreach (var item in Model.Cart.CartDetails)
+        {
+            <tr>
+                <td>
+                    <img src="~/@item.Product.Image" alt="@item.Product.Name" style="width: 50px"/>
+                </td>
+                <td>
+                    @item.Product.Name
+                </td>
+                <td>
+                    @String.Format("{0:N0}", item.Product.Price)
+                </td>
+                <td>
+                    @item.Quantity
+                </td>
+                <td>
+                    @{
+                        var amount = item.Product.Price*item.Quantity;
+                    }
+                    @String.Format("{0:N0}", amount)
+                </td>
+            </tr>
+        }
+    </table>
+</fieldset>
+<br />
+<p>
+    @Html.ActionLink("Về danh sách", "Index")
+</p>

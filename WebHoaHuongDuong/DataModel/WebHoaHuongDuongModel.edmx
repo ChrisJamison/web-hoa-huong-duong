@@ -4,15 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="WebHoaHuongDuongModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
+    <Schema Namespace="WebHoaHuongDuongModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Banner">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Thumbnail" Nullable="false" Type="nvarchar(max)" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Thumbnail" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Order" Type="int" />
-          <Property Name="IsActivated" Nullable="false" Type="bit" />
+          <Property Name="IsActivated" Type="bit" Nullable="false" />
           <Property Name="CreatedDate" Type="date" />
           <Property Name="ModifiedDate" Type="date" />
         </EntityType>
@@ -20,11 +20,11 @@
           <Key>
             <PropertyRef Name="Bill_ID" />
           </Key>
-          <Property Name="Bill_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Bill_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Cart_ID" Type="int" />
           <Property Name="DateOfCreation" Type="date" />
-          <Property Name="isPayed" Nullable="false" Type="bit" />
-          <Property Name="isOrdered" Nullable="false" Type="bit" />
+          <Property Name="isPayed" Type="bit" Nullable="false" />
+          <Property Name="isOrdered" Type="bit" Nullable="false" />
           <Property Name="BillTotal" Type="money" />
           <Property Name="Product_ID" Type="int" />
         </EntityType>
@@ -32,7 +32,7 @@
           <Key>
             <PropertyRef Name="Cart_ID" />
           </Key>
-          <Property Name="Cart_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Cart_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Customer_ID" Type="int" />
           <Property Name="DateOfCreation" Type="date" />
         </EntityType>
@@ -40,19 +40,19 @@
           <Key>
             <PropertyRef Name="Cart_Detail_ID" />
           </Key>
-          <Property Name="Cart_Detail_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Cart_Detail_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Product_ID" Type="int" />
           <Property Name="Quantity" Type="int" />
           <Property Name="Cart_ID" Type="int" />
           <Property Name="Record_ID" Type="int" />
-          <Property Name="CartDetailID" MaxLength="200" Type="nvarchar" />
+          <Property Name="CartDetailID" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="Category_ID" />
           </Key>
-          <Property Name="Category_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Name" MaxLength="50" Type="nvarchar" />
+          <Property Name="Category_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Parent_ID" Type="int" />
           <Property Name="Level" Type="int" />
           <Property Name="Description" Type="text" />
@@ -63,11 +63,11 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Fullname" MaxLength="100" Type="nvarchar" />
-          <Property Name="PhoneNumber" MaxLength="20" Type="nvarchar" />
-          <Property Name="Email" MaxLength="100" Type="nvarchar" />
-          <Property Name="Address" MaxLength="200" Type="nvarchar" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fullname" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
           <Property Name="Content" Type="nvarchar(max)" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -75,21 +75,21 @@
           <Key>
             <PropertyRef Name="Customer_ID" />
           </Key>
-          <Property Name="Customer_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="FirstName" MaxLength="10" Type="nchar" />
-          <Property Name="LastName" MaxLength="10" Type="nchar" />
-          <Property Name="Phone" MaxLength="11" Type="nchar" />
-          <Property Name="Address" MaxLength="256" Type="nvarchar" />
+          <Property Name="Customer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="256" />
           <Property Name="LastDateAccess" Type="date" />
-          <Property Name="IdentifyCardNumber" Nullable="false" MaxLength="9" Type="nchar" />
-          <Property Name="Email" Nullable="false" MaxLength="50" Type="nvarchar" />
+          <Property Name="IdentifyCardNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="News">
           <Key>
             <PropertyRef Name="News_ID" />
           </Key>
-          <Property Name="News_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Title" MaxLength="250" Type="nvarchar" />
+          <Property Name="News_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="250" />
           <Property Name="Is_active" Type="bit" />
           <Property Name="DateUpload" Type="date" />
           <Property Name="DateUpdate" Type="date" />
@@ -102,12 +102,12 @@
           <Key>
             <PropertyRef Name="Product_ID" />
           </Key>
-          <Property Name="Product_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Name" MaxLength="100" Type="nvarchar" />
-          <Property Name="Category_ID" Nullable="false" Type="int" />
+          <Property Name="Product_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Category_ID" Type="int" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
-          <Property Name="URL" MaxLength="256" Type="varchar" />
-          <Property Name="Image" MaxLength="256" Type="varchar" />
+          <Property Name="URL" Type="varchar" MaxLength="256" />
+          <Property Name="Image" Type="varchar" MaxLength="256" />
           <Property Name="DateUpload" Type="date" />
           <Property Name="DateUpdate" Type="date" />
           <Property Name="Price" Type="money" />
@@ -121,9 +121,9 @@
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Nullable="false" MaxLength="128" Type="nvarchar" />
-          <Property Name="principal_id" Nullable="false" Type="int" />
-          <Property Name="diagram_id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
@@ -131,23 +131,23 @@
           <Key>
             <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="UserId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserName" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="webpages_Membership">
           <Key>
             <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="UserId" Nullable="false" Type="int" />
+          <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="CreateDate" Type="datetime" />
-          <Property Name="ConfirmationToken" MaxLength="128" Type="nvarchar" />
+          <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
           <Property Name="IsConfirmed" Type="bit" />
           <Property Name="LastPasswordFailureDate" Type="datetime" />
-          <Property Name="PasswordFailuresSinceLastSuccess" Nullable="false" Type="int" />
-          <Property Name="Password" Nullable="false" MaxLength="128" Type="nvarchar" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="PasswordChangedDate" Type="datetime" />
-          <Property Name="PasswordSalt" Nullable="false" MaxLength="128" Type="nvarchar" />
-          <Property Name="PasswordVerificationToken" MaxLength="128" Type="nvarchar" />
+          <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
           <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
         </EntityType>
         <EntityType Name="webpages_OAuthMembership">
@@ -155,28 +155,28 @@
             <PropertyRef Name="Provider" />
             <PropertyRef Name="ProviderUserId" />
           </Key>
-          <Property Name="Provider" Nullable="false" MaxLength="30" Type="nvarchar" />
-          <Property Name="ProviderUserId" Nullable="false" MaxLength="100" Type="nvarchar" />
-          <Property Name="UserId" Nullable="false" Type="int" />
+          <Property Name="Provider" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ProviderUserId" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="webpages_Roles">
           <Key>
             <PropertyRef Name="RoleId" />
           </Key>
-          <Property Name="RoleId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="RoleName" Nullable="false" MaxLength="256" Type="nvarchar" />
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
         </EntityType>
         <EntityType Name="webpages_UsersInRoles">
           <Key>
             <PropertyRef Name="UserId" />
             <PropertyRef Name="RoleId" />
           </Key>
-          <Property Name="UserId" Nullable="false" Type="int" />
-          <Property Name="RoleId" Nullable="false" Type="int" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_BILL_CART">
-          <End Type="Self.Cart" Multiplicity="0..1" Role="Cart" />
-          <End Type="Self.Bill" Multiplicity="*" Role="Bill" />
+          <End Role="Cart" Type="Self.Cart" Multiplicity="0..1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cart">
               <PropertyRef Name="Cart_ID" />
@@ -187,8 +187,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CART_CUSTOMER">
-          <End Type="Self.Customer" Multiplicity="0..1" Role="Customer" />
-          <End Type="Self.Cart" Multiplicity="*" Role="Cart" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="Customer_ID" />
@@ -199,8 +199,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CART_DETAIL_CART">
-          <End Type="Self.Cart" Multiplicity="0..1" Role="Cart" />
-          <End Type="Self.CartDetail" Multiplicity="*" Role="CartDetail" />
+          <End Role="Cart" Type="Self.Cart" Multiplicity="0..1" />
+          <End Role="CartDetail" Type="Self.CartDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cart">
               <PropertyRef Name="Cart_ID" />
@@ -211,8 +211,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CART_DETAIL_PRODUCT">
-          <End Type="Self.Product" Multiplicity="0..1" Role="Product" />
-          <End Type="Self.CartDetail" Multiplicity="*" Role="CartDetail" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="CartDetail" Type="Self.CartDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="Product_ID" />
@@ -223,8 +223,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PRODUCT_CATEGORY">
-          <End Type="Self.Category" Multiplicity="1" Role="Category" />
-          <End Type="Self.Product" Multiplicity="*" Role="Product" />
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
               <PropertyRef Name="Category_ID" />
@@ -235,8 +235,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_RoleId">
-          <End Type="Self.webpages_Roles" Multiplicity="1" Role="webpages_Roles" />
-          <End Type="Self.webpages_UsersInRoles" Multiplicity="*" Role="webpages_UsersInRoles" />
+          <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="webpages_Roles">
               <PropertyRef Name="RoleId" />
@@ -247,8 +247,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_UserId">
-          <End Type="Self.UserProfile" Multiplicity="1" Role="UserProfile" />
-          <End Type="Self.webpages_UsersInRoles" Multiplicity="*" Role="webpages_UsersInRoles" />
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="UserProfile">
               <PropertyRef Name="UserId" />
@@ -275,32 +275,32 @@
           <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="webpages_UsersInRoles" EntityType="Self.webpages_UsersInRoles" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_BILL_CART" Association="Self.FK_BILL_CART">
-            <End EntitySet="Cart" Role="Cart" />
-            <End EntitySet="Bill" Role="Bill" />
+            <End Role="Cart" EntitySet="Cart" />
+            <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
           <AssociationSet Name="FK_CART_CUSTOMER" Association="Self.FK_CART_CUSTOMER">
-            <End EntitySet="Customer" Role="Customer" />
-            <End EntitySet="Cart" Role="Cart" />
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Cart" EntitySet="Cart" />
           </AssociationSet>
           <AssociationSet Name="FK_CART_DETAIL_CART" Association="Self.FK_CART_DETAIL_CART">
-            <End EntitySet="Cart" Role="Cart" />
-            <End EntitySet="CartDetail" Role="CartDetail" />
+            <End Role="Cart" EntitySet="Cart" />
+            <End Role="CartDetail" EntitySet="CartDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_CART_DETAIL_PRODUCT" Association="Self.FK_CART_DETAIL_PRODUCT">
-            <End EntitySet="Product" Role="Product" />
-            <End EntitySet="CartDetail" Role="CartDetail" />
+            <End Role="Product" EntitySet="Product" />
+            <End Role="CartDetail" EntitySet="CartDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_PRODUCT_CATEGORY" Association="Self.FK_PRODUCT_CATEGORY">
-            <End EntitySet="Category" Role="Category" />
-            <End EntitySet="Product" Role="Product" />
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
           </AssociationSet>
           <AssociationSet Name="fk_RoleId" Association="Self.fk_RoleId">
-            <End EntitySet="webpages_Roles" Role="webpages_Roles" />
-            <End EntitySet="webpages_UsersInRoles" Role="webpages_UsersInRoles" />
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
           </AssociationSet>
           <AssociationSet Name="fk_UserId" Association="Self.fk_UserId">
-            <End EntitySet="UserProfile" Role="UserProfile" />
-            <End EntitySet="webpages_UsersInRoles" Role="webpages_UsersInRoles" />
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -402,12 +402,12 @@
             <PropertyRef Name="Customer_ID" />
           </Key>
           <Property Name="Customer_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-          <Property Name="LastName" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-          <Property Name="Phone" Type="String" MaxLength="11" Unicode="true" FixedLength="true" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Address" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="LastDateAccess" Type="DateTime" Precision="0" />
-          <Property Name="IdentifyCardNumber" Type="String" MaxLength="9" Unicode="true" FixedLength="true" Nullable="false" />
+          <Property Name="IdentifyCardNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" Nullable="false" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Carts" Relationship="WebHoaHuongDuongModel.FK_CART_CUSTOMER" FromRole="Customer" ToRole="Cart" />
         </EntityType>

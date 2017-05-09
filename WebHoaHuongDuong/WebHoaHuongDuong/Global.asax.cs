@@ -11,6 +11,7 @@ using System.Web.Services;
 using AutoMapper;
 using DataModel;
 using BusinessEntities;
+using Newtonsoft.Json.Serialization;
 using WebMatrix.WebData;
 
 namespace WebHoaHuongDuong
@@ -23,8 +24,9 @@ namespace WebHoaHuongDuong
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);      
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
+            WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+          /*  WebApiConfig.Register(GlobalConfiguration.Configuration);*/
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);

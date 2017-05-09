@@ -9,5 +9,6 @@ namespace BusinessEntities
     public class CheckoutEntity
     {
         public string step { get; set; }
+        public int billId { get; set; }
     }
 }

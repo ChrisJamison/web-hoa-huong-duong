@@ -1,7 +1,8 @@
-﻿<div class="left-col big-col left_module">
-    <form id="payment_information_form" action="/checkout/step/paymentinformation/" method="post">
-        <input type="hidden" value="55c10a0b57dfa733f3a4755a58951be74df99555" name="FORM_TOKEN" /><input type="hidden" name="PaymentMethod[empty]" value="1" />
-        <input type="hidden" name="fingerprint" class="js-fingerprint-input" />
+﻿@model BusinessEntities.CheckoutEntity
+<div class="left-col big-col left_module">
+    <form id="payment_information_form" action="@Url.Action("SubmitOrder", "Order")" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="billId" value="@Model.billId" />
 
 
 
@@ -39,7 +40,7 @@
                                     </div>
                                     <div class="row cod_aditional_info">
                                         <u>Lưu ý:</u> <br />- Bạn nhớ kiểm tra kỹ thông tin của đơn hàng bên phải vì thông tin này sẽ không thể thay đổi sau khi đơn hàng được xác nhận thành công.<br>
-                                        - Sunflowershop.vn sẽ không gửi tin nhắn xác nhận đơn hàng nên bạn vui lòng xem lại thông tin trong xác nhận đơn hàng được gửi qua email.<br />
+                                        - Sunflowershop.vn sẽ liên hệ với bạn để cập nhật thông tin đơn hàng.<br />
                                     </div>
                                 </div>
                             </div>

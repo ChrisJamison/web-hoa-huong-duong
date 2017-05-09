@@ -1,0 +1,82 @@
+﻿@model PagedList.IPagedList<DataModel.Bill>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Danh sách Đơn Hàng</h2>
+@using (Html.BeginForm("Index", "Order", FormMethod.Get, new { @class = "form-inline" }))
+{
+    <div class="form-group">
+
+        @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control", @placeholder = "Nhập tên Khách Hàng" })
+
+    </div>
+    <input type="submit" value="Tìm kiếm" class="btn btn-default" />
+}
+<table>
+    <tr>
+        <th>
+            Mã Đơn Hàng
+        </th>
+        <th>
+            Khách Hàng
+        </th>
+        <th>
+            Số Điện Thoại
+        </th>
+        <th>
+            Địa Chỉ
+        </th>
+        <th>
+            Ngày Đặt
+        </th>
+        <th>
+            Trạng Thái
+        </th>
+        <th>
+            Tổng Tiền
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @String.Format("#0000{0}", item.Bill_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cart.Customer.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cart.Customer.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cart.Customer.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfCreation)
+            </td>
+            <td>
+                @{
+                    var isPay = item.isPayed ? Html.ActionLink("Đã Thanh Toán", "UpdateOrderStatus", new { id = item.Bill_ID, status = false }) : Html.ActionLink("Chưa Thanh Toán", "UpdateOrderStatus", new { id = item.Bill_ID, status = true });
+                }
+                @isPay
+            </td>
+            <td>
+                @String.Format("{0:N0}", item.BillTotal)
+            </td>
+            <td>
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.Bill_ID }) 
+                @*@Html.ActionLink("Xóa", "Delete", new { /* id=item.PrimaryKey */ })*@
+            </td>
+        </tr>
+    }
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

@@ -53,7 +53,7 @@
                 @Html.DisplayFor(modelItem => item.DateUpload)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                @String.Format("{0:N0}", item.Price)
             </td>
             <td>
                 @Html.ActionLink("Sửa", "Edit", new { id = item.Product_ID }) |
