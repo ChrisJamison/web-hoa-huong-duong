@@ -5,7 +5,7 @@
 }
 
 <p>
-    @Html.ActionLink("Tạo mới", "Create")
+    @Html.ActionLink("Thêm mới Banner", "Create")
 </p>
 <table>
     <tr>
@@ -27,27 +27,38 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td class="img-thumbnail">
-            <img src="/Images/sanpham/sanphammoi/@item.Thumbnail" style="width: 10%;" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Order)
-        </td>
-        <td>
-            @Html.EditorFor(modelItem => item.IsActivated)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ModifiedDate)
-        </td>
-        <td>
-            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.Id })
-        </td>
-    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="img-thumbnail">
+                <img src="/Images/sanpham/sanphammoi/@item.Thumbnail" style="width: 10%;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order)
+            </td>
+            <td>
+                @{
+                    if (item.IsActivated)
+                    {
+                        <input type="checkbox" checked="checked" value="true" name="IsActivated" onchange="ActivateBanner(@item.Id, false)"/>
+                    }
+                    else
+                    {
+                        <input type="checkbox" value="false" name="IsActivated" onchange="ActivateBanner(@item.Id, true)" />
+                    }
 }
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedDate)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

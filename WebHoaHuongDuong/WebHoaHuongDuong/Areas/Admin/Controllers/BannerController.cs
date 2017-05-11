@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using DataModel;
 
 namespace WebHoaHuongDuong.Areas.Admin.Controllers
@@ -82,6 +83,7 @@ namespace WebHoaHuongDuong.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                banner.ModifiedDate = DateTime.Now;
                 db.Entry(banner).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -119,6 +121,20 @@ namespace WebHoaHuongDuong.Areas.Admin.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+        [HttpGet]
+        public ActionResult ActivateBanner(int id, bool isActivated)
+        {
+            var banner = db.Banners.Find(id);
+            if (banner != null)
+            {
+                banner.IsActivated = isActivated;
+                db.Entry(banner).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            var response = new {success = "Cập nhật thành công"};
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
     }
 }

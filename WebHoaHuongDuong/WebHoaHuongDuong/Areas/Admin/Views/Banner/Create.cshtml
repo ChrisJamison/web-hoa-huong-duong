@@ -36,12 +36,19 @@
                         <p id="messageUpload"></p>
                         <div class="form-group">
                             <div class="col-md-10">
-                                @Html.HiddenFor(model => model.Thumbnail, new {@readonly = true, Styles = "background-color: #C5EFF7"})
+                                @Html.TextBoxFor(model => model.Thumbnail, new {@readonly = true, Styles = "background-color: #C5EFF7"})
                                 @Html.ValidationMessageFor(model => model.Thumbnail)
                             </div>
                         </div>
                     </div>
                 </section>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.Label("Mô tả", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextArea("Content", new { @class = "ckeditor", @id = "editor" })
             </div>
         </div>
 

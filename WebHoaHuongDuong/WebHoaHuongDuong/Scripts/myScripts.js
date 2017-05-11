@@ -104,3 +104,15 @@ function successProductImportHandler(data) {
         $("#messageUpload").text("Import file thất bại. Vui lòng thử lại!");
     }
 }
+
+
+function ActivateBanner(id, isActivated) {
+    $.ajax({
+        url: "/Admin/Banner/ActivateBanner?id=" + id + "&&isActivated=" + isActivated,
+        type: "GET",
+        success: function (data) {
+            alert(data.success);
+            location.reload();
+        }
+    });
+}

@@ -4,27 +4,27 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h1>Chỉnh sửa</h1>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Banner</legend>
 
         @Html.HiddenFor(model => model.Id)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Thumbnail)
+            Ảnh Banner
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Thumbnail)
+            <img src="/Images/sanpham/sanphammoi/@Model.Thumbnail" style="width: 30%;" />
+            @Html.HiddenFor(model => model.Thumbnail)
             @Html.ValidationMessageFor(model => model.Thumbnail)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Order)
+            Thứ tự
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Order)
@@ -32,26 +32,19 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.IsActivated)
+            Chọn làm Banner
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.IsActivated)
             @Html.ValidationMessageFor(model => model.IsActivated)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CreatedDate)
-        </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CreatedDate)
+            @Html.HiddenFor(model => model.CreatedDate)
             @Html.ValidationMessageFor(model => model.CreatedDate)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ModifiedDate)
-        </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.ModifiedDate)
+            @Html.HiddenFor(model => model.ModifiedDate)
             @Html.ValidationMessageFor(model => model.ModifiedDate)
         </div>
 
@@ -62,7 +55,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Về danh sách", "Index")
 </div>
 
 @section Scripts {
