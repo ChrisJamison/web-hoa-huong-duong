@@ -51,6 +51,7 @@ namespace WebHoaHuongDuong.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                banner.CreatedDate = DateTime.Now;
                 db.Banners.Add(banner);
                 db.SaveChanges();
                 return RedirectToAction("Index");

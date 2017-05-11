@@ -4,25 +4,49 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h1>Thêm Banner</h1>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Banner</legend>
+        <div class="form-group">
+            @Html.Label("Ảnh banner*", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <section>
+                    <div id="FormContent">
+                        <form id="FormUpload"
+                              enctype="multipart/form-data" method="post">
+                            <input type="file"
+                                   name="UploadedFile" id="UploadedFile" />
+                            <button class="btn btn-primary start" onclick="UploadFile();"
+                                    type="button" id="Submit_btn" style="margin-top: 10px;">
+                                <i class="glyphicon glyphicon-upload"></i>
+                                <span>Upload</span>
+                            </button>
+                        </form>
+                        <div class="progress CustomProgress">
+                            <div id="FileProgress"
+                                 class="progress-bar" role="progressbar"
+                                 aria-valuenow="0" aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 0%;">
+                            </div>
+                        </div>
+                        <p id="messageUpload"></p>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.HiddenFor(model => model.Thumbnail, new {@readonly = true, Styles = "background-color: #C5EFF7"})
+                                @Html.ValidationMessageFor(model => model.Thumbnail)
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Thumbnail)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Thumbnail)
-            @Html.ValidationMessageFor(model => model.Thumbnail)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Order)
+            Thứ tự
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Order)
@@ -30,27 +54,11 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.IsActivated)
+            Chọn làm Banner
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.IsActivated)
             @Html.ValidationMessageFor(model => model.IsActivated)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CreatedDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CreatedDate)
-            @Html.ValidationMessageFor(model => model.CreatedDate)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ModifiedDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ModifiedDate)
-            @Html.ValidationMessageFor(model => model.ModifiedDate)
         </div>
 
         <p>
@@ -60,7 +68,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Về danh sách", "Index")
 </div>
 
 @section Scripts {
