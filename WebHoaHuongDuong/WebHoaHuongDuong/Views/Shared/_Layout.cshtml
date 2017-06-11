@@ -182,7 +182,19 @@
     </div>
     <!--wrapper-->
     @{Html.RenderPartial("_Footer");}
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false);
+    @*<script>
+        $(function () {
+            $("#search").autocomplete({
+                source: "/Product/SearchAJX",
+                minLength: 1,
+                select: function (event, ui) {
+                    console.log("Selected: " + ui.item.value);
+                    $("input[name='keywords']").val(ui.item.value);
+                }
+            });
+        })
+    </script>*@
     <script>
         $(function () {
             $("#search").autocomplete({
@@ -191,6 +203,13 @@
                 select: function (event, ui) {
                     console.log("Selected: " + ui.item.value);
                     $("input[name='keywords']").val(ui.item.value);
+                }, create: function () {
+                    $(this).data('ui-autocomplete')._renderItem = function (ul, item) {
+                        return $('<li>')
+                            .append('<div class="menu-item-avatar"><img width="100" src= "' + item.image +'" /></div>')
+                            .append('<div class="menu-item-label">' + item.label + '</div>')
+                            .appendTo(ul);
+                    };
                 }
             });
         })
@@ -233,5 +252,17 @@
 
     .header-menu {
         width: 100%;
+    }
+    .ui-autocomplete {
+        position: absolute;
+        cursor: default;
+        z-index: 1001 !important
+    }
+    .menu-item-avatar {
+        display: inline-block;
+    }
+    .menu-item-label {
+        display: inline-block;
+        font-size: 20px;
     }
 </style>

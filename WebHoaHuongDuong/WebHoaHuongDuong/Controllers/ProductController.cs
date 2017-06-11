@@ -99,7 +99,7 @@ namespace WebHoaHuongDuong.Controllers
         {
             var name = Request["term"];
             var data = _db.Products.Where(p => p.Name.Contains(name))
-                .Select(p => p.Name).ToList();
+                .Select(p => new { label = p.Name, image = p.Image } ).ToList();
             return Json(data, JsonRequestBehavior.AllowGet);
         }
 
